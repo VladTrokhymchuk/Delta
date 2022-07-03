@@ -1,0 +1,74 @@
+.runline {
+  position: relative;
+  overflow: hidden;
+}
+
+.runline__inner {
+  border-top: 2px solid var(--runline-text-color, black);
+  border-bottom: 2px solid var(--runline-text-color, black);
+}
+
+.runline .swiper {
+  width: 100vw;
+  margin-left: calc(var(--container-side-padding) * -1);
+  padding: 1.4rem 0;
+}
+
+.runline .swiper-slide {
+  text-align: center;
+  font-family: "Boska-Black", serif;
+  font-size: 2rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.3em;
+  color: var(--runline-text-color, black);
+}
+
+@media only screen and (min-width: 768px) {
+  .runline .swiper {
+    padding: 1.9rem 0;
+  }
+
+  .runline .swiper-slide {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .runline .swiper-slide {
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .runline__inner {
+    border-width: 3px;
+    height: 8.5rem;
+  }
+
+  .runline .swiper {
+    position: absolute;
+    margin-left: 0;
+    left: 0;
+    top: 0;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .runline__inner {
+    height: 14.2rem;
+    border: none;
+  }
+
+  .runline .swiper {
+    padding: 2.2rem 0;
+    border-top: 2px solid var(--runline-text-color, black);
+    border-bottom: 2px solid var(--runline-text-color, black);
+  }
+
+  .runline .swiper-slide {
+    font-size: 7.2rem;
+    line-height: 9.3rem;
+  }
+}

@@ -1,0 +1,341 @@
+@import '../../../core';
+
+.cases-learn {
+    &-section {
+        @include minw($pc) {
+            .container {
+                padding-left: 2.2rem;
+                padding-right: 2.2rem;
+            }
+        }
+    }
+
+    &__more {
+        &__title {
+            font-family: $sentient-bold;
+            font-size: 2.4rem;
+            line-height: 4.2rem;
+            color: var(--white);
+
+            @include minw($sm-tab) {
+                font-size: 5.6rem;
+                line-height: 7.2rem;
+            }
+
+            @include minw($lg-tab) {
+                font-size: 4.2rem;
+                line-height: 5.6rem;
+            }
+
+            @include minw($pc) {
+                font-size: 5.6rem;
+                line-height: 6.4rem;
+            }
+
+            @include minw($xl) {
+                font-size: 3.2rem;
+                line-height: 6.4rem;
+            }
+
+            .animated-gradient-title {
+                text-transform: uppercase;
+            }
+        }
+
+        &__subtitle {
+            font-family: $apercu-pro-regular;
+            font-size: 2rem;
+            line-height: 3.2rem;
+            color: #7D7D7D;
+            margin-top: 0.5rem;
+            margin-bottom: 2rem;
+
+            @include minw($sm-tab) {
+                font-size: 3.2rem;
+                line-height: 4.8rem;
+                margin-top: 1.6rem;
+                margin-bottom: 3rem;
+            }
+
+            @include minw($lg-tab) {
+                font-size: 2.4rem;
+                line-height: 3.2rem;
+                margin-top: 0.8rem;
+                margin-bottom: 5rem;
+            }
+
+            @include minw($pc) {
+                font-size: 3.2rem;
+                line-height: 4.8rem;
+                margin-top: 1.6rem;
+                margin-bottom: 4.7rem;
+            }
+
+            @include minw($xl) {
+                margin-top: 0rem;
+                margin-bottom: 5rem;
+            }
+        }
+    }
+
+    &__serv {
+        @include minw($lg-tab) {
+            grid-template-columns: 1fr 6.9rem;
+            display: grid;
+            position: relative;
+        }
+
+        @include minw($pc) {
+            grid-template-columns: 1fr 9.4rem;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            @include minw($sm-tab) {
+                flex-direction: unset;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            @include minw($lg-tab) {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0;
+            }
+
+            li {
+                @include minw($sm-tab) {
+                    flex-basis: 48.5%;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .box {
+                    display: block;
+                    background: #29323A;
+                    border-width: 0.1rem 0.1rem 0rem 0.1rem;
+                    border-style: solid;
+                    border-color: #46525B;
+                    padding: 2.1rem;
+
+                    @include minw($sm-tab) {
+                        height: 100%;
+                    }
+
+                    @include minw($lg-tab) {
+                        padding: 2rem;
+                        border-width: 0.2rem 0.1rem 0.2rem 0.1rem;
+                    }
+
+                    @include minw($pc) {
+                        padding: 2rem 2.5rem 3rem;
+                    }
+
+                    @include minw($xl) {
+                        padding: 2.3rem 2.5rem 3.5rem;
+                    }
+
+                    picture,
+                    img {
+                        width: 9rem;
+
+                        @include minw($lg-tab) {
+                            width: 6.4rem;
+                        }
+
+                        @include minw($pc) {
+                            width: 8.2rem;
+                        }
+
+                        @include minw($xl) {
+                            width: 8.9rem;
+                        }
+                    }
+
+                    span {
+                        font-family: $sentient-bold;
+                        font-size: 2.4rem;
+                        line-height: 3.2rem;
+                        color: var(--white);
+                        margin-top: 1rem;
+                        margin-bottom: 1rem;
+                        display: block;
+
+                        @include minw($lg-tab) {
+                            font-size: 1.6rem;
+                            line-height: 2.2rem;
+                        }
+
+                        @include minw($pc) {
+                            margin-top: 1.7rem;
+                            margin-bottom: 1.7rem;
+                            font-size: 2.2rem;
+                            line-height: 3.2rem;
+                        }
+
+                        @include minw($xl) {
+                            margin-top: 1.8rem;
+                            margin-bottom: 1.8rem;
+                            font-size: 2.4rem;
+                            line-height: 3.2rem;
+                        }
+                    }
+
+                    p {
+                        font-family: $apercu-pro-regular;
+                        font-size: 1.6rem;
+                        line-height: 2.8rem;
+                        color: var(--white);
+
+                        @include minw($lg-tab) {
+                            font-size: 1.2rem;
+                            line-height: 2rem;
+                        }
+
+                        @include minw($pc) {
+                            font-size: 1.5rem;
+                            line-height: 2.6rem;
+                        }
+
+                        @include minw($xl) {
+                            font-size: 1.6rem;
+                            line-height: 2.8rem;
+                        }
+                    }
+                }
+
+                .btn {
+                    @include minw($lg-tab) {
+                        display: none;
+                    }
+
+                    span {
+                        font-family: $boska-bold;
+                        font-size: 3.2rem;
+                        line-height: 4.8rem;
+                        letter-spacing: 0.025em;
+                        text-transform: uppercase;
+                        color: var(--white);
+                        padding: 0.8rem;
+                    }
+                }
+            }
+        }
+
+        .btn-all {
+            background: #29323A;
+            border: 0.2rem solid #46525B;
+            margin-top: 2rem;
+            transition: $hover-trans;
+
+            @include minw($lg-tab) {
+                margin: 0;
+                transform: rotate(90deg);
+                position: absolute;
+                right: -8rem;
+                top: 7.9rem;
+            }
+
+            @include minw($pc) {
+                right: -10.5rem;
+                top: 10.6rem;
+            }
+
+            @include minw($xl) {
+                right: -11.7rem;
+                top: 11.8rem;
+            }
+
+            span {
+                font-size: 2.4rem;
+                line-height: 4.8rem;
+                letter-spacing: 0.8rem;
+                text-transform: uppercase;
+                color: var(--accent-1);
+                padding: 0.8rem;
+
+                @include minw($sm-tab) {
+                    padding: 2.1rem;
+                }
+
+                @include minw($lg-tab) {
+                    padding: 1.8rem 2.17rem;
+                    font-size: 1.6rem;
+                    line-height: 3.2rem;
+                    letter-spacing: 0.54rem;
+                }
+
+                @include minw($pc) {
+                    font-size: 2.4rem;
+                    line-height: 4.8rem;
+                    letter-spacing: 8px;
+                    padding: 2.1rem 1.46rem;
+                }
+
+                @include minw($xl) {
+                    padding: 2.1rem 2.67rem;
+                }
+            }
+
+            &:hover {
+                span {
+                    color: var(--white);
+                }
+            }
+        }
+
+        .big-btn {
+            display: none;
+
+            @include minw($lg-tab) {
+                display: flex;
+                position: absolute;
+                bottom: -22.6rem;
+                transition: $hover-trans;
+                width: 22.9rem;
+            }
+
+            @include minw($pc) {
+                width: 30.3rem;
+                bottom: -30.4rem;
+            }
+
+            @include minw($lg-xl) {
+                width: 30.7rem;
+            }
+
+            @include minw($xl) {
+                width: 33rem;
+                bottom: -33.1rem;
+            }
+
+            span {
+                @include minw($lg-tab) {
+                    font-family: $boska-medium;
+                    font-size: 4.6rem;
+                    line-height: 4.8rem;
+                    text-transform: uppercase;
+                    color: var(--fullmenu-bg);
+                    text-align: left;
+                    padding: 11rem 7.5rem 2rem 2rem;
+                }
+
+                @include minw($pc) {
+                    font-size: 6.2rem;
+                    line-height: 6.4rem;
+                    padding: 15.5rem 7.5rem 2rem 2rem;
+                }
+
+                @include minw($xl) {
+                    font-size: 6.7rem;
+                    line-height: 6.9rem;
+                    padding: 17.2rem 7.5rem 2rem 2rem;
+                }
+            }
+        }
+    }
+}

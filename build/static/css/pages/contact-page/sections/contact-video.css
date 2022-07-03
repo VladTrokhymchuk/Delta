@@ -1,0 +1,328 @@
+.video {
+  background-color: #242E37;
+  padding: 3.4rem 0 4.7rem;
+  position: relative;
+}
+
+.video::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../../images/not-2.png);
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+
+.video .container {
+  position: relative;
+}
+
+.video__head {
+  color: var(--white);
+  margin-bottom: 4rem;
+}
+
+.video__head__box {
+  margin-bottom: 1rem;
+}
+
+.video__head__box h3 {
+  font-family: "Sentient-Bold", serif;
+  font-size: 2.6rem;
+  line-height: 4.8rem;
+}
+
+.video__head__box .v-logo {
+  width: 21.6rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.video__head span {
+  font-family: "ApercuPro-Regular", sans-serif;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+}
+
+.video__main__item {
+  display: block;
+  margin-bottom: 3rem;
+}
+
+.video__main__item:last-child {
+  margin-bottom: 0;
+}
+
+.video__main__item .frame {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #29323A;
+  border: 0.2rem solid #46515B;
+  position: relative;
+  padding-bottom: 60.25%;
+}
+
+.video__main__item .frame img,
+.video__main__item .frame picture,
+.video__main__item .frame iframe {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.video__main__item .frame picture,
+.video__main__item .frame iframe {
+  border: .8rem solid #29323A;
+}
+
+.video__main__item .desc {
+  margin-top: 2rem;
+}
+
+.video__main__item .desc p {
+  font-family: "ApercuPro-Bold", sans-serif;
+  font-size: 2rem;
+  line-height: 3.2rem;
+  color: var(--white);
+}
+
+.video__main__item .desc .hover-underline {
+  display: inline;
+  padding-bottom: .25em;
+  background: -webkit-gradient(linear, left top, left bottom, from(#57D68D), to(#57D68D)) 0 100%/0 2px no-repeat;
+  background: -o-linear-gradient(#57D68D, #57D68D) 0 100%/0 2px no-repeat;
+  background: linear-gradient(#57D68D, #57D68D) 0 100%/0 2px no-repeat;
+  -webkit-transition: background .4s;
+  -o-transition: background .4s;
+  transition: background .4s;
+  text-decoration: none;
+}
+
+.video__main__item .desc .hover-underline:hover {
+  background-size: 100% 2px;
+}
+
+@media only screen and (min-width: 768px) {
+  .video {
+    padding: 8rem 0 34.6rem;
+  }
+
+  .video__head__box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .video__head__box h3 {
+    font-size: 3.2rem;
+  }
+
+  .video__head__box .v-logo {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 2.6rem;
+  }
+
+  .video__main__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .video__main__item .frame {
+    width: 43%;
+    margin-right: 3rem;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    padding-bottom: 27%;
+  }
+
+  .video__main__item .desc {
+    margin-top: 0;
+  }
+
+  .video__main__item .desc p {
+    font-size: 2.4rem;
+    line-height: 3.8rem;
+  }
+
+  .video__main__item--base {
+    margin-bottom: 5rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .video__main__item--base .frame {
+    width: 100%;
+    padding-bottom: 52.25%;
+  }
+
+  .video__main__item--base .desc {
+    margin-top: 3rem;
+  }
+
+  .video__main__item--base .desc p {
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .video {
+    padding: 10.6rem 0 28.7rem;
+  }
+
+  .video__head {
+    margin-bottom: 5rem;
+  }
+
+  .video__head__box {
+    margin-bottom: 2.5rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .video__head__box h3 {
+    font-size: 5.6rem;
+    line-height: 6.4rem;
+  }
+
+  .video__head span {
+    font-size: 3.2rem;
+    line-height: 4.8rem;
+  }
+
+  .video__main__list {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 3rem 1fr 3rem 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3rem;
+    margin-top: 6rem;
+  }
+
+  .video__main__item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin-bottom: 0;
+  }
+
+  .video__main__item .frame {
+    width: 100%;
+    padding-bottom: 60%;
+  }
+
+  .video__main__item .desc {
+    margin-top: 2.8rem;
+  }
+
+  .video__main__item .desc p {
+    font-size: 2rem;
+    line-height: 3.2rem;
+  }
+
+  .video__main__item--base {
+    width: 100%;
+  }
+
+  .video__main__item--base .desc p {
+    font-size: 4rem;
+    line-height: 6.2rem;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .video {
+    padding: 12rem 0 23.5rem;
+  }
+
+  .video__main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .video__main__list {
+    margin-top: 0;
+    grid-gap: 4rem;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .video__main__item {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .video__main__item .frame {
+    width: 43%;
+    padding-bottom: 27%;
+  }
+
+  .video__main__item .desc {
+    margin-top: 0;
+  }
+
+  .video__main__item .desc p {
+    font-size: 2.4rem;
+    line-height: 3.8rem;
+  }
+
+  .video__main__item--base {
+    width: 57.4rem;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin-right: 5.8rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .video__main__item--base .frame {
+    width: 100%;
+    padding-bottom: 56.25%;
+  }
+
+  .video__main__item--base .desc {
+    margin-top: 3rem;
+  }
+
+  .video__main__item--base .desc p {
+    font-size: 4rem;
+    line-height: 6.2rem;
+  }
+}
+
+@media only screen and (min-width: 1900px) {
+  .video {
+    --containter-max-width: 192rem;
+    --container-side-padding: 10.4rem;
+    padding: 12rem 0 25.4rem;
+  }
+
+  .video__main__item--base {
+    width: 83.2rem;
+    margin-right: 18.2rem;
+  }
+}

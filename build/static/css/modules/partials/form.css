@@ -1,0 +1,67 @@
+.form__subtitle {
+  font-size: 2.2rem;
+  line-height: 4.8rem;
+  font-family: "ApercuPro-Bold", sans-serif;
+  margin-bottom: 1.8rem;
+  color: var(--text-secondary);
+  width: 101%;
+}
+
+.form__item:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.form__item input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #A9A9A9;
+  font-size: 2rem;
+  line-height: 3.2rem;
+  padding-bottom: 0.8rem;
+  color: var(--text-primary);
+  font-family: "ApercuPro-Regular", sans-serif;
+  background-color: transparent;
+}
+
+.form__item input::-webkit-input-placeholder {
+  color: #BCBCBC;
+}
+
+.form__item input::-moz-placeholder {
+  color: #BCBCBC;
+}
+
+.form__item input:-ms-input-placeholder {
+  color: #BCBCBC;
+}
+
+.form__item input::-ms-input-placeholder {
+  color: #BCBCBC;
+}
+
+.form__item input::placeholder {
+  color: #BCBCBC;
+}
+
+.form__item input:focus {
+  border-color: #636363;
+}
+
+.form__submit {
+  margin-top: 5rem;
+}
+
+.form__submit .btn {
+  width: 100%;
+}
+
+@media only screen and (min-width: 1280px) {
+  .form__subtitle {
+    font-size: 3.8rem;
+    line-height: 5.6rem;
+  }
+
+  .form__item:not(:last-child) {
+    margin-bottom: 1.8rem;
+  }
+}

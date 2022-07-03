@@ -1,0 +1,89 @@
+$fonts-folder: '../../../fonts';
+
+@font-face {
+    font-family: "ApercuPro-Bold";
+    src: url("#{$fonts-folder}/ApercuPro-Bold.ttf");
+    font-style: normal;
+    font-weight: normal;
+    font-display: swup;
+}
+
+@font-face {
+    font-family: "ApercuPro-Regular";
+    src: url("#{$fonts-folder}/ApercuPro/ApercuPro-Regular.ttf");
+    font-style: normal;
+    font-weight: normal;
+    font-display: swup;
+}
+
+@font-face {
+    font-family: "Sentient-Regular";
+    src: url("#{$fonts-folder}/Sentient-Regular.otf");
+    font-style: normal;
+    font-weight: normal;
+    font-display: swup;
+}
+
+@font-face {
+    font-family: "Sentient-Bold";
+    src: url("#{$fonts-folder}/Sentient-Bold.otf");
+    font-style: normal;
+    font-weight: normal;
+    font-display: swup;
+}
+
+@font-face {
+    font-family: "Sentient-BoldItalic";
+    src: url("#{$fonts-folder}/Sentient-BoldItalic.otf");
+    font-style: normal;
+    font-weight: normal;
+    font-display: swup;
+}
+
+@font-face {
+    font-family: "Sentient-LightItalic";
+    src: url("#{$fonts-folder}/Sentient-LightItalic.otf");
+    font-style: normal;
+    font-weight: normal;
+    font-display: swup;
+}
+
+@font-face {
+    font-family: "Boska-Black";
+    src: url("#{$fonts-folder}/Boska-Black.otf");
+    font-style: normal;
+    font-weight: normal;
+    font-display: swup;
+}
+
+@font-face {
+    font-family: "Boska-Regular";
+    src: url("#{$fonts-folder}/Boska-Regular.otf");
+    font-style: normal;
+    font-weight: normal;
+    font-display: swup;
+}
+
+@font-face {
+    font-family: "Boska-Bold";
+    src: url("#{$fonts-folder}/Boska-Bold.otf");
+    font-style: normal;
+    font-weight: normal;
+    font-display: swup;
+}
+
+@font-face {
+    font-family: "Boska-Medium";
+    src: url("#{$fonts-folder}/Boska-Medium.otf");
+    font-style: normal;
+    font-weight: normal;
+    font-display: swup;
+}
+
+@font-face {
+    font-family: "Boska-MediumItalic";
+    src: url("#{$fonts-folder}/Boska-MediumItalic.otf");
+    font-style: normal;
+    font-weight: normal;
+    font-display: swup;
+}

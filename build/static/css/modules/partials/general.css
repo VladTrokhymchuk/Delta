@@ -1,0 +1,138 @@
+html,
+body,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+html {
+  font-size: 10px;
+}
+
+body.noscroll {
+  height: 100vh;
+  overflow: hidden;
+}
+
+body.noscroll::-webkit-scrollbar {
+  width: 0;
+}
+
+body::-webkit-scrollbar {
+  width: .3rem;
+  -webkit-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: rgba(246, 243, 240, 0.15);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--accent-1);
+  width: .3rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: var(--container-max-width);
+  padding: 0 var(--container-side-padding);
+}
+
+section {
+  overflow: hidden;
+  z-index: 1;
+}
+
+body {
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  font-family: "Sentient-Regular", serif;
+}
+
+.apercu {
+  font-family: "ApercuPro-Bold", sans-serif;
+}
+
+.boska {
+  font-family: "Boska-Black", serif;
+}
+
+.form__subtitle {
+  font-size: 2.2rem;
+  line-height: 4.8rem;
+  font-family: "ApercuPro-Bold", sans-serif;
+  margin-bottom: 1.8rem;
+  color: var(--text-secondary);
+  width: 101%;
+}
+
+.form__item:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.form__item input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #A9A9A9;
+  font-size: 2rem;
+  line-height: 3.2rem;
+  padding-bottom: 0.8rem;
+  color: var(--text-primary);
+  font-family: "ApercuPro-Regular", sans-serif;
+  background-color: transparent;
+}
+
+.form__item input::-webkit-input-placeholder {
+  color: #BCBCBC;
+}
+
+.form__item input::-moz-placeholder {
+  color: #BCBCBC;
+}
+
+.form__item input:-ms-input-placeholder {
+  color: #BCBCBC;
+}
+
+.form__item input::-ms-input-placeholder {
+  color: #BCBCBC;
+}
+
+.form__item input::placeholder {
+  color: #BCBCBC;
+}
+
+.form__item input:focus {
+  border-color: #636363;
+}
+
+.form__submit {
+  margin-top: 5rem;
+}
+
+.form__submit .btn {
+  width: 100%;
+}
+
+@media only screen and (min-width: 1280px) {
+  .form__subtitle {
+    font-size: 3.8rem;
+    line-height: 5.6rem;
+  }
+
+  .form__item:not(:last-child) {
+    margin-bottom: 1.8rem;
+  }
+}

@@ -1,0 +1,177 @@
+@import '../../../core';
+
+.coment {
+    background: #17313B;
+    color: var(--white);
+    font-family: $apercu-pro-regular;
+    font-size: 1.3rem;
+    line-height: 2.4rem;
+    border-radius: 1.2rem;
+    margin: 6.4rem 1.3rem;
+    padding: 2rem;
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        height: 2.1rem;
+        background: #22424f;
+        position: absolute;
+        z-index: -1;
+        width: 86%;
+        top: -1.9rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 1.2rem 1.2rem 0 0;
+
+        @include minw($pc) {
+            height: 3.6rem;
+            top: -3.4rem;
+
+        }
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        height: 2.1rem;
+        background: #22424f;
+        position: absolute;
+        z-index: -1;
+        width: 86%;
+        bottom: -1.9rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 0 0 1.2rem 1.2rem;
+
+        @include minw($pc) {
+            height: 3.6rem;
+            bottom: -3.4rem;
+        }
+    }
+
+    @include minw($lg-tab) {
+        width: 64rem;
+        margin-right: 2.1rem;
+        margin-left: auto;
+    }
+
+    @include minw($pc) {
+        width: 83.8rem;
+        margin-left: auto;
+        margin-right: 2.5rem;
+        padding: 4rem;
+    }
+
+    @include minw($lg) {
+        margin-right: 5.5rem;
+    }
+
+    @include minw($lg-xl) {
+        margin-right: 16.5rem;
+    }
+
+    @include minw($xl) {
+        margin-right: 10.6rem;
+        width: 113.2rem;
+    }
+
+    br {
+        height: 0rem;
+    }
+
+    p {
+        margin-bottom: 1.6rem;
+
+        @include minw($lg-tab) {
+            font-size: 1.8rem;
+        }
+
+        &::before {
+            content: "";
+            background: url(../../../images/lap-com.png) no-repeat;
+            background-size: cover;
+            width: 2.8rem;
+            height: 2.8rem;
+            display: block;
+            margin-bottom: 1rem;
+
+            @include minw($lg-tab) {
+                width: 3.2rem;
+                height: 3.2rem;
+                margin-bottom: 1.6rem;
+            }
+        }
+    }
+
+    span {
+        font-style: italic;
+
+        @include minw($lg-tab) {
+            font-size: 1.8rem;
+        }
+    }
+
+
+    &__logo {
+        margin: 1.6rem 0;
+        width: 13.6rem;
+    }
+
+    &__bott {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__rating {
+        display: flex;
+        align-items: center;
+
+        span {
+            font-size: 2.6rem;
+            line-height: 2.6rem;
+            font-style: normal;
+            margin-right: 0.7rem;
+        }
+
+        .star {
+            display: flex;
+            gap: 0.1rem;
+
+            picture {
+                height: 1.8rem;
+            }
+        }
+    }
+
+    &__reviews {
+        span {
+            font-family: $apercu-pro-thin;
+            font-size: 2rem;
+            line-height: 2rem;
+            font-style: normal;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            transition: $hover-trans;
+            border-bottom: 0.2rem solid transparent;
+            cursor: pointer;
+
+            &::after {
+                content: "";
+                background: url(../../../images/arr-rew.png) no-repeat;
+                background-size: cover;
+                display: block;
+                width: 0.7rem;
+                height: 1rem;
+                margin-left: 0.7rem;
+            }
+
+            &:hover {
+                border-color: var(--white);
+            }
+        }
+    }
+
+}

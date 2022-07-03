@@ -1,0 +1,16 @@
+@import './core.scss';
+@import 'utils/variables/css-vars';
+@import "utils/fonts.scss";
+@import "general/reset";
+@import "modules/header/header";
+// @import "modules/header/fullmenu";
+@import "modules/footer/footer";
+@import "modules/partials/general";
+// @import "modules/partials/typography";
+// @import "modules/partials/form";
+// @import "blocks/block-breadcrumbs";
+@import "modules/buttons/buttons";
+
+// @import "libs/animate.scss";
+// @import "../../../node_modules/animate-scss/animate.scss";
+@import "libs/basictable.scss";

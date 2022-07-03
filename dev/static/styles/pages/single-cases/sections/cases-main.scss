@@ -1,0 +1,1032 @@
+@import '../../../core';
+
+main {
+    background-color: #e5e5e533;
+}
+
+.footer {
+    @include minw($sm-tab) {
+        z-index: 5;
+        position: relative;
+    }
+}
+
+.cases-main {
+    .result {
+        &:nth-last-child(-n+2) {
+            margin-bottom: 6.7rem;
+
+            @include minw($xl) {
+                margin-bottom: 15rem;
+            }
+        }
+    }
+
+    .coment {
+        &:nth-last-child(-n+2) {
+            margin-bottom: 6.7rem;
+            margin-top: 5.1rem;
+
+            @include minw($lg-tab) {
+                margin-top: 8.4rem;
+            }
+
+            @include minw($xl) {
+                margin-bottom: 15rem;
+            }
+        }
+    }
+
+    .container {
+        &:nth-last-child(-n+2) {
+            margin-bottom: 6.7rem;
+
+            @include minw($xl) {
+                margin-bottom: 15rem;
+            }
+        }
+
+        @include minw($lg-tab) {
+            padding-left: 2.4rem;
+            padding-right: 2.4rem;
+        }
+
+        @include minw($pc) {
+            padding-left: 2.1rem;
+            padding-right: 2.1rem;
+        }
+
+        @include minw($lg-xl) {
+            padding-left: 8rem;
+            padding-right: 8rem;
+        }
+
+        @include minw($xl) {
+            padding-left: 10.6rem;
+            padding-right: 10.6rem;
+        }
+    }
+
+    @include minw($lg-tab) {
+        position: relative;
+
+        &::before {
+            content: "";
+            background: url(../../../images/plus-3.png);
+            background-repeat: repeat;
+            background-size: 13.43rem 13.4rem;
+            background-position-x: 3rem;
+            background-position-y: 14.1rem;
+            display: block;
+            width: 50rem;
+            height: calc(100% - 111.5rem);
+            position: absolute;
+            top: 111.5rem;
+            left: 2.4rem;
+            z-index: -2;
+        }
+
+        &::after {
+            content: "";
+            background: url(../../../images/cube-bott.png) no-repeat;
+            background-size: cover;
+            position: absolute;
+            display: block;
+            width: 67rem;
+            height: 61.3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -16.7rem;
+            z-index: -2;
+        }
+    }
+
+    @include minw($pc) {
+        &::before {
+            top: 106rem;
+            left: 2.1rem;
+        }
+
+        &::after {
+            width: 100.6rem;
+            height: 91.9rem;
+            bottom: -22.7rem;
+        }
+    }
+
+    @include minw($lg) {
+        &::before {
+            left: 5.5rem;
+        }
+    }
+
+    @include minw($lg-xl) {
+        &::before {
+            left: 0rem;
+            background-position-x: 0rem;
+            width: 58rem;
+        }
+    }
+
+    @include minw($xl) {
+        &::before {
+            background-position-x: 5.8rem;
+            width: 82rem;
+            top: 124rem;
+            // left: 0rem;
+        }
+
+        &::after {
+            bottom: -54.7rem;
+        }
+    }
+
+}
+
+.cases-main {
+    padding-top: 11rem;
+    position: relative;
+
+    @include minw($sm-tab) {
+        padding-top: 22.4rem;
+    }
+
+    @include minw($lg-tab) {
+        overflow: unset;
+        padding-top: 28.5rem;
+    }
+
+    @include minw($pc) {
+        padding-top: 33.4rem;
+    }
+
+    @include minw($xl) {
+        padding-top: 40.5rem;
+    }
+
+    &__box {
+        @include minw($lg-tab) {
+            display: flex;
+        }
+    }
+
+    &__sidebar {
+        margin: 0 1.2rem;
+
+        @include minw($sm-tab) {
+            margin: 0 3.4rem;
+        }
+
+        @include minw($lg-tab) {
+            position: absolute;
+            z-index: 55;
+            top: 28.5rem;
+            height: 100%;
+            margin: 0;
+            margin-left: 2.4rem;
+        }
+
+        @include minw($pc) {
+            margin-left: 2.1rem;
+            top: 33.4rem;
+        }
+
+        @include minw($lg) {
+            margin-left: 3.4rem;
+        }
+
+        @include minw($lg-xl) {
+            margin-left: 8rem;
+        }
+
+        @include minw($xl) {
+            margin-left: 10.6rem;
+            top: 40.5rem;
+        }
+
+        &__wrap {
+            background: var(--white);
+            box-shadow: 0rem 0rem 4rem rgba(0, 0, 0, 0.15);
+            margin-bottom: 4rem;
+            padding: 2rem;
+
+            @include minw($sm-tab) {
+                display: flex;
+                gap: 2rem;
+                justify-content: space-between;
+            }
+
+            @include minw($lg-tab) {
+                display: block;
+                width: 31.7rem;
+                overflow: auto;
+                height: fit-content;
+                margin-bottom: 50rem;
+                position: sticky;
+                top: 3rem;
+            }
+
+            @include minw($pc) {
+                padding: 4rem;
+                width: 42.8rem;
+            }
+
+            @include minw($xl) {
+                width: 51.6rem;
+            }
+
+            &__info {
+                margin-bottom: 2rem;
+
+                @include minw($sm-tab) {
+                    flex-basis: 27.6rem;
+                }
+
+                &__title {
+                    display: block;
+                    font-family: $boska-medium;
+                    font-size: 3.8rem;
+                    line-height: 3.2rem;
+                    text-align: center;
+                    text-transform: uppercase;
+                    color: var(--text-primary);
+
+                    @include minw($sm-tab) {
+                        font-size: 5.6rem;
+                        line-height: 6.4rem;
+                        text-align: left;
+                    }
+
+                    @include minw($pc) {
+                        font-size: 7.2rem;
+                        line-height: 8.6rem;
+                    }
+                }
+
+                &__subtitle {
+                    display: block;
+                    font-family: $sentient-regular;
+                    font-size: 1.6rem;
+                    line-height: 2.2rem;
+                    text-align: center;
+                    color: var(--text-secondary);
+                    margin-top: 2rem;
+
+                    @include minw($sm-tab) {
+                        text-align: left;
+                    }
+                }
+            }
+
+            &__form {
+                @include minw($sm-tab) {
+                    flex-basis: 36.4rem;
+                }
+
+                .form {
+                    .screen-reader-response {
+                        display: none;
+                    }
+
+                    .invalid {
+                        .wpcf7-response-output {
+                            display: none;
+                        }
+                    }
+
+                    &__item {
+                        position: relative;
+
+                        &:not(:last-child) {
+                            margin-bottom: 1rem;
+                        }
+
+                        input {
+                            padding-top: 0.8rem;
+
+                            &:focus~.wpcf7-not-valid-tip {
+                                display: none;
+                            }
+                        }
+
+                        .wpcf7-not-valid {
+                            border-bottom: 0.2rem solid var(--red);
+                            color: var(--red);
+
+                            &::placeholder {
+                                color: var(--red);
+                            }
+                        }
+
+                        .wpcf7-not-valid-tip {
+                            position: absolute;
+                            bottom: 0.6rem;
+                            right: 0;
+                            padding: 0.8rem;
+                            background: var(--red);
+                            color: var(--white);
+                            border-radius: 0.4rem;
+                            font-family: $apercu-pro-regular;
+                            font-style: italic;
+                            line-height: 2rem;
+                        }
+                    }
+
+                    &__submit {
+                        margin-top: 2rem;
+
+                        @include minw($lg-tab) {
+                            margin-top: 5rem;
+                        }
+                    }
+
+                    .btn__front,
+                    .btn__back {
+                        font-size: 2rem;
+                        padding: 2.4rem;
+                    }
+                }
+            }
+        }
+    }
+
+    &__content {
+        color: var(--text-primary);
+        z-index: 3;
+
+        @include minw($lg-tab) {
+            width: 64rem;
+            margin-left: auto;
+        }
+
+        @include minw($pc) {
+            width: 83.8rem;
+        }
+
+        @include minw($lg-xl) {
+            width: 100.8rem;
+        }
+
+        @include minw($xl) {
+            width: 113.2rem;
+        }
+
+        h1 {
+            font-family: $sentient-bold;
+            font-size: 4.4rem;
+            line-height: 6.4rem;
+            margin-bottom: 1.6rem;
+        }
+
+        h2 {
+            font-family: $sentient-bold;
+            font-size: 3.8rem;
+            line-height: 5.2rem;
+
+            @include minw($lg-tab) {
+                font-size: 4.8rem;
+                line-height: 5.6rem;
+            }
+        }
+
+        h3 {
+            font-family: $sentient-regular;
+            font-size: 2.4rem;
+            line-height: 3.8rem;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        h4 {
+            font-family: $sentient-bold;
+            font-size: 3.2rem;
+            line-height: 5.6rem;
+        }
+
+        p {
+            font-size: 1.4rem;
+            line-height: 2.8rem;
+
+            @include minw($sm-tab) {
+                font-size: 1.6rem;
+                line-height: 3.2rem;
+            }
+
+            @include minw($lg-tab) {
+                font-size: 2rem;
+                line-height: 3rem;
+            }
+
+            strong {
+                font-family: $sentient-bold;
+            }
+
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 1.6rem 0;
+
+            li {
+                display: flex;
+                align-items: flex-start;
+                font-size: 1.4rem;
+                line-height: 2.8rem;
+
+                @include minw($sm-tab) {
+                    font-size: 1.6rem;
+                    line-height: 3.2rem;
+                }
+
+                @include minw($lg-tab) {
+                    font-size: 2rem;
+                    line-height: 3rem;
+                }
+
+                &::before {
+                    content: "";
+                    display: flex;
+                    width: 0.5rem;
+                    min-width: 0.5rem;
+                    max-width: 0.5rem;
+                    height: 0.5rem;
+                    border-radius: 50%;
+                    margin-left: 0.8rem;
+                    margin-right: 0.8rem;
+                    background: var(--text-primary);
+                    margin-top: 1.1rem;
+
+                    @include minw($sm-tab) {
+                        margin-left: 1.2rem;
+                    }
+                }
+            }
+        }
+
+        ol {
+            padding-left: 2.5rem;
+            margin: 1.6rem 0;
+
+            li {
+                font-size: 1.4rem;
+                line-height: 2.8rem;
+                margin-bottom: 0.6rem;
+
+                &:last-of-type {
+                    margin-bottom: 0rem;
+                }
+
+                @include minw($sm-tab) {
+                    font-size: 1.6rem;
+                    line-height: 3.2rem;
+                }
+
+                @include minw($lg-tab) {
+                    font-size: 2rem;
+                    line-height: 3rem;
+                }
+            }
+        }
+
+        blockquote {
+            display: flex;
+            margin-bottom: 3.2rem;
+
+            p {
+                font-family: $boska-bold;
+                font-size: 2.2rem;
+                line-height: 3.6rem;
+                color: var(--text-secondary);
+                margin: 0;
+
+                @include minw($sm-tab) {
+                    font-size: 2.4rem;
+                    line-height: 4.2rem;
+                }
+            }
+
+            &::before {
+                content: "";
+                background: url(../../../images/lap.png) no-repeat;
+                background-size: cover;
+                width: 100%;
+                max-width: 3.8rem;
+                height: 3.8rem;
+                display: block;
+                margin-right: 3rem;
+
+                @include minw($sm-tab) {
+                    max-width: 7.2rem;
+                    height: 7.2rem;
+                }
+            }
+        }
+
+        p {
+            margin: 1.6rem 0;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        h2+h3 {
+            margin-top: 1.6rem;
+
+            @include minw($sm-tab) {
+                margin-top: 2.4rem;
+            }
+
+            @include minw($pc) {
+                margin-top: 5rem;
+            }
+        }
+
+        h2+p {
+            margin-top: 1.6rem;
+
+            @include minw($sm-tab) {
+                margin-top: 2.4rem;
+            }
+
+            @include minw($pc) {
+                margin-top: 5rem;
+            }
+        }
+
+        ul+h2 {
+            margin-top: 1.6rem;
+
+            @include minw($sm-tab) {
+                margin-top: 2.4rem;
+            }
+
+            @include minw($pc) {
+                margin-top: 5rem;
+            }
+        }
+
+        h3 {
+            margin-bottom: 0.8rem;
+
+            @include minw($pc) {
+                margin-bottom: 1.6rem;
+            }
+        }
+
+        h4 {
+            margin-top: 0.8rem;
+            margin-bottom: 0.8rem;
+
+            @include minw($pc) {
+                margin-top: 1.6rem;
+                margin-bottom: 1.6rem;
+            }
+        }
+
+        h4~h4 {
+            margin-top: 2.4rem;
+
+            @include minw($pc) {
+                margin-top: 3.2rem;
+            }
+        }
+
+        h3+h4 {
+            margin-top: 0.8rem;
+
+            @include minw($pc) {
+                margin-top: 1.6rem;
+            }
+        }
+
+        p+h2 {
+            margin-top: 1.6rem;
+
+            @include minw($sm-tab) {
+                margin-top: 2.4rem;
+            }
+
+            @include minw($pc) {
+                margin-top: 5rem;
+            }
+        }
+
+        p+blockquote {
+            margin-top: 3.2rem;
+        }
+
+        ul+blockquote {
+            margin-top: 2.4rem;
+
+            @include minw($pc) {
+                margin-top: 3.2rem;
+            }
+        }
+
+        ol+blockquote {
+            margin-top: 2.4rem;
+
+            @include minw($pc) {
+                margin-top: 3.2rem;
+            }
+        }
+
+        ul+h4 {
+            margin-top: 2.4rem;
+
+            @include minw($pc) {
+                margin-top: 3.2rem;
+            }
+        }
+
+        ol+h4 {
+            margin-top: 2.4rem;
+
+            @include minw($pc) {
+                margin-top: 3.2rem;
+            }
+        }
+
+        h2+div {
+            margin-top: 2.4rem;
+
+            @include minw($lg-tab) {
+                margin-top: 3.2rem;
+            }
+        }
+
+        div+div {
+            margin-top: 2.4rem;
+            margin-bottom: 2.4rem;
+
+            @include minw($lg-tab) {
+                margin-top: 5rem;
+                margin-bottom: 5rem;
+            }
+
+        }
+
+        div+h2 {
+            margin-top: 2.4rem;
+
+            @include minw($lg-tab) {
+                margin-top: 5rem;
+            }
+        }
+
+        div {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0 1.6rem;
+
+            &>div {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin-bottom: 0;
+
+                @include minw($tab) {
+                    width: 49%;
+                }
+
+                @include minw($lg-tab) {
+                    width: 48.7%;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+            }
+
+            picture {
+                margin-bottom: 1.6rem;
+
+                @include minw($lg-tab) {
+                    margin-bottom: 0rem;
+                    align-self: center;
+                }
+
+                &:first-of-type {
+                    @include minw($lg-tab) {
+                        margin-right: 20%;
+                    }
+
+                    @include minw($pc) {
+                        margin-right: 27%;
+                    }
+
+                    @include minw($xl) {
+                        margin-right: 32.5%;
+                    }
+                }
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .work-scope {
+            display: block;
+            gap: 0 1rem;
+            margin-top: 2.4rem;
+            margin-bottom: 2.4rem;
+
+            @include minw($sm-tab) {
+                gap: 0 3rem;
+                margin-top: 3.2rem;
+                margin-bottom: 3.3rem;
+            }
+
+            @include minw($lg-tab) {
+                margin-bottom: 5rem;
+            }
+
+            &__list {
+                margin-top: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: nowrap;
+                width: 100%;
+                margin-bottom: 1.6rem;
+
+                @include minw($sm-tab) {
+                    height: 4.8rem;
+                }
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+
+                span {
+                    font-size: 1.4rem;
+                    line-height: 3.2rem;
+                    letter-spacing: 0.025em;
+                    color: #002D50;
+
+                    @include minw($sm-tab) {
+                        font-size: 2rem;
+                        line-height: 2rem;
+                    }
+                }
+
+                &__title {
+                    width: 8rem;
+                    margin: 0;
+
+                    @include minw($sm-tab) {
+                        width: 12rem;
+                    }
+                }
+
+                &__percent {
+                    width: auto;
+                    margin: 0;
+                    flex-grow: 1;
+                    --fly: 2.4rem;
+
+                    @include minw($sm-tab) {
+                        --fly: 4.8rem;
+                    }
+
+                    &--line {
+                        margin: 0;
+                        height: 0.4rem;
+                        background: #4EC0FF;
+                        position: relative;
+
+                        &::after {
+                            content: "";
+                            background: url(../../../images/fly.png) no-repeat;
+                            background-position: center;
+                            background-size: cover;
+                            width: 2.4rem;
+                            height: 2.4rem;
+                            display: block;
+                            position: absolute;
+                            right: -2.7rem;
+                            top: 50%;
+                            transform: translateY(-50%);
+
+                            @include minw($sm-tab) {
+                                right: -4.1rem;
+                                width: 3.8rem;
+                                height: 3.8rem;
+                            }
+                        }
+                    }
+                }
+
+                &__hour {
+                    margin: 0;
+                    width: 6rem;
+
+                    @include minw($sm-tab) {
+                        width: 8rem;
+                    }
+                }
+            }
+        }
+    }
+
+    &__figure {
+        display: none;
+
+        @include minw($lg-tab) {
+            display: block;
+            position: absolute;
+            top: 108.5rem;
+            left: 2.4rem;
+            z-index: -2;
+            overflow: hidden;
+
+            .bg-cube,
+            .bg-cube-two {
+                background-color: #fafafa;
+            }
+
+            &__bg-lines {
+                width: 50rem;
+                padding: 10rem 0;
+
+                .cube {
+                    background: url(../../../images/cude.png) no-repeat;
+                    min-height: 42.6rem;
+                    background-size: 48.3rem;
+                }
+
+                .cube-two {
+                    background: url(../../../images/cube-bor-rad-right.png) no-repeat;
+                    min-height: 50.5rem;
+                    background-size: 48.3rem;
+                }
+
+                .null-figure {
+                    height: 12rem;
+                }
+            }
+        }
+
+        @include minw($pc) {
+            top: 95.5rem;
+            left: 2.1rem;
+            height: -webkit-fill-available;
+        }
+
+        @include minw($lg) {
+            left: 5.5rem;
+        }
+
+        @include minw($lg-xl) {
+            left: 0rem;
+            top: 113.5rem;
+            height: auto;
+
+            &__bg-lines {
+                width: 68rem;
+                padding: 10rem 0;
+                padding-left: 5rem;
+            }
+        }
+
+        @include minw($xl) {
+            left: 0rem;
+            top: 123.5rem;
+
+            &__bg-lines {
+                width: 82rem;
+                padding: 10rem 0;
+                padding-left: 7rem;
+
+                .null-figure {
+                    height: 50rem;
+                }
+            }
+        }
+    }
+
+    &__images {
+        margin: 0 1.3rem;
+        margin-top: 3.2rem;
+        margin-bottom: 3.2rem;
+
+        @include minw($lg-tab) {
+            width: 64rem;
+            margin-right: 2.1rem;
+            margin-left: auto;
+        }
+
+        @include minw($pc) {
+            width: 83.8rem;
+            margin-right: 2.5rem;
+        }
+
+        @include minw($lg) {
+            margin-right: 5.5rem;
+        }
+
+        @include minw($lg-xl) {
+            margin-right: 8rem;
+            width: 100.8rem;
+        }
+
+        @include minw($xl) {
+            margin-right: 10.6rem;
+            width: 113.2rem;
+        }
+
+        img,
+        picture {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 1rem 1rem 0rem 0rem;
+        }
+
+        picture {
+            filter: drop-shadow(0.56rem 0.56rem 7rem rgba(0, 0, 0, 0.15));
+        }
+    }
+
+    &__q-img {
+        display: flex;
+        align-items: center;
+        margin-top: -1.2rem;
+        margin-bottom: 5rem;
+        margin-left: 7.3rem;
+        margin-right: 1.2rem;
+
+        @include minw($sm-tab) {
+            margin-left: 13.3rem;
+            margin-right: 3.5rem;
+        }
+
+        @include minw($lg-tab) {
+            margin-left: auto;
+            width: 53.8rem;
+            margin-right: 2.1rem;
+            margin-bottom: 10rem;
+        }
+
+        @include minw($pc) {
+            width: 73.6rem;
+            margin-right: 2.5rem;
+        }
+
+        @include minw($lg) {
+            margin-right: 5.9rem;
+        }
+
+        @include minw($lg-xl) {
+            margin-right: 25.3rem;
+        }
+
+        @include minw($xl) {
+            margin-right: 40.3rem;
+        }
+
+        &__user {
+            width: 10.8rem;
+            height: 10.8rem;
+            margin-right: 2rem;
+            padding: 0.6rem;
+
+            @include minw($sm-tab) {
+                margin-right: 3rem;
+            }
+
+            picture,
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+
+        p {
+            font-family: $boska-medium-italic;
+            font-size: 1.9rem;
+            line-height: 3.2rem;
+
+            br {
+                height: 0;
+            }
+
+            @include minw($sm-tab) {
+                font-size: 3.3rem;
+                line-height: 4.8rem;
+            }
+        }
+    }
+
+    .result+&__images {
+        margin-top: 3.2rem;
+        margin-bottom: 5rem;
+    }
+
+    &__images+.result {
+        margin-top: 3.2rem;
+        margin-bottom: 5rem;
+    }
+}

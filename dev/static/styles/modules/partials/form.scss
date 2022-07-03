@@ -1,0 +1,55 @@
+@import '../../core.scss';
+
+.form {
+    &__subtitle {
+        font-size: 2.2rem;
+        line-height: 4.8rem;
+        font-family: $apercu-pro-bold;
+        margin-bottom: 1.8rem;
+        color: var(--text-secondary);
+        width: 101%;
+
+        @include minw($pc) {
+            font-size: 3.8rem;
+            line-height: 5.6rem;
+        }
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 1.6rem;
+
+            @include minw($pc) {
+                margin-bottom: 1.8rem;
+            }
+        }
+
+        input {
+            width: 100%;
+            border: none;
+            border-bottom: 2px solid #A9A9A9;
+            font-size: 2rem;
+            line-height: 3.2rem;
+            padding-bottom: 0.8rem;
+            color: var(--text-primary);
+            font-family: $apercu-pro-regular;
+            background-color: transparent;
+
+            &::placeholder {
+                color: #BCBCBC;
+            }
+
+            &:focus {
+                border-color: #636363;
+            }
+        }
+    }
+
+    &__submit {
+        margin-top: 5rem;
+
+        .btn {
+            width: 100%;
+        }
+    }
+}

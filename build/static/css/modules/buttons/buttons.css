@@ -1,0 +1,34 @@
+.btn--accent-1 .btn__front {
+  background-color: var(--accent-1);
+}
+
+.btn--accent-1 .btn__back {
+  background-color: var(--accent-1-darker);
+}
+
+.btn span {
+  width: 100%;
+  font-family: "Sentient-Bold", serif;
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  padding: 1.2rem;
+  text-align: center;
+  text-transform: uppercase;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-transform-origin: 50% 0 0;
+  -ms-transform-origin: 50% 0 0;
+  transform-origin: 50% 0 0;
+  -webkit-transition: -webkit-transform 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  transition: -webkit-transform 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  -o-transition: transform 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  transition: transform 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  transition: transform 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s, -webkit-transform 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}

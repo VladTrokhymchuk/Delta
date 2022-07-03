@@ -1,0 +1,197 @@
+.h-services-section {
+  padding-top: 4.2rem;
+  padding-bottom: 0.5rem;
+  background-color: var(--service-bg-color, #f7f7f7);
+  -webkit-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  -o-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+}
+
+.h-services__list {
+  padding-top: 3rem;
+}
+
+.h-services__item {
+  position: relative;
+}
+
+.h-services__item:not(:last-child) {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--dark-2);
+}
+
+.h-services__item span {
+  font-size: 3.2rem;
+  line-height: 4rem;
+  font-family: "Boska-Black", serif;
+  color: #11171D;
+  display: block;
+}
+
+.h-services__item__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  -o-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+}
+
+.h-services__item__inner svg {
+  height: 2.8rem;
+  width: 7.5rem;
+  fill: transparent;
+  stroke: var(--dark-3);
+  stroke-width: 4px;
+  margin-left: 0.8rem;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  -o-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+}
+
+.h-services__item__img {
+  position: absolute;
+  display: none;
+  z-index: 10;
+  -webkit-box-shadow: 0 0.8rem 10rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0.8rem 10rem rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.h-services__item__img img,
+.h-services__item__img picture {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+
+.h-services__item__figure {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(50%);
+  -ms-transform: translateX(-50%) translateY(50%);
+  transform: translateX(-50%) translateY(50%);
+}
+
+@media only screen and (min-width: 768px) {
+  .h-services-section {
+    padding-top: 5.7rem;
+  }
+
+  .h-services__list {
+    padding: 4rem 0 3rem;
+  }
+
+  .h-services__item span {
+    font-size: 5.8rem;
+    line-height: 6.4rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .h-services-section {
+    padding-top: 4.9rem;
+  }
+
+  .h-services__list {
+    padding: 4.8rem 0 3.6rem;
+  }
+
+  .h-services__item span {
+    font-size: 7.2rem;
+    line-height: 9.2rem;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .h-services-section {
+    padding-top: 6.3rem;
+    overflow: visible;
+  }
+
+  .h-services__list {
+    padding: 8.3rem 0 4.2rem;
+  }
+
+  .h-services__item:not(:last-child) {
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .h-services__item__img {
+    display: block;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+    -o-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+    transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .h-services-section {
+    --container-max-width: 152rem;
+    --container-side-padding: 0;
+    padding-top: 19.2rem;
+    -webkit-box-shadow: inset 0.8rem 0.8rem 10rem rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0.8rem 0.8rem 10rem rgba(0, 0, 0, 0.25);
+  }
+
+  .h-services__list {
+    padding: 19.2rem 0 23.1rem;
+  }
+
+  .h-services__item:not(:last-child) {
+    padding-bottom: 2.4rem;
+    margin-bottom: 3.9rem;
+  }
+
+  .h-services__item:last-child {
+    padding-bottom: 2.4rem;
+    border-bottom: 1px solid var(--dark-2);
+  }
+
+  .h-services__item span {
+    font-size: 10rem;
+    line-height: 13rem;
+  }
+}
+
+@media only screen and (min-width: 1900px) {
+  .h-services__item__img {
+    right: -16rem;
+  }
+}
+
+@media only screen and (hover: hover) and (pointer: fine) {
+  .h-services__item:hover .h-services__item__img {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .h-services__item:hover .h-services__item__inner {
+    -webkit-transform: translateX(6.4rem);
+    -ms-transform: translateX(6.4rem);
+    transform: translateX(6.4rem);
+  }
+
+  .h-services__item:hover .h-services__item__inner svg {
+    opacity: 1;
+    visibility: visible;
+  }
+}

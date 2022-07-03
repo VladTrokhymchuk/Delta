@@ -1,0 +1,126 @@
+html {
+    scroll-behavior: auto;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    -webkit-text-size-adjust: none;
+
+    &.menu-mode {
+        height: 100vh;
+        overflow: hidden;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+ul:not([class]),
+ol:not([class]) {
+    margin: initial;
+    padding: initial;
+}
+
+ul[class],
+ol[class] {
+    list-style: none;
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a,
+button {
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+img,
+picture,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
+img[data-src] {
+    transition: all 0.3s;
+    opacity: 0;
+}
+
+img[data-src].lazyloaded {
+    opacity: 1;
+}
+
+video {
+    border: none;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+:focus {
+    outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    border: transparent;
+    background-color: transparent;
+    -webkit-text-fill-color: var(--autofill-input-color) !important;
+    box-shadow: none;
+    color: var(--autofill-input-color) !important;
+    transition: background-color 0s linear 300s !important;
+    caret-color: var(--autofill-input-color) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

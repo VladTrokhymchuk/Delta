@@ -1,0 +1,217 @@
+@import '../core';
+
+.faq {
+    &-section {
+        color: var(--white);
+        background-color: var(--dark-3);
+        padding: 6rem 0 9rem;
+
+        @include minw($sm-tab) {
+            padding: 5rem 0 6.5rem;
+        }
+
+        @include minw($lg-tab) {
+            padding: 8rem 0 6.8rem;
+        }
+
+        @include minw($pc) {
+            padding: 10rem 0 13.2rem;
+        }
+
+        &.three-line-section {
+            &::before,
+            &::after {
+                border-color: #263B4B;
+            }
+        }
+    }
+
+    &-partners {
+        margin-bottom: 2rem;
+
+        @include minw($sm-tab) {
+            margin-bottom: 0;
+        }
+
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+
+            @include minw($sm-tab) {
+                justify-content: space-around;
+                margin-top: 0.6rem;
+            }
+
+            @include minw($lg-tab) {
+                max-width: 100rem;
+                justify-content: flex-start;
+                margin-top: 1.6rem;
+            }
+
+            @include minw($xl) {
+                max-width: 100%;
+            }
+        }
+
+        &__item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            margin-bottom: 5rem;
+
+            @include minw($sm-tab) {
+                width: auto;
+                flex-basis: 50%;
+                flex-grow: 1;
+                margin-bottom: 7rem;
+                justify-content: flex-start;
+            }
+
+            @include minw($lg-tab) {
+                flex-basis: 33.3%;
+                flex-grow: 0;
+            }
+
+            @include minw($pc) {
+                justify-content: center;
+            }
+
+            @include minw($xl) {
+                flex-basis: 20%;
+            }
+
+            img,
+            picture {
+                @include img-fit(contain);
+                max-width: 90%;
+
+                @include minw($sm-tab) {
+                    max-width: 27rem;
+                }
+            }
+        }
+    }
+
+    &__title {
+        font-family: $boska-black;
+        font-size: 3.8rem;
+        line-height: 4.8rem;
+        padding-bottom: 3.8rem;
+        display: block;
+
+        @include minw($sm-tab) {
+            text-align: center;
+            font-size: 4.8rem;
+            line-height: 5.6rem;
+            padding-bottom: 3rem;
+        }
+
+        @include minw($lg-tab) {
+            text-align: left;
+            font-size: 6.4rem;
+            line-height: 7.2rem;
+            padding-bottom: 4rem;
+        }
+
+        @include minw($pc) {
+            font-size: 10rem;
+            line-height: 12rem;
+            padding-bottom: 5rem;
+        }
+    }
+
+    & {
+        @include minw($pc) {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        @include minw($xl) {
+            margin-top: 3rem;
+        }
+
+        &__title {
+            flex-shrink: 0;
+        }
+
+        &__list {
+            @include minw($pc) {
+                width: 75%;
+                max-width: 100rem;
+                flex-grow: 0;
+            }
+
+            @include minw($xl) {
+                max-width: 112.7rem;
+            }
+        }
+
+        &__item {
+            transition: .5s $cubic;
+
+            &:not(:last-child) {
+                margin-bottom: 2rem;
+
+                @include minw($pc) {
+                    margin-bottom: 1rem;
+                }
+            }
+
+            &.open {
+                box-shadow: inset .8rem .8rem 10rem rgba(black, 0.25);
+            }
+
+            &__question {
+                font-family: $sentient-bold;
+                font-size: 2.4rem;
+                line-height: 3.2rem;
+                display: block;
+                padding: 1rem;
+
+                @include minw($sm-tab) {
+                    font-size: 2.6rem;
+                    line-height: 4.8rem;
+                    padding: 2rem;
+                }
+
+                @include minw($lg-tab) {
+                    font-size: 3.2rem;
+                    line-height: 6.4rem;
+                }
+
+                @include minw($pc) {
+                    font-size: 4.2rem;
+                    padding: 3.2rem;
+                }
+            }
+
+            &__answer {
+                font-size: 1.6rem;
+                line-height: 3.2rem;
+
+                @include minw($lg-tab) {
+                    font-size: 1.8rem;
+                }
+
+                @include minw($pc) {
+                    font-size: 2.8rem;
+                    line-height: 4.8rem;
+                }
+
+                &__inner {
+                    padding: 0 1rem 1rem 1rem;
+
+                    @include minw($sm-tab) {
+                        padding: 0 2rem 2rem 2rem;
+                    }
+
+                    @include minw($pc) {
+                        padding: 0 3.2rem 3.2rem 3.2rem;
+                    }
+                }
+            }
+        }
+    }
+}

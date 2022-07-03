@@ -1,0 +1,32 @@
+@import '../../core.scss';
+
+.btn {
+    &--accent-1 {
+        .btn {
+            &__front {
+                background-color: var(--accent-1);
+            }
+
+            &__back {
+                background-color: var(--accent-1-darker);
+            }
+        }
+    }
+
+    span {
+        width: 100%;
+        font-family: $sentient-bold;
+        color: var(--text-primary);
+        font-size: 1.8rem;
+        line-height: 3.2rem;
+        padding: 1.2rem;
+        text-align: center;
+        text-transform: uppercase;
+        display: inline-flex;
+        justify-content: center;
+        transform-origin: 50% 0 0;
+        transition: transform .35s cubic-bezier(.76, 0, .24, 1) 0s;
+        backface-visibility: hidden;
+    }
+
+}

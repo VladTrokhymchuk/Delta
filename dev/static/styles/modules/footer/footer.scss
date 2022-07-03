@@ -1,0 +1,7 @@
+@import "../../core.scss";
+
+.footer {
+    .container {
+        @include minw($xl) {}
+    }
+}
