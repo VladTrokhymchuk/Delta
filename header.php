@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title><?php wp_title(); ?></title>
+    <title><?php the_field('title_head', 'options') ?></title>
+    <meta name="description" content="<?php the_field('description_head', 'options') ?>">
+    <meta name="keywords" content="<?php the_field('keywords_head', 'options') ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,21 +16,46 @@
 </head>
 
 <body>
-
-
     <main <?php body_class(); ?>>
 
-        <header class="header">
+        <header class="header-section">
             <div class="container">
-                <div class="header__cont">
 
-                    <?php if (is_front_page()): ?>
-                    <div class="header__menu">
-                        <?php wp_nav_menu(array(
-                                'menu' => 'Fullpage menu',
-                            )) ?>
-                    </div>
+                <div class="header__nav">
+                    <?php
+                        $img_logo = get_field('img_logo', 'options');
+                        if ($img_logo):
+                        $link = get_field('logo_link', 'options');
+                    ?>
+
+                    <a class="header__logo" href='<?= esc_url($link['url']); ?>'>
+                        <?php
+                            $svg_markup = file_get_contents( get_attached_file( $img_logo['ID'] ) );
+                            echo $svg_markup;
+                        ?>
+                    </a>
+
+
                     <?php endif; ?>
+
+                    <div class='navbar'>
+                        <?php wp_nav_menu(array(
+                            'menu' => 'Fullpage menu',
+                            'container'       => 'div',
+                            'container_class' => 'menu',
+                            'theme_location' => 'primary',
+                            'menu_class' => 'menu-list'));
+                            ?>
+                    </div>
+
+                    <div class="hamburger__box">
+                        <div id="hamburger-button">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </header>

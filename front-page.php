@@ -10,6 +10,6 @@
     wp_enqueue_style('front-page', get_template_directory_uri() . '/build/static/css/pages/front-page/front-page.css');
     // wp_enqueue_style('swiper', get_template_directory_uri() . '/build/static/css/libs/swiper.css');
 
-    get_template_part('./blocks/front-page/block-hero'); 
+    get_template_part('./blocks/front-page/block-main'); 
 
     get_footer();

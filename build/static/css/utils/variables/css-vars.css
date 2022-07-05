@@ -3,7 +3,7 @@
   --accent-1-darker: #44AE71;
   --accent-2: #FE733E;
   --accent-2-darker: #d36033;
-  --dark-1: #46525B;
+  --dark-1: #153049;
   --dark-2: #484F55;
   --dark-3: #1A232B;
   --dark-4: #24303A;
@@ -19,6 +19,9 @@
   --text-secondary: #484F55;
   --text-legal-subtitle: #768088;
   --red: #FA0F00;
+  --red-hover: #AD0C26;
+  --bg: #760023;
+  --bg-bage: #EEEAE8;
   --header-mob-height: 9.8rem;
   --header-desk-width: 10.6rem;
   --container-max-width: 136.6rem;
@@ -46,7 +49,8 @@
 
 @media only screen and (min-width: 1600px) {
   :root {
-    --container-side-padding: 80rem;
+    --container-max-width: unset;
+    --container-side-padding: 8rem;
   }
 }
 
