@@ -317,6 +317,7 @@ input:-webkit-autofill:focus {
   -o-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
   transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
   background-color: var(--bg-bage);
+  z-index: 5;
 }
 
 .header__nav .navbar .menu {

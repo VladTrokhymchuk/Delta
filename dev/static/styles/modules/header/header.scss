@@ -89,6 +89,7 @@
             top: 0;
             transition: $hover-trans;
             background-color: var(--bg-bage);
+            z-index: 5;
 
             @include minw($lg-tab) {
                 position: unset;
