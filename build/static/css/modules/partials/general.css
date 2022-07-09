@@ -69,6 +69,14 @@ body {
   font-family: "Boska-Black", serif;
 }
 
+.form .screen-reader-response {
+  display: none;
+}
+
+.form .invalid .wpcf7-response-output {
+  display: none;
+}
+
 .form__subtitle {
   font-size: 2.2rem;
   line-height: 4.8rem;
@@ -78,18 +86,22 @@ body {
   width: 101%;
 }
 
+.form__item {
+  position: relative;
+}
+
 .form__item:not(:last-child) {
-  margin-bottom: 1.6rem;
+  margin-bottom: 1rem;
 }
 
 .form__item input {
   width: 100%;
   border: none;
-  border-bottom: 2px solid #A9A9A9;
-  font-size: 2rem;
+  border-bottom: 1px solid var(--white);
+  font-size: 1.6rem;
   line-height: 3.2rem;
   padding-bottom: 0.8rem;
-  color: var(--text-primary);
+  color: var(--white);
   font-family: "ApercuPro-Regular", sans-serif;
   background-color: transparent;
 }
@@ -118,12 +130,65 @@ body {
   border-color: #636363;
 }
 
+.form__item input:focus ~ .wpcf7-not-valid-tip {
+  display: none;
+}
+
+.form__item .wpcf7-not-valid {
+  border-bottom: 0.2rem solid var(--red);
+  color: var(--red);
+}
+
+.form__item .wpcf7-not-valid::-webkit-input-placeholder {
+  color: var(--red);
+}
+
+.form__item .wpcf7-not-valid::-moz-placeholder {
+  color: var(--red);
+}
+
+.form__item .wpcf7-not-valid:-ms-input-placeholder {
+  color: var(--red);
+}
+
+.form__item .wpcf7-not-valid::-ms-input-placeholder {
+  color: var(--red);
+}
+
+.form__item .wpcf7-not-valid::placeholder {
+  color: var(--red);
+}
+
+.form__item .wpcf7-not-valid-tip {
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0;
+  padding: 0.8rem;
+  background: var(--red);
+  color: var(--white);
+  border-radius: 0.4rem;
+  font-family: "ApercuPro-Regular", sans-serif;
+  font-style: italic;
+  line-height: 2rem;
+  font-size: 1rem;
+}
+
 .form__submit {
-  margin-top: 5rem;
+  margin-top: 4rem;
 }
 
 .form__submit .btn {
   width: 100%;
+}
+
+.form__submit .btn span {
+  padding: 1.4rem;
+}
+
+.form button {
+  padding: 0;
+  background: none;
+  border: 0;
 }
 
 @media only screen and (min-width: 1280px) {

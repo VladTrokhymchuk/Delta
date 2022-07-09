@@ -1,5 +1,5 @@
 :root {
-  --accent-1: #57D68D;
+  --accent-1: #d63638;
   --accent-1-darker: #44AE71;
   --accent-2: #FE733E;
   --accent-2-darker: #d36033;
@@ -444,6 +444,112 @@ input:-webkit-autofill:focus {
   padding-top: 0.8rem;
 }
 
+.footer {
+  background: var(--bg);
+  font-family: "ApercuPro-Regular", sans-serif;
+  color: var(--white);
+  padding-bottom: 2rem;
+}
+
+.footer__logo {
+  padding: 5rem 0;
+}
+
+.footer__logo__img {
+  margin: 0 auto;
+  width: 10rem;
+}
+
+.footer__logo__img svg {
+  height: auto;
+}
+
+.footer__logo__img svg path {
+  fill: var(--white);
+}
+
+.footer__sidebar {
+  display: -ms-grid;
+  display: grid;
+  gap: 3rem;
+}
+
+.footer__sidebar--items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.footer__sidebar__title {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-family: "ApercuPro-Bold", sans-serif;
+}
+
+.footer__sidebar__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer__sidebar__box .name {
+  font-family: "ApercuPro-Bold", sans-serif;
+}
+
+.footer__sidebar__box a {
+  -webkit-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  -o-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  font-size: 1.6rem;
+  font-family: "ApercuPro-Regular", sans-serif;
+  letter-spacing: 0;
+}
+
+.footer__sidebar__box a:hover {
+  letter-spacing: 0.1rem;
+  color: var(--light-1);
+}
+
+.footer__bott {
+  padding-top: 1rem;
+  border-top: 0.1rem solid var(--white);
+  margin-top: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.footer__bott .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.footer__bott .social__item {
+  width: 2.6rem;
+}
+
+.footer__bott .social__item svg {
+  height: auto;
+}
+
 html,
 body,
 *:before,
@@ -515,6 +621,14 @@ body {
   font-family: "Boska-Black", serif;
 }
 
+.form .screen-reader-response {
+  display: none;
+}
+
+.form .invalid .wpcf7-response-output {
+  display: none;
+}
+
 .form__subtitle {
   font-size: 2.2rem;
   line-height: 4.8rem;
@@ -524,18 +638,22 @@ body {
   width: 101%;
 }
 
+.form__item {
+  position: relative;
+}
+
 .form__item:not(:last-child) {
-  margin-bottom: 1.6rem;
+  margin-bottom: 1rem;
 }
 
 .form__item input {
   width: 100%;
   border: none;
-  border-bottom: 2px solid #A9A9A9;
-  font-size: 2rem;
+  border-bottom: 1px solid var(--white);
+  font-size: 1.6rem;
   line-height: 3.2rem;
   padding-bottom: 0.8rem;
-  color: var(--text-primary);
+  color: var(--white);
   font-family: "ApercuPro-Regular", sans-serif;
   background-color: transparent;
 }
@@ -564,26 +682,95 @@ body {
   border-color: #636363;
 }
 
+.form__item input:focus ~ .wpcf7-not-valid-tip {
+  display: none;
+}
+
+.form__item .wpcf7-not-valid {
+  border-bottom: 0.2rem solid var(--red);
+  color: var(--red);
+}
+
+.form__item .wpcf7-not-valid::-webkit-input-placeholder {
+  color: var(--red);
+}
+
+.form__item .wpcf7-not-valid::-moz-placeholder {
+  color: var(--red);
+}
+
+.form__item .wpcf7-not-valid:-ms-input-placeholder {
+  color: var(--red);
+}
+
+.form__item .wpcf7-not-valid::-ms-input-placeholder {
+  color: var(--red);
+}
+
+.form__item .wpcf7-not-valid::placeholder {
+  color: var(--red);
+}
+
+.form__item .wpcf7-not-valid-tip {
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0;
+  padding: 0.8rem;
+  background: var(--red);
+  color: var(--white);
+  border-radius: 0.4rem;
+  font-family: "ApercuPro-Regular", sans-serif;
+  font-style: italic;
+  line-height: 2rem;
+  font-size: 1rem;
+}
+
 .form__submit {
-  margin-top: 5rem;
+  margin-top: 4rem;
 }
 
 .form__submit .btn {
   width: 100%;
 }
 
-.btn--accent-1 .btn__front {
-  background-color: var(--accent-1);
+.form__submit .btn span {
+  padding: 1.4rem;
 }
 
-.btn--accent-1 .btn__back {
-  background-color: var(--accent-1-darker);
+.form button {
+  padding: 0;
+  background: none;
+  border: 0;
+}
+
+.btn--accent-1 .btn__prime {
+  background-color: transparent;
+  -webkit-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  -o-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+}
+
+.btn--accent-1 .btn__prime:hover {
+  color: var(--white);
+  background-color: var(--dark-4);
+}
+
+.btn--accent-2 .btn__prime {
+  background-color: var(--white);
+  -webkit-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  -o-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+}
+
+.btn--accent-2 .btn__prime:hover {
+  color: var(--white);
+  background-color: var(--dark-4);
 }
 
 .btn span {
   width: 100%;
   font-family: "Sentient-Bold", serif;
-  color: var(--text-primary);
+  color: var(--dark-4);
   font-size: 1.8rem;
   line-height: 3.2rem;
   padding: 1.2rem;
@@ -605,6 +792,7 @@ body {
   transition: transform 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s, -webkit-transform 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  border: solid 0.1rem var(--dark-4);
 }
 
 /*
@@ -715,7 +903,7 @@ table.bt.bt--no-header tbody td::before {
 }
 
 .front-head__swip {
-  padding: 3.6rem 0;
+  padding-top: 3.6rem;
 }
 
 .front-head__swip .swiper-slide {
@@ -792,9 +980,159 @@ table.bt.bt--no-header tbody td::before {
   height: auto;
 }
 
+.front-about {
+  text-align: center;
+  max-width: 105rem;
+  margin: 0 auto;
+}
+
+.front-about h3 {
+  text-transform: uppercase;
+  color: var(--dark-4);
+  margin-bottom: 2.6rem;
+  font-size: 2.8rem;
+  line-height: 100%;
+  font-weight: 100;
+}
+
+.front-about p {
+  font-style: italic;
+  color: var(--dark-4);
+  font-size: 1.6rem;
+}
+
+.front-parallax {
+  position: relative;
+}
+
+.front-parallax-section {
+  max-width: 105rem;
+  margin: 0 auto;
+  padding: 10rem 0;
+}
+
+.front-parallax picture {
+  overflow: hidden;
+  display: block;
+  -webkit-perspective: 100px;
+  perspective: 100px;
+  -webkit-clip-path: polygon(0 0, 85% 0%, 100% 15%, 100% 85%, 100% 100%, 15% 100%, 0% 85%, 0% 15%);
+  clip-path: polygon(0 0, 85% 0%, 100% 15%, 100% 85%, 100% 100%, 15% 100%, 0% 85%, 0% 15%);
+}
+
+.front-parallax picture img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.front-parallax__cont {
+  width: 93%;
+  max-width: 40rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: var(--white);
+  padding: 3rem;
+}
+
+.front-parallax__cont__info {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.front-parallax__cont__info h1 {
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 2.4rem;
+  line-height: 100%;
+  margin-bottom: 1rem;
+  color: var(--dark-4);
+}
+
+.front-parallax__cont__info p {
+  color: var(--text-secondary);
+  font-style: italic;
+  font-size: 1.6rem;
+}
+
+.front-informations-section {
+  max-width: 105rem;
+  margin: 0 auto;
+  padding-bottom: 10rem;
+}
+
+.front-informations-section .container {
+  padding: 0;
+}
+
+.front-informations h3 {
+  text-align: center;
+  font-size: 2.8rem;
+  line-height: 100%;
+  font-weight: 100;
+  text-transform: uppercase;
+  color: var(--dark-4);
+  margin-bottom: 5rem;
+}
+
+.front-informations__inform {
+  display: -ms-grid;
+  display: grid;
+  gap: 4rem;
+}
+
+.front-informations__inform__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.front-informations__inform__item h4 {
+  font-size: 1.8rem;
+  line-height: 100%;
+  text-align: center;
+  color: var(--dark-4);
+}
+
+.front-informations__inform__item p {
+  color: var(--dark-2);
+  text-align: center;
+  font-size: 1.6rem;
+  font-style: italic;
+}
+
 @media only screen and (min-width: 768px) {
   :root {
     --container-side-padding: 3.5rem;
+  }
+
+  .footer__sidebar {
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer__bott {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 2rem;
   }
 
   .front-head__info p::before,
@@ -827,6 +1165,30 @@ table.bt.bt--no-header tbody td::before {
 
   .front-head__lay__logo__img {
     width: 16rem;
+  }
+
+  .front-parallax-section {
+    padding: 12rem 3.5rem;
+  }
+
+  .front-parallax picture {
+    -webkit-clip-path: unset;
+    clip-path: unset;
+    max-height: 48rem;
+  }
+
+  .front-informations-section {
+    padding-bottom: 12rem;
+  }
+
+  .front-informations__inform {
+    -ms-grid-columns: 1fr 1rem 1fr 1rem 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .front-informations__inform__item {
+    gap: 2.2rem;
   }
 }
 
@@ -954,7 +1316,7 @@ table.bt.bt--no-header tbody td::before {
   }
 
   .front-head__swip {
-    padding: 8.6rem 0;
+    padding-top: 8.6rem;
   }
 
   .front-head__numb ul {
@@ -967,6 +1329,35 @@ table.bt.bt--no-header tbody td::before {
 
   .front-head__lay__logo {
     bottom: 9.6rem;
+  }
+
+  .front-parallax-section {
+    padding: 15rem 1.8rem;
+  }
+
+  .front-parallax picture {
+    max-height: 80rem;
+  }
+
+  .front-parallax__cont {
+    padding: 6rem;
+  }
+
+  .front-parallax__cont__info {
+    margin-bottom: 4rem;
+  }
+
+  .front-parallax__cont__info h1 {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+  }
+
+  .front-parallax__cont__info p {
+    font-size: 1.8rem;
+  }
+
+  .front-informations-section {
+    padding-bottom: 15rem;
   }
 }
 
@@ -992,6 +1383,14 @@ table.bt.bt--no-header tbody td::before {
 
   .form__item:not(:last-child) {
     margin-bottom: 1.8rem;
+  }
+
+  .front-parallax-section {
+    padding: 19rem 0;
+  }
+
+  .front-informations-section {
+    padding-bottom: 19rem;
   }
 }
 

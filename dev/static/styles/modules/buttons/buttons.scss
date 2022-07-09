@@ -3,12 +3,28 @@
 .btn {
     &--accent-1 {
         .btn {
-            &__front {
-                background-color: var(--accent-1);
-            }
+            &__prime {
+                background-color: transparent;
+                transition: $hover-trans;
 
-            &__back {
-                background-color: var(--accent-1-darker);
+                &:hover {
+                    color: var(--white);
+                    background-color: var(--dark-4);
+                }
+            }
+        }
+    }
+
+    &--accent-2 {
+        .btn {
+            &__prime {
+                background-color: var(--white);
+                transition: $hover-trans;
+
+                &:hover {
+                    color: var(--white);
+                    background-color: var(--dark-4);
+                }
             }
         }
     }
@@ -16,7 +32,7 @@
     span {
         width: 100%;
         font-family: $sentient-bold;
-        color: var(--text-primary);
+        color: var(--dark-4);
         font-size: 1.8rem;
         line-height: 3.2rem;
         padding: 1.2rem;
@@ -27,6 +43,6 @@
         transform-origin: 50% 0 0;
         transition: transform .35s cubic-bezier(.76, 0, .24, 1) 0s;
         backface-visibility: hidden;
+        border: solid 0.1rem var(--dark-4);
     }
-
 }

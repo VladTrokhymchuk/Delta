@@ -65,10 +65,10 @@
     }
 
     &__swip {
-        padding: 3.6rem 0;
+        padding-top: 3.6rem;
 
         @include minw($lg-tab) {
-            padding: 8.6rem 0;
+            padding-top: 8.6rem;
         }
 
         .swiper-slide {

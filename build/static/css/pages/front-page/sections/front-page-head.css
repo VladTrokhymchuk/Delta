@@ -44,7 +44,7 @@
 }
 
 .front-head__swip {
-  padding: 3.6rem 0;
+  padding-top: 3.6rem;
 }
 
 .front-head__swip .swiper-slide {
@@ -174,7 +174,7 @@
   }
 
   .front-head__swip {
-    padding: 8.6rem 0;
+    padding-top: 8.6rem;
   }
 
   .front-head__numb ul {

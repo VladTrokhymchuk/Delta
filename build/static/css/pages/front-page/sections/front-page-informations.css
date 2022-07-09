@@ -1,0 +1,81 @@
+.front-informations-section {
+  max-width: 105rem;
+  margin: 0 auto;
+  padding-bottom: 10rem;
+}
+
+.front-informations-section .container {
+  padding: 0;
+}
+
+.front-informations h3 {
+  text-align: center;
+  font-size: 2.8rem;
+  line-height: 100%;
+  font-weight: 100;
+  text-transform: uppercase;
+  color: var(--dark-4);
+  margin-bottom: 5rem;
+}
+
+.front-informations__inform {
+  display: -ms-grid;
+  display: grid;
+  gap: 4rem;
+}
+
+.front-informations__inform__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.front-informations__inform__item h4 {
+  font-size: 1.8rem;
+  line-height: 100%;
+  text-align: center;
+  color: var(--dark-4);
+}
+
+.front-informations__inform__item p {
+  color: var(--dark-2);
+  text-align: center;
+  font-size: 1.6rem;
+  font-style: italic;
+}
+
+@media only screen and (min-width: 768px) {
+  .front-informations-section {
+    padding-bottom: 12rem;
+  }
+
+  .front-informations__inform {
+    -ms-grid-columns: 1fr 1rem 1fr 1rem 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .front-informations__inform__item {
+    gap: 2.2rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .front-informations-section {
+    padding-bottom: 15rem;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .front-informations-section {
+    padding-bottom: 19rem;
+  }
+}

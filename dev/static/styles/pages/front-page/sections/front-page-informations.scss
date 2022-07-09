@@ -1,0 +1,75 @@
+@import '../../../core';
+
+// @include minw($sm-tab) {}
+
+.front-informations {
+    &-section {
+        max-width: 105rem;
+        margin: 0 auto;
+        padding-bottom: 10rem;
+
+        @include minw($sm-tab) {
+            padding-bottom: 12rem;
+        }
+
+        @include minw($lg-tab) {
+            padding-bottom: 15rem;
+        }
+
+        @include minw($pc) {
+            padding-bottom: 19rem;
+        }
+
+        .container {
+            padding: 0;
+        }
+    }
+
+    h3 {
+
+        text-align: center;
+        font-size: 2.8rem;
+        line-height: 100%;
+        font-weight: 100;
+        text-transform: uppercase;
+        color: var(--dark-4);
+        margin-bottom: 5rem;
+    }
+
+    &__inform {
+        display: grid;
+        gap: 4rem;
+
+        @include minw($sm-tab) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.6rem;
+
+            @include minw($sm-tab) {
+                gap: 2.2rem;
+            }
+
+            h4 {
+                font-size: 1.8rem;
+                line-height: 100%;
+                text-align: center;
+                color: var(--dark-4);
+            }
+
+            p {
+                color: var(--dark-2);
+                text-align: center;
+                font-size: 1.6rem;
+                font-style: italic;
+            }
+        }
+
+    }
+
+}

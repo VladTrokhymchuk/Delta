@@ -1,7 +1,98 @@
 @import "../../core.scss";
 
 .footer {
-    .container {
-        @include minw($xl) {}
+    background: var(--bg);
+    font-family: $apercu-pro-regular;
+    color: var(--white);
+    padding-bottom: 2rem;
+
+    &__logo {
+        padding: 5rem 0;
+
+        &__img {
+            margin: 0 auto;
+            width: 10rem;
+
+            svg {
+
+                height: auto;
+
+                path {
+                    fill: var(--white);
+                }
+            }
+        }
+    }
+
+    &__sidebar {
+        display: grid;
+        gap: 3rem;
+
+        @include minw($sm-tab) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        &--items {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        &__title {
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            font-family: $apercu-pro-bold
+        }
+
+        &__box {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .name {
+                font-family: $apercu-pro-bold
+            }
+
+            a {
+                transition: $hover-trans;
+                font-size: 1.6rem;
+                font-family: $apercu-pro-regular;
+                letter-spacing: 0;
+
+                &:hover {
+                    letter-spacing: 0.1rem;
+                    color: var(--light-1);
+                }
+            }
+        }
+    }
+
+    &__bott {
+        padding-top: 1rem;
+        border-top: 0.1rem solid var(--white);
+        margin-top: 5rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+
+        @include minw($sm-tab) {
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+        }
+
+        .social {
+            display: flex;
+            gap: 1rem;
+
+            &__item {
+                width: 2.6rem;
+
+                svg {
+                    height: auto;
+                }
+            }
+        }
     }
 }

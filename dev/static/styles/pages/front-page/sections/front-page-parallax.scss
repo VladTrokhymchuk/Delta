@@ -1,0 +1,96 @@
+@import '../../../core';
+
+.front-parallax {
+    &-section {
+        max-width: 105rem;
+        margin: 0 auto;
+        padding: 10rem 0;
+
+        @include minw($sm-tab) {
+            padding: 12rem 3.5rem;
+        }
+
+        @include minw($lg-tab) {
+            padding: 15rem 1.8rem;
+        }
+
+        @include minw($pc) {
+            padding: 19rem 0;
+        }
+    }
+
+    position: relative;
+
+    picture {
+        overflow: hidden;
+        display: block;
+        perspective: 100px;
+        clip-path: polygon(0 0, 85% 0%, 100% 15%, 100% 85%, 100% 100%, 15% 100%, 0% 85%, 0% 15%);
+
+        @include minw($sm-tab) {
+            clip-path: unset;
+            max-height: 48rem;
+        }
+
+        @include minw($lg-tab) {
+            max-height: 80rem;
+        }
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            will-change: transform;
+        }
+    }
+
+    &__cont {
+        width: 93%;
+        max-width: 40rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: var(--white);
+        padding: 3rem;
+
+        @include minw($lg-tab) {
+            padding: 6rem;
+        }
+
+        &__info {
+            text-align: center;
+            margin-bottom: 2rem;
+
+            @include minw($lg-tab) {
+                margin-bottom: 4rem;
+            }
+
+            h1 {
+                text-transform: uppercase;
+                font-weight: 100;
+                font-size: 2.4rem;
+                line-height: 100%;
+                margin-bottom: 1rem;
+                color: var(--dark-4);
+
+                @include minw($lg-tab) {
+                    font-size: 2.8rem;
+                    margin-bottom: 3rem;
+                }
+            }
+
+            p {
+                color: var(--text-secondary);
+                font-style: italic;
+                font-size: 1.6rem;
+
+                @include minw($lg-tab) {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+
+
+    }
+}

@@ -1,15 +1,31 @@
-.btn--accent-1 .btn__front {
-  background-color: var(--accent-1);
+.btn--accent-1 .btn__prime {
+  background-color: transparent;
+  -webkit-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  -o-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
 }
 
-.btn--accent-1 .btn__back {
-  background-color: var(--accent-1-darker);
+.btn--accent-1 .btn__prime:hover {
+  color: var(--white);
+  background-color: var(--dark-4);
+}
+
+.btn--accent-2 .btn__prime {
+  background-color: var(--white);
+  -webkit-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  -o-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+}
+
+.btn--accent-2 .btn__prime:hover {
+  color: var(--white);
+  background-color: var(--dark-4);
 }
 
 .btn span {
   width: 100%;
   font-family: "Sentient-Bold", serif;
-  color: var(--text-primary);
+  color: var(--dark-4);
   font-size: 1.8rem;
   line-height: 3.2rem;
   padding: 1.2rem;
@@ -31,4 +47,5 @@
   transition: transform 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s, -webkit-transform 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  border: solid 0.1rem var(--dark-4);
 }
