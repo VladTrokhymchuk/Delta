@@ -355,7 +355,6 @@ input:-webkit-autofill:focus {
 }
 
 .header__nav .navbar .menu ul li a {
-  font-family: "Sentient-Regular", serif;
   font-size: 2.8rem;
   line-height: 3.2rem;
   color: var(--dark-1);
@@ -446,7 +445,6 @@ input:-webkit-autofill:focus {
 
 .footer {
   background: var(--bg);
-  font-family: "ApercuPro-Regular", sans-serif;
   color: var(--white);
   padding-bottom: 2rem;
 }
@@ -488,7 +486,6 @@ input:-webkit-autofill:focus {
 .footer__sidebar__title {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  font-family: "ApercuPro-Bold", sans-serif;
 }
 
 .footer__sidebar__box {
@@ -502,16 +499,11 @@ input:-webkit-autofill:focus {
   gap: 1rem;
 }
 
-.footer__sidebar__box .name {
-  font-family: "ApercuPro-Bold", sans-serif;
-}
-
 .footer__sidebar__box a {
   -webkit-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
   -o-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
   transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
   font-size: 1.6rem;
-  font-family: "ApercuPro-Regular", sans-serif;
   letter-spacing: 0;
 }
 
@@ -610,11 +602,6 @@ section {
 body {
   font-size: 1.4rem;
   line-height: 2.4rem;
-  font-family: "Sentient-Regular", serif;
-}
-
-.apercu {
-  font-family: "ApercuPro-Bold", sans-serif;
 }
 
 .boska {
@@ -632,7 +619,6 @@ body {
 .form__subtitle {
   font-size: 2.2rem;
   line-height: 4.8rem;
-  font-family: "ApercuPro-Bold", sans-serif;
   margin-bottom: 1.8rem;
   color: var(--text-secondary);
   width: 101%;
@@ -654,7 +640,6 @@ body {
   line-height: 3.2rem;
   padding-bottom: 0.8rem;
   color: var(--white);
-  font-family: "ApercuPro-Regular", sans-serif;
   background-color: transparent;
 }
 
@@ -719,7 +704,6 @@ body {
   background: var(--red);
   color: var(--white);
   border-radius: 0.4rem;
-  font-family: "ApercuPro-Regular", sans-serif;
   font-style: italic;
   line-height: 2rem;
   font-size: 1rem;
@@ -769,7 +753,7 @@ body {
 
 .btn span {
   width: 100%;
-  font-family: "Sentient-Bold", serif;
+  font-weight: bold;
   color: var(--dark-4);
   font-size: 1.8rem;
   line-height: 3.2rem;
@@ -1115,6 +1099,62 @@ table.bt.bt--no-header tbody td::before {
   font-style: italic;
 }
 
+.front-informations__inform__img img {
+  width: 6.4rem;
+  height: 6.4rem;
+}
+
+.front-location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.front-location-section {
+  background-color: var(--bg-bage);
+}
+
+.front-location__mapa iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 37.5rem;
+}
+
+.front-location__address {
+  padding: 4rem 1.3rem;
+  color: var(--dark-4);
+}
+
+.front-location__title {
+  font-size: 3rem;
+  line-height: 100%;
+}
+
+.front-location__wrap {
+  margin-top: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.front-location__wrap__item h4 {
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.front-location__wrap__item p {
+  font-family: "Apercu-Pro-Thin", sans-serif;
+}
+
 @media only screen and (min-width: 768px) {
   :root {
     --container-side-padding: 3.5rem;
@@ -1189,6 +1229,13 @@ table.bt.bt--no-header tbody td::before {
 
   .front-informations__inform__item {
     gap: 2.2rem;
+  }
+
+  .front-location {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -1298,6 +1345,11 @@ table.bt.bt--no-header tbody td::before {
     display: none;
   }
 
+  .footer__sidebar {
+    -ms-grid-columns: 0.7fr 0.7fr 1.3fr;
+    grid-template-columns: 0.7fr 0.7fr 1.3fr;
+  }
+
   .front-head-section {
     padding: 10rem 0;
   }
@@ -1358,6 +1410,10 @@ table.bt.bt--no-header tbody td::before {
 
   .front-informations-section {
     padding-bottom: 15rem;
+  }
+
+  .front-location__address {
+    padding: 4rem 4rem;
   }
 }
 

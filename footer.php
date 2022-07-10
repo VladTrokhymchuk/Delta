@@ -53,7 +53,7 @@
                 <div class="social">
                     <?php if( have_rows('social_rep', 'options') ): while( have_rows('social_rep', 'options') ): the_row(); ?>
                     <?php $social_item = get_sub_field('social_item');?>
-                    <a class="social__item" href='<?=esc_url( $social_item['url'] ); ?>'>
+                    <a class="social__item" href='<?=esc_url( $social_item['url'] ); ?>' title="<?=esc_html( $social_item['title'] ); ?>">
                         <?php $img_soc = get_sub_field('img_soc', 'options'); ?>
                         <?php $svg_markup_soc = file_get_contents( get_attached_file( $img_soc['ID'] ) );
                             echo $svg_markup_soc;

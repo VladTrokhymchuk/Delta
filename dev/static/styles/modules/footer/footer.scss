@@ -2,7 +2,7 @@
 
 .footer {
     background: var(--bg);
-    font-family: $apercu-pro-regular;
+    // font-family: $apercu-pro-regular;
     color: var(--white);
     padding-bottom: 2rem;
 
@@ -32,6 +32,10 @@
             grid-template-columns: repeat(3, 1fr);
         }
 
+        @include minw($lg-tab) {
+            grid-template-columns: 0.7fr 0.7fr 1.3fr;
+        }
+
         &--items {
             display: flex;
             flex-direction: column;
@@ -41,7 +45,7 @@
         &__title {
             text-transform: uppercase;
             letter-spacing: 0.2rem;
-            font-family: $apercu-pro-bold
+            // font-family: $apercu-pro-bold
         }
 
         &__box {
@@ -50,13 +54,13 @@
             gap: 1rem;
 
             .name {
-                font-family: $apercu-pro-bold
+                // font-family: $apercu-pro-bold
             }
 
             a {
                 transition: $hover-trans;
                 font-size: 1.6rem;
-                font-family: $apercu-pro-regular;
+                // font-family: $apercu-pro-regular;
                 letter-spacing: 0;
 
                 &:hover {

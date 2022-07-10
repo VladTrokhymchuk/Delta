@@ -841,6 +841,10 @@ table.bt.bt--no-header tbody td::before {
   display: none;
 }
 
+h1 {
+  color: rebeccapurple;
+}
+
 @media only screen and (min-width: 768px) {
   :root {
     --container-side-padding: 3.5rem;

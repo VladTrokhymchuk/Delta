@@ -117,7 +117,6 @@
 }
 
 .header__nav .navbar .menu ul li a {
-  font-family: "Sentient-Regular", serif;
   font-size: 2.8rem;
   line-height: 3.2rem;
   color: var(--dark-1);

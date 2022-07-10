@@ -94,3 +94,26 @@
         </div>
     </div>
 </section>
+
+<section class="front-location-section">
+    <div class="front-location">
+        <div class="front-location__mapa">
+            <?php $main_iframe = get_field('main_iframe_mapa'); ?>
+            <?php echo $main_iframe; ?>
+        </div>
+        <div class="front-location__address">
+            <h3 class="front-location__title"><?php the_field('str_title'); ?></h3>
+
+            <div class="front-location__wrap">
+                <?php if( have_rows('address_item') ): while( have_rows('address_item') ): the_row(); ?>
+                <div class="front-location__wrap__item">
+                    <h4><?php the_sub_field('title_r'); ?></h4>
+                    <p><?php the_sub_field('desc_r'); ?></p>
+                </div>
+                <?php endwhile; endif; ?>
+            </div>
+
+
+        </div>
+    </div>
+</section>

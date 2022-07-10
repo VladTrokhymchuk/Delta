@@ -841,6 +841,112 @@ table.bt.bt--no-header tbody td::before {
   display: none;
 }
 
+.room-list {
+  padding: 2rem;
+}
+
+.room-list-section {
+  background-color: #f5f5f5;
+}
+
+.room-list__item {
+  position: relative;
+  margin-bottom: 4rem;
+  border: 1px solid #e1e1e1;
+  display: block;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+}
+
+.room-list__photo__img picture,
+.room-list__photo__img img {
+  min-height: 29.3rem;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.room-list__desc {
+  padding: 2rem;
+  text-align: center;
+}
+
+.room-list__desc h2 {
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--dark-4);
+  margin-bottom: 1rem;
+}
+
+.room-list__desc p {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  color: var(--dark-2);
+}
+
+.room-list__desc__short {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  color: var(--dark-2);
+  text-align: left;
+}
+
+.room-list__desc__features {
+  margin-top: 3rem;
+}
+
+.room-list__desc__features ul {
+  color: var(--dark-4);
+}
+
+.room-list__desc__features ul li {
+  line-height: 4rem;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-transform: uppercase;
+  position: relative;
+  width: 100%;
+  height: 4rem;
+  border-bottom: 0.1rem solid #e1e1e1;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.1rem;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.room-list__desc__features ul li .check {
+  width: 2.3rem;
+  border: solid 0.1rem var(--bg);
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+.room-list__desc__features ul li .check svg {
+  height: auto;
+}
+
+.room-list__desc__features ul li .check svg g path {
+  fill: var(--bg);
+}
+
+.room-list__price__inner h3 {
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--dark-4);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 @media only screen and (min-width: 768px) {
   :root {
     --container-side-padding: 3.5rem;

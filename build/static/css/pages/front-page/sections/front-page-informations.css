@@ -52,6 +52,11 @@
   font-style: italic;
 }
 
+.front-informations__inform__img img {
+  width: 6.4rem;
+  height: 6.4rem;
+}
+
 @media only screen and (min-width: 768px) {
   .front-informations-section {
     padding-bottom: 12rem;

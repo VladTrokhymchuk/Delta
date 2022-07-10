@@ -31,7 +31,8 @@
 
     span {
         width: 100%;
-        font-family: $sentient-bold;
+        // font-family: $sentient-bold;
+        font-weight: bold;
         color: var(--dark-4);
         font-size: 1.8rem;
         line-height: 3.2rem;

@@ -1,6 +1,5 @@
 .footer {
   background: var(--bg);
-  font-family: "ApercuPro-Regular", sans-serif;
   color: var(--white);
   padding-bottom: 2rem;
 }
@@ -42,7 +41,6 @@
 .footer__sidebar__title {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  font-family: "ApercuPro-Bold", sans-serif;
 }
 
 .footer__sidebar__box {
@@ -56,16 +54,11 @@
   gap: 1rem;
 }
 
-.footer__sidebar__box .name {
-  font-family: "ApercuPro-Bold", sans-serif;
-}
-
 .footer__sidebar__box a {
   -webkit-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
   -o-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
   transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
   font-size: 1.6rem;
-  font-family: "ApercuPro-Regular", sans-serif;
   letter-spacing: 0;
 }
 
@@ -118,5 +111,12 @@
     -ms-flex-align: center;
     align-items: center;
     padding-top: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .footer__sidebar {
+    -ms-grid-columns: 0.7fr 0.7fr 1.3fr;
+    grid-template-columns: 0.7fr 0.7fr 1.3fr;
   }
 }

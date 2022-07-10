@@ -9,7 +9,6 @@
 .form__subtitle {
   font-size: 2.2rem;
   line-height: 4.8rem;
-  font-family: "ApercuPro-Bold", sans-serif;
   margin-bottom: 1.8rem;
   color: var(--text-secondary);
   width: 101%;
@@ -31,7 +30,6 @@
   line-height: 3.2rem;
   padding-bottom: 0.8rem;
   color: var(--white);
-  font-family: "ApercuPro-Regular", sans-serif;
   background-color: transparent;
 }
 
@@ -96,7 +94,6 @@
   background: var(--red);
   color: var(--white);
   border-radius: 0.4rem;
-  font-family: "ApercuPro-Regular", sans-serif;
   font-style: italic;
   line-height: 2rem;
   font-size: 1rem;
