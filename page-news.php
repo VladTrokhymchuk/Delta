@@ -64,7 +64,7 @@
                 <div class="room-list__price">
                     <div class="room-list__price__inner">
                         <h3><?php the_field('price'); ?></h3>
-                        <div class="btn"> <span><?php the_field('btn_p_room', 'options'); ?></span></div>
+                        <div class="btn btn--more"> <span class="btn__prime"><?php the_field('btn_p_room', 'options'); ?></span></div>
                     </div>
                 </div>
 

@@ -751,6 +751,20 @@ body {
   background-color: var(--dark-4);
 }
 
+.btn--more .btn__prime {
+  border-radius: 5rem;
+  color: var(--white);
+  background-color: var(--dark-4);
+  -webkit-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  -o-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+}
+
+.btn--more .btn__prime:hover {
+  color: var(--dark-4);
+  background-color: var(--white);
+}
+
 .btn span {
   width: 100%;
   font-weight: bold;

@@ -29,6 +29,22 @@
         }
     }
 
+    &--more {
+        .btn {
+            &__prime {
+                border-radius: 5rem;
+                color: var(--white);
+                background-color: var(--dark-4);
+                transition: $hover-trans;
+
+                &:hover {
+                    color: var(--dark-4);
+                    background-color: var(--white);
+                }
+            }
+        }
+    }
+
     span {
         width: 100%;
         // font-family: $sentient-bold;

@@ -81,6 +81,10 @@
   gap: 2rem;
 }
 
+.room-list__desc__features ul li:last-of-type {
+  border-bottom: 0;
+}
+
 .room-list__desc__features ul li .check {
   width: 2.3rem;
   border: solid 0.1rem var(--bg);
@@ -96,10 +100,38 @@
   fill: var(--bg);
 }
 
+.room-list__price__inner {
+  border-top: 0.1rem solid #e1e1e1;
+  padding: 2rem;
+}
+
 .room-list__price__inner h3 {
   font-size: 3.2rem;
   font-weight: 900;
   color: var(--dark-4);
   text-align: center;
   margin-bottom: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .room-list__desc__features ul {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .room-list__desc__features ul li {
+    border-bottom: 0;
+    padding: 0 1.3rem;
+  }
+
+  .room-list__desc__features ul li:nth-child(n+4) {
+    border-top: 0.1rem solid #e1e1e1;
+  }
+
+  .room-list__desc__features ul li:nth-child(3n+2) {
+    border-left: 0.1rem solid #e1e1e1;
+    border-right: 0.1rem solid #e1e1e1;
+  }
 }

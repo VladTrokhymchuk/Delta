@@ -751,6 +751,20 @@ body {
   background-color: var(--dark-4);
 }
 
+.btn--more .btn__prime {
+  border-radius: 5rem;
+  color: var(--white);
+  background-color: var(--dark-4);
+  -webkit-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  -o-transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+}
+
+.btn--more .btn__prime:hover {
+  color: var(--dark-4);
+  background-color: var(--white);
+}
+
 .btn span {
   width: 100%;
   font-weight: bold;
@@ -924,6 +938,10 @@ table.bt.bt--no-header tbody td::before {
   gap: 2rem;
 }
 
+.room-list__desc__features ul li:last-of-type {
+  border-bottom: 0;
+}
+
 .room-list__desc__features ul li .check {
   width: 2.3rem;
   border: solid 0.1rem var(--bg);
@@ -937,6 +955,11 @@ table.bt.bt--no-header tbody td::before {
 
 .room-list__desc__features ul li .check svg g path {
   fill: var(--bg);
+}
+
+.room-list__price__inner {
+  border-top: 0.1rem solid #e1e1e1;
+  padding: 2rem;
 }
 
 .room-list__price__inner h3 {
@@ -965,6 +988,27 @@ table.bt.bt--no-header tbody td::before {
     -ms-flex-align: center;
     align-items: center;
     padding-top: 2rem;
+  }
+
+  .room-list__desc__features ul {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .room-list__desc__features ul li {
+    border-bottom: 0;
+    padding: 0 1.3rem;
+  }
+
+  .room-list__desc__features ul li:nth-child(n+4) {
+    border-top: 0.1rem solid #e1e1e1;
+  }
+
+  .room-list__desc__features ul li:nth-child(3n+2) {
+    border-left: 0.1rem solid #e1e1e1;
+    border-right: 0.1rem solid #e1e1e1;
   }
 }
 
