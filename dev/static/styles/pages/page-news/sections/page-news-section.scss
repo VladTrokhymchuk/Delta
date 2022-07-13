@@ -15,6 +15,19 @@
         background-color: #fff;
         -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
         box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+
+        @include minw($lg-tab) {
+            display: grid;
+            grid-template-columns: 22.5rem 1fr 18rem;
+        }
+
+        @include minw($pc) {
+            grid-template-columns: 29.5rem 1fr 23.5rem;
+        }
+
+        @include minw($lg-xl) {
+            grid-template-columns: 38.5rem 1fr 30.5rem;
+        }
     }
 
     &__photo {
@@ -24,6 +37,7 @@
             img {
                 min-height: 29.3rem;
                 object-fit: cover;
+                width: 100%;
             }
         }
     }
@@ -31,6 +45,10 @@
     &__desc {
         padding: 2rem;
         text-align: center;
+
+        @include minw($lg-tab) {
+            padding: 4rem;
+        }
 
         h2 {
             font-size: 3rem;
@@ -122,9 +140,31 @@
     }
 
     &__price {
+        @include minw($lg-tab) {
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            &::after {
+                content: "";
+                background: linear-gradient(to right, rgba(33, 30, 25, .1) -100%, rgba(0, 0, 0, 0) 100%);
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 20px;
+                height: 100%;
+                display: inline-block;
+            }
+        }
+
         &__inner {
             border-top: 0.1rem solid #e1e1e1;
             padding: 2rem;
+
+            @include minw($lg-tab) {
+                width: 100%;
+                border: 0;
+            }
 
             h3 {
                 font-size: 3.2rem;
@@ -132,6 +172,10 @@
                 color: var(--dark-4);
                 text-align: center;
                 margin-bottom: 2rem;
+
+                @include minw($lg-tab) {
+                    margin-bottom: 3rem;
+                }
             }
         }
     }

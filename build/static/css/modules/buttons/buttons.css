@@ -63,3 +63,11 @@
   backface-visibility: hidden;
   border: solid 0.1rem var(--dark-4);
 }
+
+@media only screen and (min-width: 1024px) {
+  .btn--more .btn__prime {
+    font-size: 1.3rem;
+    letter-spacing: 0.2rem;
+    padding: 0.3rem;
+  }
+}

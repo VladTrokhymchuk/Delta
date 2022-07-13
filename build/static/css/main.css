@@ -986,6 +986,12 @@ table.bt.bt--no-header tbody td::before {
     -ms-grid-columns: 0.7fr 0.7fr 1.3fr;
     grid-template-columns: 0.7fr 0.7fr 1.3fr;
   }
+
+  .btn--more .btn__prime {
+    font-size: 1.3rem;
+    letter-spacing: 0.2rem;
+    padding: 0.3rem;
+  }
 }
 
 @media only screen and (min-width: 1280px) {

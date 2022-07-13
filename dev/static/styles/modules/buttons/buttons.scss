@@ -37,6 +37,12 @@
                 background-color: var(--dark-4);
                 transition: $hover-trans;
 
+                @include minw($lg-tab) {
+                    font-size: 1.3rem;
+                    letter-spacing: 0.2rem;
+                    padding: 0.3rem;
+                }
+
                 &:hover {
                     color: var(--dark-4);
                     background-color: var(--white);

@@ -1364,6 +1364,12 @@ table.bt.bt--no-header tbody td::before {
     grid-template-columns: 0.7fr 0.7fr 1.3fr;
   }
 
+  .btn--more .btn__prime {
+    font-size: 1.3rem;
+    letter-spacing: 0.2rem;
+    padding: 0.3rem;
+  }
+
   .front-head-section {
     padding: 10rem 0;
   }
