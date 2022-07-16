@@ -991,6 +991,16 @@ table.bt.bt--no-header tbody td::before {
     padding-top: 2rem;
   }
 
+  .room-list__photo__img {
+    height: 100%;
+  }
+
+  .room-list__photo__img picture,
+  .room-list__photo__img img {
+    min-height: 100%;
+    height: 100%;
+  }
+
   .room-list__desc__features ul {
     display: -ms-grid;
     display: grid;

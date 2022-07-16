@@ -1,5 +1,66 @@
 @import '../../../core';
 
-h1{
-    color: rebeccapurple;
+.room {
+    &-section {
+        background-color: #f5f5f5;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    &__slider {
+        .swiper {
+            border: 1rem solid #fff;
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                width: 5rem;
+                height: 5rem;
+                background: var(--white);
+                top: unset;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(calc(-50% + 2.55rem));
+
+                &::after {
+                    width: 0.1rem;
+                    height: 1.5rem;
+                    background: var(--bg);
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(-50%, -25%) rotate(45deg);
+                    left: 50%;
+                }
+
+                &::before {
+                    content: '';
+                    width: 0.1rem;
+                    height: 1.5rem;
+                    background: var(--bg);
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-95%) rotate(-45deg);
+                }
+            }
+
+            .swiper-button-prev {
+                transform: translateX(calc(-50% - 2.55rem));
+
+                &::after {
+                    top: 50%;
+                    transform: translate(-50%, -25%) rotate(-45deg);
+                    left: 50%;
+                }
+
+                &::before {
+                    content: '';
+                    top: 50%;
+                    transform: translateY(-95%) rotate(45deg);
+                }
+            }
+        }
+
+        .mySwiperP {
+            display: none;
+        }
+    }
 }
