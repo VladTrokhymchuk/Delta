@@ -1,7 +1,7 @@
 "use strict";
 
 var swiper = new Swiper(".mySwiperP", {
-  spaceBetween: 10,
+  spaceBetween: 20,
   slidesPerView: 3,
   freeMode: true,
   watchSlidesProgress: true,
