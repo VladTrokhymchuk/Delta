@@ -21,7 +21,7 @@
                             <?php if( have_rows('room_rep') ): while( have_rows('room_rep') ): the_row(); ?>
                             <div class="swiper-slide">
                                 <?php $room_img = get_sub_field('room_img');?>
-                                <img src='<?=esc_url( $room_img['sizes'][isMobile() ? 'medium' : 'full_hd']); ?>'
+                                <img src='<?=esc_url( $room_img['sizes'][isMobile() ? 'medium_large' : 'full_hd']); ?>'
                                     alt='<?=esc_attr($room_img['alt']); ?>'>
                             </div>
                             <?php endwhile; endif; ?>

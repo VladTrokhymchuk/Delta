@@ -1,8 +1,6 @@
 <section class="front-head-section">
     <div class="container">
         <div class="front-head__info">
-            <h1 style="color: crimson; margin-bottom: 50px;">Сайт тимчасово на реконструкції, телефонуйте за номерами
-            </h1>
             <h1><?php the_field('title'); ?></h1>
             <p><?php the_field('subtitle'); ?></p>
         </div>
