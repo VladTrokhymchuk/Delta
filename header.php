@@ -12,6 +12,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet"> -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122481211-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-122481211-1');
+    </script>
     <?php wp_head(); ?>
 </head>
 
@@ -28,7 +40,8 @@
                         $link = get_field('logo_link', 'options');
                     ?>
 
-                    <a class="header__logo" href='<?= esc_url($link['url']); ?>' title="<?=esc_html( $link['title'] ); ?>">
+                    <a class="header__logo" href='<?= esc_url($link['url']); ?>'
+                        title="<?=esc_html( $link['title'] ); ?>">
                         <?php
                             $svg_markup = file_get_contents( get_attached_file( $img_logo['ID'] ) );
                             echo $svg_markup;
