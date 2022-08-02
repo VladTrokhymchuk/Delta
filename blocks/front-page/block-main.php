@@ -44,7 +44,7 @@
     </div>
 </section>
 
-<section class="front-about-section">
+<section id="<?php the_field('id_hotel'); ?>" class="front-about-section">
     <div class="container">
         <div class="front-about">
             <h3><?php the_field('about_title'); ?></h3>
@@ -53,7 +53,7 @@
     </div>
 </section>
 
-<section class="front-parallax-section">
+<section id="<?php the_field('id_room'); ?>" class="front-parallax-section">
     <div class="front-parallax">
         <?php $img_room = get_field('img_room');?>
         <div class="front-parallax__bg">
@@ -73,7 +73,7 @@
     </div>
 </section>
 
-<section class="front-informations-section">
+<section id="<?php the_field('id_info'); ?>" class="front-informations-section">
     <div class="container">
         <div class="front-informations">
             <h3><?php the_field('info_title'); ?></h3>
@@ -93,7 +93,7 @@
     </div>
 </section>
 
-<section class="front-location-section">
+<section id="<?php the_field('id_mapa'); ?>" class="front-location-section">
     <div class="front-location">
         <div class="front-location__mapa">
             <?php $main_iframe = get_field('main_iframe_mapa'); ?>
