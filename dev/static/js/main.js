@@ -33,25 +33,16 @@ $('#hamburger-button').click(function () {
 
 });
 
-//animate
+$('li a').click(function () {
+    animateHamburger();
+    slideMenu(); 
+    slideLogo();
 
-// gsap.from(".header", {
-//     duration: 1.2,
-//     ease: "power2.out",
-//     top: "-100%"
-// });
-
-
-// const showAnim = gsap.from('header', {
-//     yPercent: -100,
-//     paused: true,
-//     duration: 0.2
-// }).progress(1);
-
-// ScrollTrigger.create({
-//     start: "top top",
-//     end: 99999,
-//     onUpdate: (self) => {
-//         self.direction === -1 ? showAnim.play() : showAnim.reverse()
-//     }
-// });
+    if (window && window.innerWidth < 1024) {
+        if ($('li a').hasClass('open')) {
+            $("body").css('overflow', 'hidden');
+        } else {
+            $("body").css('overflow', 'unset');
+        }
+    }
+});
