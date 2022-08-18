@@ -1,5 +1,5 @@
 <?php
-    get_header(); 
+     get_header('second'); 
 
     wp_enqueue_style('swiper', get_template_directory_uri() . '/build/static/css/libs/swiper-bundle.css');
     wp_enqueue_style('single-news', get_template_directory_uri() . '/build/static/css/pages/single-news/single-news.css');
