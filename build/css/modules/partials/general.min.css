@@ -1,0 +1,141 @@
+html,
+body,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body.noscroll {
+  height: 100vh;
+  overflow: hidden;
+}
+body.noscroll::-webkit-scrollbar {
+  width: 0;
+}
+body::-webkit-scrollbar {
+  width: 0.8rem;
+  transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+}
+body::-webkit-scrollbar-track {
+  background-color: rgba(246, 243, 240, 0.15);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--accent-1);
+  width: 0.3rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: var(--container-max-width);
+  padding: 0 var(--container-side-padding);
+}
+
+section {
+  overflow: hidden;
+  z-index: 1;
+}
+
+body {
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+}
+
+.boska {
+  font-family: "Boska-Black", serif;
+}
+
+.form .screen-reader-response {
+  display: none;
+}
+.form .invalid .wpcf7-response-output {
+  display: none;
+}
+.form__subtitle {
+  font-size: 2.2rem;
+  line-height: 4.8rem;
+  margin-bottom: 1.8rem;
+  color: var(--text-secondary);
+  width: 101%;
+}
+@media only screen and (min-width: 1280px) {
+  .form__subtitle {
+    font-size: 3.8rem;
+    line-height: 5.6rem;
+  }
+}
+.form__item {
+  position: relative;
+}
+.form__item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+@media only screen and (min-width: 1280px) {
+  .form__item:not(:last-child) {
+    margin-bottom: 1.8rem;
+  }
+}
+.form__item input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--white);
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+  padding-bottom: 0.8rem;
+  color: var(--white);
+  background-color: transparent;
+}
+.form__item input::placeholder {
+  color: #BCBCBC;
+}
+.form__item input:focus {
+  border-color: #636363;
+}
+.form__item input:focus ~ .wpcf7-not-valid-tip {
+  display: none;
+}
+.form__item .wpcf7-not-valid {
+  border-bottom: 0.2rem solid var(--red);
+  color: var(--red);
+}
+.form__item .wpcf7-not-valid::placeholder {
+  color: var(--red);
+}
+.form__item .wpcf7-not-valid-tip {
+  padding: 0.8rem;
+  color: var(--red);
+  border-radius: 0.4rem;
+  font-style: italic;
+  line-height: 2rem;
+  font-size: 1rem;
+}
+.form__submit {
+  margin-top: 4rem;
+}
+.form__submit .btn {
+  width: 100%;
+}
+.form__submit .btn span {
+  padding: 1.4rem;
+}
+.form button {
+  padding: 0;
+  background: none;
+  border: 0;
+}
+
+.hidden-fields-container {
+  display: none;
+}

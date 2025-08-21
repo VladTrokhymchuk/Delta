@@ -1,0 +1,58 @@
+@import '../../core.scss';
+
+html,
+body,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+html {
+    // MAIN REM VALUE
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+body {
+    &.noscroll {
+        height: 100vh;
+        overflow: hidden;
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        width: .8rem;
+        transition: $hover-trans;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: rgba(#F6F3F0, 0.15);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--accent-1);
+        width: .3rem;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: var(--container-max-width);
+    padding: 0 var(--container-side-padding);
+}
+
+section {
+    overflow: hidden;
+    z-index: 1;
+}

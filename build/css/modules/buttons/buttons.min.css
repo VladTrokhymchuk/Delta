@@ -1,0 +1,161 @@
+.btn--accent-1 .btn__prime {
+  background-color: transparent;
+  transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+}
+.btn--accent-1 .btn__prime:hover {
+  color: var(--white);
+  background-color: var(--dark-4);
+}
+.btn--accent-2 .btn__prime {
+  background-color: var(--white);
+  transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+}
+.btn--accent-2 .btn__prime:hover {
+  color: var(--white);
+  background-color: var(--dark-4);
+}
+.btn--more .btn__prime {
+  border-radius: 5rem;
+  color: var(--white);
+  background-color: var(--dark-4);
+  transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+}
+@media only screen and (min-width: 1024px) {
+  .btn--more .btn__prime {
+    font-size: 1.3rem;
+    letter-spacing: 0.2rem;
+    padding: 0.3rem;
+  }
+}
+.btn--more .btn__prime:hover {
+  color: var(--dark-4);
+  background-color: var(--white);
+}
+.btn span {
+  width: 100%;
+  font-weight: bold;
+  color: var(--dark-4);
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  padding: 1.2rem;
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-flex;
+  justify-content: center;
+  transform-origin: 50% 0 0;
+  transition: transform 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  backface-visibility: hidden;
+  border: solid 0.1rem var(--dark-4);
+}
+
+.bttn,
+.bttn-link {
+  cursor: pointer;
+  user-select: none;
+  height: 5.4rem;
+  transition: 0.2s ease-in-out;
+  border: none;
+  padding: 1.8rem 3.2rem;
+  font-size: 1.6rem;
+  line-height: 120%;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.bttn svg,
+.bttn-link svg {
+  margin-left: 1rem;
+  transition: 0.2s ease-in-out;
+}
+@media only screen and (min-width: 1024px) {
+  .bttn,
+  .bttn-link {
+    font-size: 1.8rem;
+  }
+}
+
+.bttn {
+  color: #fff;
+  background-color: #760023;
+}
+.bttn:hover {
+  background-color: rgba(118, 0, 35, 0.75);
+  color: #fff;
+}
+
+.bttn[disabled] {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.bttn-loading,
+.wpcf7 .wpcf7-form.submitting .wpcf7-submit {
+  transition: none;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  text-shadow: none;
+  color: transparent;
+}
+
+.wpcf7 .wpcf7-form.submitting .wpcf7-submit {
+  background-image: url("../../../img/general/spinner.svg");
+}
+
+.bttn-loading {
+  background-image: url("../img/general/spinner-blue.svg");
+  background-color: rgba(67, 214, 249, 0.1019607843);
+}
+
+.bttn-link {
+  color: #000;
+  background-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: none !important;
+  font-size: 1.6rem;
+}
+.bttn-link span {
+  font-size: inherit;
+  display: none;
+  margin-right: 0.6rem;
+}
+@media only screen and (min-width: 1024px) {
+  .bttn-link span {
+    display: inline;
+  }
+}
+.bttn-link:after {
+  content: "";
+  display: block;
+  margin-left: 1.2rem;
+  background-image: url("data:image/svg+xml,%3Csvg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.490159 11.0961C0.0996346 11.4866 0.0996346 12.1198 0.490159 12.5103C0.880683 12.9009 1.51385 12.9009 1.90437 12.5103L0.490159 11.0961ZM12.8039 1.19662C12.8039 0.644336 12.3562 0.196621 11.8039 0.196621L2.80387 0.196621C2.25158 0.19662 1.80387 0.644336 1.80387 1.19662C1.80387 1.74891 2.25158 2.19662 2.80387 2.19662L10.8039 2.19662L10.8039 10.1966C10.8039 10.7489 11.2516 11.1966 11.8039 11.1966C12.3562 11.1966 12.8039 10.7489 12.8039 10.1966L12.8039 1.19662ZM1.90437 12.5103L12.511 1.90373L11.0968 0.489514L0.490159 11.0961L1.90437 12.5103Z' fill='black'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-size: contain;
+  transition: 0.2s ease-in-out;
+}
+@media only screen and (min-width: 1024px) {
+  .bttn-link:after {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}
+.bttn-link:hover:after {
+  transform: scale(1, -1);
+}
+.bttn-link.link-loading {
+  transition: none;
+  background-image: url("../img/general/spinner-blue.svg");
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  text-shadow: none;
+  color: transparent;
+  cursor: default;
+}
+.bttn-link.link-loading:after {
+  display: none;
+}

@@ -67,7 +67,10 @@
     </footer>
     </main>
 
-    <?php wp_footer(); ?>
+    <?php 
+    get_template_part('./template-parts/popups');
+
+    wp_footer(); ?>
     </body>
 
     </html>

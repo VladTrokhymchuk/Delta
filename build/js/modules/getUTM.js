@@ -1,0 +1,1 @@
+(()=>{"use strict";window.location.search.replace("?","").split("&").reduce(((e,o)=>{const t=o.split("=");return e[decodeURIComponent(t[0])]=decodeURIComponent(t[1]),e}),{})})();

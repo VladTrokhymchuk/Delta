@@ -1,0 +1,77 @@
+@font-face {
+  font-family: "ApercuPro-Bold";
+  src: url("../../../fonts/ApercuPro-Bold.ttf");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swup;
+}
+@font-face {
+  font-family: "ApercuPro-Regular";
+  src: url("../../../fonts/ApercuPro/ApercuPro-Regular.ttf");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swup;
+}
+@font-face {
+  font-family: "Sentient-Regular";
+  src: url("../../../fonts/Sentient-Regular.otf");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swup;
+}
+@font-face {
+  font-family: "Sentient-Bold";
+  src: url("../../../fonts/Sentient-Bold.otf");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swup;
+}
+@font-face {
+  font-family: "Sentient-BoldItalic";
+  src: url("../../../fonts/Sentient-BoldItalic.otf");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swup;
+}
+@font-face {
+  font-family: "Sentient-LightItalic";
+  src: url("../../../fonts/Sentient-LightItalic.otf");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swup;
+}
+@font-face {
+  font-family: "Boska-Black";
+  src: url("../../../fonts/Boska-Black.otf");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swup;
+}
+@font-face {
+  font-family: "Boska-Regular";
+  src: url("../../../fonts/Boska-Regular.otf");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swup;
+}
+@font-face {
+  font-family: "Boska-Bold";
+  src: url("../../../fonts/Boska-Bold.otf");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swup;
+}
+@font-face {
+  font-family: "Boska-Medium";
+  src: url("../../../fonts/Boska-Medium.otf");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swup;
+}
+@font-face {
+  font-family: "Boska-MediumItalic";
+  src: url("../../../fonts/Boska-MediumItalic.otf");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swup;
+}

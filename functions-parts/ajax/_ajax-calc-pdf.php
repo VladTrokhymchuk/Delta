@@ -258,7 +258,7 @@ function get_calc_pdf()
 
     $date = date('Y-m-d-H-i-s');
 
-    $stylesheet = file_get_contents('../wp-content/themes/stonelight/build/static/css/pages/page-calc-pdf-result.css');
+    $stylesheet = file_get_contents('../wp-content/themes/stonelight/build/css/pages/page-calc-pdf-result.min.css');
     
     header('Content-Type: application/pdf');
 

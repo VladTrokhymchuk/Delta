@@ -1,62 +1,50 @@
-"use strict";
+// Основной модуль
+import gulp from 'gulp';
+// Импорт путей
+import { path } from './gulp/config/path.js';
+// Импорт общих плагинов
+import { plugins } from './gulp/config/plugins.js';
 
-global.$ = {
-    path: {
-        task: require('./gulp/path/tasks.js')
-    },
-    gulp: require('gulp'),
-    browserSync: require('browser-sync').create(),
-    del: require('del')
+// Передаем значения в глобальную переменную
+global.app = {
+  isBuild: process.argv.includes('--build'),
+  isDev: !process.argv.includes('--build'),
+  path: path,
+  gulp: gulp,
+  plugins: plugins,
 };
 
-$.path.task.forEach(function (taskPath) {
-    require(taskPath)();
-});
+// Импорт задач
+import { copy } from './gulp/tasks/copy.js';
+import { fontsStyle, otfToTtf, ttfToWoff } from './gulp/tasks/fonts.js';
+import { html } from './gulp/tasks/html.js';
+import { images } from './gulp/tasks/images.js';
+import { js } from './gulp/tasks/js.js';
+import { reset } from './gulp/tasks/reset.js';
+import { scss, scssCompress } from './gulp/tasks/scss.js';
+import { server } from './gulp/tasks/server.js';
 
-$.gulp.task('dev', $.gulp.series(
-    // 'clean',
-    $.gulp.parallel(
-        // 'pug',
-        'fonts',
-        'styles:dev',
-        'img:dev',
-        'libsJS:dev',
-        'js:dev',
-        'js:webpack',
-        'svg',
-    )
-));
+// Наблюдатель за изменениями в файлах
+function watcher() {
+  gulp.watch(path.watch.fonts, copy);
+  gulp.watch(path.watch.html, html); //gulp.series(html)
+  gulp.watch(path.watch.scss, scss);
+  gulp.watch(path.watch.js, js);
+  gulp.watch(path.watch.images, images);
+}
 
-$.gulp.task('build', $.gulp.series(
-    // 'clean',
-    $.gulp.parallel(
-        // 'pug',
-        'fonts',
-        'styles:build',
-        'img:build',
-        'libsJS:build',
-        'js:build',
-        'svg'
-    )
-));
+// Последовательная обработака шрифтов
+const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle);
 
-$.gulp.task('build-min', $.gulp.series(
-    // 'clean',
-    $.gulp.parallel(
-        // 'pug',
-        'fonts',
-        'styles:build-min',
-        'img:build',
-        'libsJS:build',
-        'js:build-min',
-        'svg'
-    )
-));
+// Основные задачи
+const mainTasks = gulp.series(gulp.parallel(copy, html, scss, js, images));
 
-$.gulp.task('default', $.gulp.series(
-    'dev',
-    $.gulp.parallel(
-        'watch',
-        // 'serve'
-    )
-));
+// Построение сценариев выполнения задач
+const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
+const build = gulp.series(reset, mainTasks);
+
+// Экспорт сценариев
+export { build, dev, js, scssCompress };
+
+// Выполнение сценария по умолчанию
+gulp.task('default', dev);

@@ -1,0 +1,10 @@
+@import './core.scss';
+@import 'utils/variables/css-vars';
+@import "utils/fonts.scss";
+@import "general/reset";
+@import "modules/header/header";
+@import "modules/footer/footer";
+@import "modules/partials/general";
+@import "modules/buttons/buttons";
+@import "libs/basictable.scss";
+@import 'modules/popup';

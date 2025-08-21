@@ -1,0 +1,57 @@
+:root {
+  --accent-1: #d63638;
+  --accent-1-darker: #44AE71;
+  --accent-2: #FE733E;
+  --accent-2-darker: #d36033;
+  --dark-1: #153049;
+  --dark-2: #484F55;
+  --dark-3: #1A232B;
+  --dark-4: #24303A;
+  --light-1: #F7F7F7;
+  --white: #ffffff;
+  --black: #000000;
+  --fullmenu-bg: #1A232B;
+  --header-border: #384B5B;
+  --footer-bg: #0D1218;
+  --footer-text: #ffffff;
+  --table-text-head: #EBF3FF;
+  --text-primary: #1B2B38;
+  --text-secondary: #484F55;
+  --text-legal-subtitle: #768088;
+  --red: #FA0F00;
+  --red-hover: #AD0C26;
+  --bg: #760023;
+  --bg-bage: #EEEAE8;
+  --header-mob-height: 9.8rem;
+  --header-desk-width: 10.6rem;
+  --container-max-width: 136.6rem;
+  --container-side-padding: 1.2rem;
+  --container-side-margin: calc(50vw - 68.3rem);
+}
+@media only screen and (min-width: 768px) {
+  :root {
+    --container-side-padding: 3.5rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  :root {
+    --container-side-padding: 1.8rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  :root {
+    --container-side-padding: 3.4rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  :root {
+    --container-max-width: unset;
+    --container-side-padding: 8rem;
+  }
+}
+@media only screen and (min-width: 1900px) {
+  :root {
+    --container-max-width: 198rem;
+    --container-side-padding: 10.2rem;
+  }
+}

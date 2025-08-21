@@ -1,0 +1,306 @@
+@import '../../core.scss';
+
+.header {
+    &-section {
+        background: var(--bg);
+    }
+
+    position: fixed;
+    width: 100%;
+    z-index: 250;
+    transition: $hover-trans;
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        max-width: 10.8rem;
+        height: 5rem;
+        z-index: 10;
+
+        @include minw($lg-tab) {
+            width: 100%;
+            height: 7rem;
+        }
+
+        @include minw($xl) {
+            max-width: 13.2rem;
+        }
+
+        svg {
+            object-fit: cover;
+            width: auto;
+            height: 100%;
+
+            path {
+                transition: $hover-trans;
+
+                fill: var(--white)
+            }
+        }
+
+        &--open {
+            svg {
+                path {
+                    fill: var(--bg)
+                }
+            }
+        }
+
+        img {
+            max-width: 70%;
+
+            @include minw($lg-tab) {
+                max-width: 100%;
+            }
+
+            @include minw($xl) {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+
+    &__nav {
+        height: 7rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include minw($lg-tab) {
+            height: 10.4rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        @include minw($xl) {
+            height: 12rem;
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 8.1rem;
+            position: fixed;
+            height: 100vh;
+            width: 100vw;
+            left: 100vw;
+            top: 0;
+            transition: $hover-trans;
+            background-color: var(--bg-bage);
+            z-index: 5;
+
+            @include minw($lg-tab) {
+                position: unset;
+                flex-direction: row;
+                justify-content: center;
+                height: unset;
+                width: 100%;
+                background-color: transparent;
+                padding-top: 0;
+            }
+
+            .menu {
+                margin-top: 3rem;
+
+                @include minw($lg-tab) {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    flex-grow: 1;
+                    display: flex;
+                    justify-content: flex-end;
+                }
+
+                ul {
+                    text-align: center;
+
+                    @include minw($lg-tab) {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        // gap: 3.6rem;
+                        width: 100%;
+                    }
+
+                    @include minw($pc) {
+                        justify-content: flex-end;
+                    }
+
+                    // @include minw($xl) {
+                    //     gap: 6.6rem;
+                    // }
+
+                    li {
+                        margin-bottom: 3rem;
+                        transition: $hover-trans;
+
+                        &:last-of-type {
+                            margin-bottom: 0;
+                            background: var(--bg);
+                            border: solid 0.1rem var(--bg);
+                            padding: 1.6rem 2.4rem;
+
+                            padding: 0;
+                            display: flex;
+                            justify-content: center;
+
+                            @include minw($lg-tab) {
+                                flex-grow: 1;
+                                margin-right: 0;
+                                border: solid 0.1rem var(--white);
+                                background: transparent;
+                                max-width: 20rem;
+                            }
+
+                            @include minw($pc) {
+                                margin-left: 10%;
+                            }
+
+                            @include minw($lg-xl) {
+                                margin-left: 15%;
+                            }
+
+                            @include minw($xl) {
+                                margin-left: 5%;
+                                max-width: 28rem;
+                            }
+
+                            a {
+                                color: var(--white);
+                                padding: 2rem 5.5rem;
+                                // color: red;
+
+                                @include minw($xl) {
+                                    padding: 2rem 8.5rem;
+                                }
+                            }
+
+                            &:hover {
+                                background: transparent;
+
+                                @include minw($lg-tab) {
+                                    background: var(--white);
+                                }
+
+                                a {
+                                    color: var(--bg);
+
+                                    @include minw($lg-tab) {
+                                        border-bottom: none;
+                                    }
+                                }
+                            }
+                        }
+
+                        @include minw($lg-tab) {
+                            margin-bottom: 0;
+                            margin-right: 0;
+                        }
+
+                        a {
+                            // font-family: $sentient-regular;
+                            font-size: 2.8rem;
+                            line-height: 3.2rem;
+                            color: var(--dark-1);
+                            transition: $hover-trans;
+
+                            @include minw($lg-tab) {
+                                font-size: 1.6rem;
+                                line-height: 150%;
+                                color: var(--white);
+                                padding: 4.2rem 2rem;
+                            }
+
+                            @include minw($xl) {
+                                font-size: 2rem;
+                                line-height: 160%;
+                                 padding: 4.2rem 4rem;
+                            }
+
+                            &:hover {
+                                transition: $hover-trans;
+                                color: var(--red-hover);
+
+                                @include minw($lg-tab) {
+                                    color: var(--table-text-head);
+                                    border-bottom: solid;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .navbar.open {
+            left: 0;
+        }
+
+        #hamburger-button {
+            position: relative;
+            z-index: 999;
+            width: 3.2rem;
+            margin: 0 auto;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            >span {
+                display: block;
+                height: 0.2rem;
+                width: 3.2rem;
+                margin-bottom: 0.7rem;
+                background-color: var(--white);
+                transition: $hover-trans;
+            }
+
+            span {
+                &:nth-child(2) {
+                    opacity: 0.6;
+                }
+
+                &:last-child {
+                    opacity: 0.3;
+                }
+            }
+        }
+
+        #hamburger-button.open {
+
+            >span {
+                background-color: var(--bg);
+
+                &:first-child {
+                    transform: translateY(1rem) rotate(45deg);
+                }
+
+                &:nth-child(2) {
+                    transform: translateY(0) rotate(-45deg);
+                    opacity: 1;
+                }
+
+                &:last-child {
+                    transform: translateY(-0.9rem) rotate(-45deg);
+                    height: 0;
+                    opacity: 0;
+                }
+            }
+        }
+
+        .hamburger__box {
+            z-index: 10;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            width: 3.6rem;
+            height: 3.6rem;
+            padding-top: 0.8rem;
+
+            @include minw($lg-tab) {
+                display: none;
+            }
+        }
+    }
+}

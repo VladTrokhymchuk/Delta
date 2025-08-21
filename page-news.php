@@ -1,7 +1,7 @@
 <?php // Template name: News page
     get_header('second'); 
 
-    wp_enqueue_style('page-news', get_template_directory_uri() . '/build/static/css/pages/page-news/page-news.css');
+    wp_enqueue_style('page-news', get_template_directory_uri() . '/build/css/pages/page-news/page-news.min.css');
 
 ?>
 

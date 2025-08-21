@@ -1,0 +1,280 @@
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 250;
+  transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+}
+.header-section {
+  background: var(--bg);
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+  max-width: 10.8rem;
+  height: 5rem;
+  z-index: 10;
+}
+@media only screen and (min-width: 1024px) {
+  .header__logo {
+    width: 100%;
+    height: 7rem;
+  }
+}
+@media only screen and (min-width: 1900px) {
+  .header__logo {
+    max-width: 13.2rem;
+  }
+}
+.header__logo svg {
+  object-fit: cover;
+  width: auto;
+  height: 100%;
+}
+.header__logo svg path {
+  transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  fill: var(--white);
+}
+.header__logo--open svg path {
+  fill: var(--bg);
+}
+.header__logo img {
+  max-width: 70%;
+}
+@media only screen and (min-width: 1024px) {
+  .header__logo img {
+    max-width: 100%;
+  }
+}
+@media only screen and (min-width: 1900px) {
+  .header__logo img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+.header__nav {
+  height: 7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media only screen and (min-width: 1024px) {
+  .header__nav {
+    height: 10.4rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 1900px) {
+  .header__nav {
+    height: 12rem;
+  }
+}
+.header__nav .navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8.1rem;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  left: 100vw;
+  top: 0;
+  transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  background-color: var(--bg-bage);
+  z-index: 5;
+}
+@media only screen and (min-width: 1024px) {
+  .header__nav .navbar {
+    position: unset;
+    flex-direction: row;
+    justify-content: center;
+    height: unset;
+    width: 100%;
+    background-color: transparent;
+    padding-top: 0;
+  }
+}
+.header__nav .navbar .menu {
+  margin-top: 3rem;
+}
+@media only screen and (min-width: 1024px) {
+  .header__nav .navbar .menu {
+    margin-top: 0;
+    margin-bottom: 0;
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+.header__nav .navbar .menu ul {
+  text-align: center;
+}
+@media only screen and (min-width: 1024px) {
+  .header__nav .navbar .menu ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .header__nav .navbar .menu ul {
+    justify-content: flex-end;
+  }
+}
+.header__nav .navbar .menu ul li {
+  margin-bottom: 3rem;
+  transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+}
+.header__nav .navbar .menu ul li:last-of-type {
+  margin-bottom: 0;
+  background: var(--bg);
+  border: solid 0.1rem var(--bg);
+  padding: 1.6rem 2.4rem;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+@media only screen and (min-width: 1024px) {
+  .header__nav .navbar .menu ul li:last-of-type {
+    flex-grow: 1;
+    margin-right: 0;
+    border: solid 0.1rem var(--white);
+    background: transparent;
+    max-width: 20rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .header__nav .navbar .menu ul li:last-of-type {
+    margin-left: 10%;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .header__nav .navbar .menu ul li:last-of-type {
+    margin-left: 15%;
+  }
+}
+@media only screen and (min-width: 1900px) {
+  .header__nav .navbar .menu ul li:last-of-type {
+    margin-left: 5%;
+    max-width: 28rem;
+  }
+}
+.header__nav .navbar .menu ul li:last-of-type a {
+  color: var(--white);
+  padding: 2rem 5.5rem;
+}
+@media only screen and (min-width: 1900px) {
+  .header__nav .navbar .menu ul li:last-of-type a {
+    padding: 2rem 8.5rem;
+  }
+}
+.header__nav .navbar .menu ul li:last-of-type:hover {
+  background: transparent;
+}
+@media only screen and (min-width: 1024px) {
+  .header__nav .navbar .menu ul li:last-of-type:hover {
+    background: var(--white);
+  }
+}
+.header__nav .navbar .menu ul li:last-of-type:hover a {
+  color: var(--bg);
+}
+@media only screen and (min-width: 1024px) {
+  .header__nav .navbar .menu ul li:last-of-type:hover a {
+    border-bottom: none;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .header__nav .navbar .menu ul li {
+    margin-bottom: 0;
+    margin-right: 0;
+  }
+}
+.header__nav .navbar .menu ul li a {
+  font-size: 2.8rem;
+  line-height: 3.2rem;
+  color: var(--dark-1);
+  transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+}
+@media only screen and (min-width: 1024px) {
+  .header__nav .navbar .menu ul li a {
+    font-size: 1.6rem;
+    line-height: 150%;
+    color: var(--white);
+    padding: 4.2rem 2rem;
+  }
+}
+@media only screen and (min-width: 1900px) {
+  .header__nav .navbar .menu ul li a {
+    font-size: 2rem;
+    line-height: 160%;
+    padding: 4.2rem 4rem;
+  }
+}
+.header__nav .navbar .menu ul li a:hover {
+  transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+  color: var(--red-hover);
+}
+@media only screen and (min-width: 1024px) {
+  .header__nav .navbar .menu ul li a:hover {
+    color: var(--table-text-head);
+    border-bottom: solid;
+  }
+}
+.header__nav .navbar.open {
+  left: 0;
+}
+.header__nav #hamburger-button {
+  position: relative;
+  z-index: 999;
+  width: 3.2rem;
+  margin: 0 auto;
+}
+.header__nav #hamburger-button:hover {
+  cursor: pointer;
+}
+.header__nav #hamburger-button > span {
+  display: block;
+  height: 0.2rem;
+  width: 3.2rem;
+  margin-bottom: 0.7rem;
+  background-color: var(--white);
+  transition: 0.35s cubic-bezier(0.76, 0, 0.24, 1) 0s;
+}
+.header__nav #hamburger-button span:nth-child(2) {
+  opacity: 0.6;
+}
+.header__nav #hamburger-button span:last-child {
+  opacity: 0.3;
+}
+.header__nav #hamburger-button.open > span {
+  background-color: var(--bg);
+}
+.header__nav #hamburger-button.open > span:first-child {
+  transform: translateY(1rem) rotate(45deg);
+}
+.header__nav #hamburger-button.open > span:nth-child(2) {
+  transform: translateY(0) rotate(-45deg);
+  opacity: 1;
+}
+.header__nav #hamburger-button.open > span:last-child {
+  transform: translateY(-0.9rem) rotate(-45deg);
+  height: 0;
+  opacity: 0;
+}
+.header__nav .hamburger__box {
+  z-index: 10;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  padding-top: 0.8rem;
+}
+@media only screen and (min-width: 1024px) {
+  .header__nav .hamburger__box {
+    display: none;
+  }
+}

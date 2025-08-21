@@ -1,11 +1,11 @@
 <?php
      get_header('second'); 
 
-    wp_enqueue_style('swiper', get_template_directory_uri() . '/build/static/css/libs/swiper-bundle.css');
-    wp_enqueue_style('single-news', get_template_directory_uri() . '/build/static/css/pages/single-news/single-news.css');
+    wp_enqueue_style('swiper', get_template_directory_uri() . '/build/css/libs/swiper-bundle.min.css');
+    wp_enqueue_style('single-news', get_template_directory_uri() . '/build/css/pages/single-news/single-news.min.css');
 
-    wp_enqueue_script('swiper-js', get_stylesheet_directory_uri() . '/build/static/js/libs/swiper-bundle.min.js',  array('jquery'), '1.0', true);
-    wp_enqueue_script('single-news-js', get_template_directory_uri() . '/build/static/js/pages/single-news/single-news.js',  array('jquery'), '1.0', true);
+    wp_enqueue_script('swiper-js', get_stylesheet_directory_uri() . '/build/js/libs/swiper-bundle.min.js',  array('jquery'), '1.0', true);
+    wp_enqueue_script('single-news-js', get_template_directory_uri() . '/build/js/pages/single-news/single-news.js',  array('jquery'), '1.0', true);
 
 ?>
 
