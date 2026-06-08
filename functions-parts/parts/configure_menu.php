@@ -1,4 +1,5 @@
 <?php
+defined('ABSPATH') || exit;
 # 3. Удаление пунктов меню
 function remove_menus(){
 	// remove_menu_page('index.php');                  //Консоль

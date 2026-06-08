@@ -1,4 +1,5 @@
 <?php
+defined('ABSPATH') || exit;
 # 8. Безопасность
 	# 8.1 Полное Удаление версии WP
 	add_filter('the_generator', '__return_empty_string'); // из фидов и URL

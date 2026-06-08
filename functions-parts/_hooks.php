@@ -1,4 +1,5 @@
-<?php 
+<?php
+defined('ABSPATH') || exit;
 function hide_show_adminpanel()
 {
 
@@ -48,21 +49,6 @@ add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
 function wpcf7_autop_return_false() {
     return false;
 }
-
-
-
-
-
-function my_acf_google_map_api( $api ){
-
-  $api['key'] = 'AIzaSyDUWsFsO6reAfRrNXBo0tt9BdcnA_FceA4';
-
-  return $api;
-
-}
-
-add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
-
 
 
 // add_filter ('acf_the_content', 'img_p_class_content_filter', 20);

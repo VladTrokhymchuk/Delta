@@ -6,8 +6,8 @@
             <div class="bg-grid">
                 <div class="cases-header__top__info">
                     <div class="h-box">
-                        <h1 class="cases-header__title"><?php echo get_field('head_title'); ?></h1>
-                        <h2 class="cases-header__subtitle"><?php echo get_field('head_subtitle'); ?></h2>
+                        <h1 class="cases-header__title"><?php echo esc_html(get_field('head_title')); ?></h1>
+                        <h2 class="cases-header__subtitle"><?php echo esc_html(get_field('head_subtitle')); ?></h2>
                     </div>
                 </div>
             </div>
@@ -31,14 +31,14 @@
 
         <div class="cases-header__bott">
             <div class="cases-header__bott__info">
-                <span class="cases-header__bott__title"><?php echo get_field('head_title_for_description'); ?></span>
-                <p class="cases-header__bott__desc"><?php echo get_field('head_description'); ?></p>
+                <span class="cases-header__bott__title"><?php echo esc_html(get_field('head_title_for_description')); ?></span>
+                <p class="cases-header__bott__desc"><?php echo esc_html(get_field('head_description')); ?></p>
             </div>
 
             <div class="cases-header__bott__items">
-                <span class="cases-header__bott__title"><?php echo get_field('head_title_for_items'); ?></span>
+                <span class="cases-header__bott__title"><?php echo esc_html(get_field('head_title_for_items')); ?></span>
                 <?php if( get_field('head_description_item') ): ?>
-                <p class="cases-header__bott__desc"><?php echo get_field('head_description_item'); ?></p>
+                <p class="cases-header__bott__desc"><?php echo esc_html(get_field('head_description_item')); ?></p>
                 <?php endif; ?>
 
                 <ul>
@@ -51,11 +51,11 @@
                                     echo $svg_markup;
                                 ?>
                             </div>
-                            <span><?php the_sub_field('numb_r'); ?></span>
+                            <span><?php echo esc_html(get_sub_field('numb_r')); ?></span>
                         </div>
 
                         <div class="item-bott">
-                            <p><?php the_sub_field('desc_r'); ?></p>
+                            <p><?php echo wp_kses_post(get_sub_field('desc_r')); ?></p>
                         </div>
                     </li>
                     <?php endwhile; endif; ?>

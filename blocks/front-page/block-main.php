@@ -1,8 +1,8 @@
 <section class="front-head-section">
     <div class="container">
         <div class="front-head__info">
-            <h1><?php the_field('title'); ?></h1>
-            <p><?php the_field('subtitle'); ?></p>
+            <h1><?php echo esc_html(get_field('title')); ?></h1>
+            <p><?php echo esc_html(get_field('subtitle')); ?></p>
         </div>
         <div class="front-head__swip">
             <div class="front-head__numb">
@@ -44,16 +44,16 @@
     </div>
 </section>
 
-<section id="<?php the_field('id_hotel'); ?>" class="front-about-section">
+<section id="<?php echo esc_html(get_field('id_hotel')); ?>" class="front-about-section">
     <div class="container">
         <div class="front-about">
-            <h3><?php the_field('about_title'); ?></h3>
-            <p><?php the_field('about_desc'); ?></p>
+            <h3><?php echo esc_html(get_field('about_title')); ?></h3>
+            <p><?php echo esc_html(get_field('about_desc')); ?></p>
         </div>
     </div>
 </section>
 
-<section id="<?php the_field('id_room'); ?>" class="front-parallax-section">
+<section id="<?php echo esc_html(get_field('id_room')); ?>" class="front-parallax-section">
     <div class="front-parallax">
         <?php $img_room = get_field('img_room');?>
         <div class="front-parallax__bg">
@@ -62,8 +62,8 @@
         </div>
         <div class="content front-parallax__cont">
             <div class="front-parallax__cont__info">
-                <h1><?php the_field('title_room'); ?></h1>
-                <p><?php the_field('desc_room'); ?></p>
+                <h1><?php echo esc_html(get_field('title_room')); ?></h1>
+                <p><?php echo esc_html(get_field('desc_room')); ?></p>
             </div>
             <?php if( get_field('link_room') ): $link_room = get_field('link_room');?>
             <a class="btn btn--accent-1" href='<?=esc_url( $link_room['url'] ); ?>'><span
@@ -73,10 +73,10 @@
     </div>
 </section>
 
-<section id="<?php the_field('id_info'); ?>" class="front-informations-section">
+<section id="<?php echo esc_html(get_field('id_info')); ?>" class="front-informations-section">
     <div class="container">
         <div class="front-informations">
-            <h3><?php the_field('info_title'); ?></h3>
+            <h3><?php echo esc_html(get_field('info_title')); ?></h3>
             <div class="front-informations__inform">
                 <?php if( have_rows('info_rep') ): while( have_rows('info_rep') ): the_row(); ?>
                 <div class="front-informations__inform__item">
@@ -84,8 +84,8 @@
                         <?php $icon_inform = get_sub_field('icon_inform');?>
                         <img src='<?=esc_url( $icon_inform['url'] ); ?>' alt='<?=esc_attr($icon_inform['alt']); ?>'>
                     </div>
-                    <h4><?php the_sub_field('item_title'); ?></h4>
-                    <p><?php the_sub_field('item_desc'); ?></p>
+                    <h4><?php echo esc_html(get_sub_field('item_title')); ?></h4>
+                    <p><?php echo wp_kses_post(get_sub_field('item_desc')); ?></p>
                 </div>
                 <?php endwhile; endif; ?>
             </div>
@@ -93,20 +93,20 @@
     </div>
 </section>
 
-<section id="<?php the_field('id_mapa'); ?>" class="front-location-section">
+<section id="<?php echo esc_html(get_field('id_mapa')); ?>" class="front-location-section">
     <div class="front-location">
         <div class="front-location__mapa">
             <?php $main_iframe = get_field('main_iframe_mapa'); ?>
             <?php echo $main_iframe; ?>
         </div>
         <div class="front-location__address">
-            <h3 class="front-location__title"><?php the_field('str_title'); ?></h3>
+            <h3 class="front-location__title"><?php echo esc_html(get_field('str_title')); ?></h3>
 
             <div class="front-location__wrap">
                 <?php if( have_rows('address_item') ): while( have_rows('address_item') ): the_row(); ?>
                 <div class="front-location__wrap__item">
-                    <h4><?php the_sub_field('title_r'); ?></h4>
-                    <p><?php the_sub_field('desc_r'); ?></p>
+                    <h4><?php echo esc_html(get_sub_field('title_r')); ?></h4>
+                    <p><?php echo wp_kses_post(get_sub_field('desc_r')); ?></p>
                 </div>
                 <?php endwhile; endif; ?>
             </div>

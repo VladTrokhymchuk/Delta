@@ -8,7 +8,7 @@
 <section class="pravila-section">
     <div class="container">
         <div class="pravila">
-            <?php the_field('kontent'); ?>
+            <?php echo wp_kses_post(get_field('kontent')); ?>
         </div>
     </div>
 </section>

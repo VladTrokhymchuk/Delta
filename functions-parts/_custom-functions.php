@@ -1,4 +1,5 @@
 <?php
+defined('ABSPATH') || exit;
 function print_svg_ic($icon_id) {
   ?>
     <svg>

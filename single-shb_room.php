@@ -46,12 +46,12 @@
 
                 </div>
                 <div class="room__info__price">
-                    <span><?php the_field('price'); ?></span>
+                    <span><?php echo esc_html(get_field('price')); ?></span>
                 </div>
 
                 <div class="room__desc">
-                    <h5><?php the_field('opis_nomeru_zagolovok'); ?></h5>
-                    <p><?php the_field('opis_nomeru'); ?></p>
+                    <h5><?php echo esc_html(get_field('opis_nomeru_zagolovok')); ?></h5>
+                    <p><?php echo wp_kses_post(get_field('opis_nomeru')); ?></p>
                 </div>
             </div>
             <div class="room__sidebar">
@@ -87,7 +87,7 @@
                                     ?>
                                 </div>
                                 <?php endif; ?>
-                                <span><?php the_sub_field('d_f_item'); ?></span>
+                                <span><?php echo esc_html(get_sub_field('d_f_item')); ?></span>
                             </li>
                             <?php endwhile; endif; ?>
                         </ul>
@@ -98,7 +98,7 @@
 
                         <ul class="">
                             <?php if( have_rows('short_character') ): while( have_rows('short_character') ): the_row(); ?>
-                            <li><span> <?php the_sub_field('s_h_item'); ?></span></li>
+                            <li><span> <?php echo esc_html(get_sub_field('s_h_item')); ?></span></li>
                             <?php endwhile; endif; ?>
                         </ul>
                     </div>

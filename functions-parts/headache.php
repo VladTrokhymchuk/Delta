@@ -19,6 +19,8 @@
 
 namespace Headache;
 
+defined('ABSPATH') || exit;
+
 // Redirects all feeds to home page.
 function disable_feeds(): void
 {

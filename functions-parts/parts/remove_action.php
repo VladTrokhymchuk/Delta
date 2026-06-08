@@ -1,4 +1,5 @@
 <?php
+defined('ABSPATH') || exit;
 remove_action('wp_head', 'start_post_rel_link', 10, 0);
 remove_action('wp_head', 'index_rel_link');
 

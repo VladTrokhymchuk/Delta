@@ -1,4 +1,5 @@
 <?php
+defined('ABSPATH') || exit;
 # 5.4 Регистрация нового размера изображений
 add_image_size( 'full_hd', 1920, 1080 );
 

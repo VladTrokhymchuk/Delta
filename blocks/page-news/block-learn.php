@@ -21,15 +21,15 @@
         <div class="cases-learn__inform">
             <div class="bg-grid">
                 <div class="cases-learn__inform__desc">
-                    <span class="fontn"><?php the_field('l_desc') ?></span>
-                    <span class="fontn fontn-italic"><?php the_field('l_desc_italic') ?></span>
+                    <span class="fontn"><?php echo esc_html(get_field('l_desc')) ?></span>
+                    <span class="fontn fontn-italic"><?php echo esc_html(get_field('l_desc_italic')) ?></span>
                 </div>
                 <div class="cases-learn__inform__items">
                     <?php if( have_rows('inform_rep') ): while( have_rows('inform_rep') ): the_row(); ?>
                     <div class="cases-learn__inform__items__list">
                         <?php $list_img = get_sub_field('list_img');?>
                         <img src='<?=esc_url( $list_img['url'] ); ?>' alt='<?=esc_attr($list_img['alt']); ?>'>
-                        <p> <?php the_sub_field('list_desc'); ?></p>
+                        <p> <?php echo esc_html(get_sub_field('list_desc')); ?></p>
                     </div>
                     <?php endwhile; endif; ?>
                 </div>
@@ -38,11 +38,11 @@
 
         <div class="cases-learn__more">
             <div class="cases-learn__more__title">
-                <span><?php the_field('m_title') ?></span>
-                <span class="animated-gradient-title"><?php the_field('m_title_grad') ?></span>
+                <span><?php echo esc_html(get_field('m_title')) ?></span>
+                <span class="animated-gradient-title"><?php echo esc_html(get_field('m_title_grad')) ?></span>
             </div>
             <div class="cases-learn__more__subtitle">
-                <span><?php the_field('m_subtitle') ?></span>
+                <span><?php echo esc_html(get_field('m_subtitle')) ?></span>
             </div>
             <div class="cases-learn__serv">
                 <ul id="hoveredElement">
@@ -52,8 +52,8 @@
                         <a href='<?=esc_url( $serv_link['url'] ); ?>' class="box">
                             <?php $serv_icon = get_sub_field('serv_icon');?>
                             <img src=' <?=esc_url( $serv_icon['url'] ); ?>' alt='<?=esc_attr($serv_icon['alt']); ?>'>
-                            <span><?php the_sub_field('serv_title'); ?></span>
-                            <p><?php the_sub_field('serv_desc'); ?></p>
+                            <span><?php echo esc_html(get_sub_field('serv_title')); ?></span>
+                            <p><?php echo esc_html(get_sub_field('serv_desc')); ?></p>
                         </a>
                         <a href='<?=esc_url( $serv_link['url'] ); ?>'
                             class="btn btn--accent-1 btn-primary custom-btn-style">

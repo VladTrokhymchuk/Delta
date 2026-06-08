@@ -1,4 +1,5 @@
 <?php
+defined('ABSPATH') || exit;
 /**
  * Filter URL entry before it gets added to the sitemap.
  *

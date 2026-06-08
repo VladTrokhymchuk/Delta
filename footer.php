@@ -14,15 +14,15 @@
 
             <div class="footer__sidebar">
                 <div class="footer__sidebar__address footer__sidebar--items">
-                    <span class="footer__sidebar__title"><?php the_field('adr_title', 'options'); ?></span>
+                    <span class="footer__sidebar__title"><?php echo esc_html(get_field('adr_title', 'options')); ?></span>
                     <div class="footer__sidebar__box">
-                        <span class="name"><?php the_field('foot_delta', 'options'); ?></span>
-                        <span><?php the_field('foot_strit', 'options'); ?></span>
+                        <span class="name"><?php echo esc_html(get_field('foot_delta', 'options')); ?></span>
+                        <span><?php echo esc_html(get_field('foot_strit', 'options')); ?></span>
                     </div>
                 </div>
 
                 <div class="footer__sidebar__numb footer__sidebar--items">
-                    <span class="footer__sidebar__title"><?php the_field('contact_title', 'options'); ?></span>
+                    <span class="footer__sidebar__title"><?php echo esc_html(get_field('contact_title', 'options')); ?></span>
                     <ul class="footer__sidebar__box">
                         <?php if( have_rows('phone_rep', 'options') ): while( have_rows('phone_rep', 'options') ): the_row(); ?>
                         <?php $phone = get_sub_field('phone');?>
@@ -43,7 +43,7 @@
 
             <div class="footer__bott">
                 <div class="copyright">
-                    <p><?php the_field('copyright', 'options'); ?>
+                    <p><?php echo esc_html(get_field('copyright', 'options')); ?>
                         <?php if( get_field('vlad', 'options') ): $vlad = get_field('vlad', 'options');?>
                         <a href='<?=esc_url( $vlad['url'] ); ?>'> <?=esc_html( $vlad['title'] ); ?> </a>
                         <?php endif; ?>

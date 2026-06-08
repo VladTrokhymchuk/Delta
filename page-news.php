@@ -39,7 +39,7 @@
 
                     <ul class="room-list__desc__short">
                         <?php if( have_rows('short_character') ): while( have_rows('short_character') ): the_row(); ?>
-                        <li><span> <?php the_sub_field('s_h_item'); ?></span></li>
+                        <li><span> <?php echo esc_html(get_sub_field('s_h_item')); ?></span></li>
                         <?php endwhile; endif; ?>
                     </ul>
 
@@ -54,7 +54,7 @@
                                     ?>
                                 </div>
                                 <?php endif; ?>
-                                <span><?php the_sub_field('d_f_item'); ?></span>
+                                <span><?php echo esc_html(get_sub_field('d_f_item')); ?></span>
                             </li>
                             <?php endwhile; endif; ?>
                         </ul>
@@ -63,8 +63,8 @@
 
                 <div class="room-list__price">
                     <div class="room-list__price__inner">
-                        <h3><?php the_field('price'); ?></h3>
-                        <div class="btn btn--more"> <span class="btn__prime"><?php the_field('btn_p_room', 'options'); ?></span></div>
+                        <h3><?php echo esc_html(get_field('price')); ?></h3>
+                        <div class="btn btn--more"> <span class="btn__prime"><?php echo esc_html(get_field('btn_p_room', 'options')); ?></span></div>
                     </div>
                 </div>
 
