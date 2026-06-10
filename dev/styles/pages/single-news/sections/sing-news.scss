@@ -1,46 +1,84 @@
 @import '../../../core';
 
+// --- Локальні токени картки для цілісного вигляду блоку ---
+$card-radius: 1.6rem;
+$card-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.06);
+$card-border: 0.1rem solid #efece9;
+$hairline: 0.1rem solid #efece9;
+
+// Спільний "eyebrow" — маленький бордовий підзаголовок з акцентною рискою
+@mixin eyebrow {
+    position: relative;
+    display: inline-block;
+    color: var(--bg);
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    margin-bottom: 1.6rem;
+    padding-bottom: 1rem;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 3.5rem;
+        height: 0.2rem;
+        background: var(--bg);
+    }
+}
+
 .room {
     &-section {
-        background-color: #f5f5f5;
+        background-color: #f4f1ee;
         padding-top: 5rem;
         padding-bottom: 5rem;
 
         @include minw($lg-tab) {
-            padding-top: 10rem;
-            padding-bottom: 10rem;
+            padding-top: 8rem;
+            padding-bottom: 8rem;
         }
     }
 
     &__wrap {
         @include minw($lg-tab) {
             display: grid;
-            justify-content: center;
-            grid-template-columns: 68% 1fr;
-            gap: 3rem;
+            align-items: start;
+            grid-template-columns: minmax(0, 1fr) 40rem;
+            gap: 4rem;
+        }
+
+        @include minw($xl) {
+            grid-template-columns: minmax(0, 1fr) 46rem;
+            gap: 5rem;
         }
     }
 
     &__info {
         position: relative;
+        min-width: 0;
 
         &__price {
-            display: flex;
+            display: inline-flex;
+            align-items: center;
             position: absolute;
-            top: 3rem;
-            left: 1rem;
+            top: 2rem;
+            left: 2rem;
             z-index: 4;
-            min-width: 20rem;
-            padding: 1rem 3rem;
-            background-color: #760023b3;
+            padding: 1rem 2.4rem;
+            border-radius: 100rem;
+            background-color: var(--bg);
+            box-shadow: 0 0.6rem 1.6rem rgba(118, 0, 35, 0.35);
 
             span {
                 font-size: 1.8rem;
-                font-weight: 900;
+                font-weight: 800;
+                letter-spacing: 0.02em;
                 color: var(--white);
 
                 @include minw($sm-tab) {
-                    font-size: 3rem;
+                    font-size: 2.2rem;
                 }
             }
         }
@@ -51,58 +89,66 @@
 
             .swiper-button-next,
             .swiper-button-prev {
-                width: 5rem;
-                height: 5rem;
+                width: 4.8rem;
+                height: 4.8rem;
+                margin-top: 0;
+                top: 50%;
+                bottom: auto;
+                left: auto;
+                transform: translateY(-50%);
+                border-radius: 50%;
                 background: var(--white);
-                top: unset;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(calc(-50% + 2.55rem));
-
-                &::after {
-                    width: 0.1rem;
-                    height: 1.5rem;
-                    background: var(--bg);
-                    position: absolute;
-                    top: 50%;
-                    transform: translate(-50%, -25%) rotate(45deg);
-                    left: 50%;
-                }
+                box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.18);
+                transition: $hover-trans;
+                z-index: 5;
 
                 &::before {
+                    content: none;
+                    display: none;
+                }
+
+                &::after {
                     content: '';
-                    width: 0.1rem;
-                    height: 1.5rem;
+                    width: 1.1rem;
+                    height: 1.1rem;
+                    border-top: 0.2rem solid var(--bg);
+                    border-right: 0.2rem solid var(--bg);
+                    transition: $hover-trans;
+                }
+
+                &:hover {
                     background: var(--bg);
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-95%) rotate(-45deg);
+
+                    &::after {
+                        border-color: var(--white);
+                    }
+                }
+            }
+
+            .swiper-button-next {
+                right: 1.5rem;
+
+                &::after {
+                    transform: translateX(-0.2rem) rotate(45deg);
                 }
             }
 
             .swiper-button-prev {
-                transform: translateX(calc(-50% - 2.55rem));
+                left: 1.5rem;
 
                 &::after {
-                    top: 50%;
-                    transform: translate(-50%, -25%) rotate(-45deg);
-                    left: 50%;
-                }
-
-                &::before {
-                    content: '';
-                    top: 50%;
-                    transform: translateY(-95%) rotate(45deg);
+                    transform: translateX(0.2rem) rotate(-135deg);
                 }
             }
         }
 
         .mySwiper2 {
-            border: 1rem solid #fff;
+            border-radius: $card-radius;
+            overflow: hidden;
+            box-shadow: $card-shadow;
 
             .swiper-slide {
-                height: 25rem;
-
+                height: 28rem;
 
                 @include minw($sm-tab) {
                     height: 52rem;
@@ -119,15 +165,19 @@
 
         .mySwiperP {
             display: none;
-            margin-top: 4rem;
+            margin-top: 1.6rem;
 
             .swiper-slide {
+                cursor: pointer;
+
                 .room-thmb {
-                    border: 1rem solid #fff;
+                    position: relative;
                     height: 25rem;
+                    border-radius: 1rem;
+                    overflow: hidden;
 
                     @include minw($lg-tab) {
-                        height: 15rem;
+                        height: 12rem;
                     }
 
                     picture,
@@ -135,7 +185,27 @@
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
+                        transition: $hover-trans;
                     }
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        inset: 0;
+                        border: 0.2rem solid transparent;
+                        border-radius: inherit;
+                        background: rgba(255, 255, 255, 0.5);
+                        transition: $hover-trans;
+                    }
+                }
+
+                &:hover .room-thmb::after {
+                    background: rgba(255, 255, 255, 0.15);
+                }
+
+                &.swiper-slide-thumb-active .room-thmb::after {
+                    background: transparent;
+                    border-color: var(--bg);
                 }
             }
 
@@ -146,36 +216,19 @@
     }
 
     &__desc {
-        margin-top: 4rem;
+        margin-top: 3rem;
         padding: 2.5rem;
         background: var(--white);
-        border-radius: 1.2rem;
-        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.06);
+        border: $card-border;
+        border-radius: $card-radius;
+        box-shadow: $card-shadow;
 
         @include minw($sm-tab) {
             padding: 3rem 3.5rem;
         }
 
         h5 {
-            position: relative;
-            display: inline-block;
-            color: var(--bg);
-            font-size: 1.2rem;
-            font-weight: 900;
-            letter-spacing: 0.2rem;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-
-            &::after {
-                content: '';
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                width: 4rem;
-                height: 0.2rem;
-                background: var(--bg);
-            }
+            @include eyebrow;
         }
 
         p {
@@ -223,41 +276,58 @@
     }
 
     &__sidebar {
-        margin-top: 4rem;
+        margin-top: 3rem;
 
         @include minw($lg-tab) {
             margin-top: 0;
         }
 
         &__form {
-            padding: 2rem;
+            padding: 3rem 2.5rem;
             background: var(--white);
-            -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
-            box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+            border: $card-border;
+            border-radius: $card-radius;
+            box-shadow: $card-shadow;
+
+            @include minw($xl) {
+                padding: 4rem 3.5rem;
+            }
 
             &__info {
                 margin-bottom: 3rem;
 
                 h4 {
-                    font-size: 1.2rem;
-                    font-weight: 900;
-                    letter-spacing: 0.2rem;
-                    text-transform: uppercase;
-                    color: var(--bg);
-                    margin-bottom: 1rem;
+                    @include eyebrow;
                 }
 
                 span {
-                    font-size: 2.8rem;
-                    color: var(--dark-4);
+                    display: block;
+                    font-size: 2.6rem;
+                    line-height: 1.25;
+                    color: var(--text-primary);
+
+                    @include minw($xl) {
+                        font-size: 3rem;
+                    }
                 }
             }
 
             .form {
                 &__item {
                     input {
-                        border-bottom: 1px solid var(--dark-4);
-                        color: var(--dark-4);
+                        border-bottom: 0.1rem solid #d9d2cc;
+                        color: var(--text-primary);
+                        font-size: 1.6rem;
+                        padding-bottom: 0.8rem;
+                        transition: $hover-trans;
+
+                        &::placeholder {
+                            color: #a79e98;
+                        }
+
+                        &:focus {
+                            border-color: var(--bg);
+                        }
                     }
                 }
 
@@ -266,9 +336,17 @@
 
                     .bttn {
                         width: 100%;
+                        height: 5.6rem;
                         line-height: 100%;
                         font-weight: 600;
-                        letter-spacing: 0.03em;
+                        letter-spacing: 0.05em;
+                        border-radius: 1rem;
+                        transition: $hover-trans;
+
+                        &:hover {
+                            transform: translateY(-0.2rem);
+                            box-shadow: 0 1rem 2.4rem rgba(118, 0, 35, 0.3);
+                        }
                     }
 
                     .btn {
@@ -283,34 +361,43 @@
         }
 
         &__features {
-            margin-top: 4rem;
-            padding: 2rem;
+            margin-top: 3rem;
+            padding: 3rem 2.5rem;
             background: var(--white);
-            -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
-            box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+            border: $card-border;
+            border-radius: $card-radius;
+            box-shadow: $card-shadow;
+
+            @include minw($xl) {
+                padding: 4rem 3.5rem;
+            }
 
             &__sub {
-                color: var(--bg);
-                font-size: 1.8rem;
-                margin-bottom: 1rem;
                 display: block;
+                color: var(--text-primary);
+                font-size: 1.3rem;
+                font-weight: 700;
+                letter-spacing: 0.1rem;
+                text-transform: uppercase;
+                margin-bottom: 1.6rem;
             }
 
             &__info {
                 margin-bottom: 3rem;
 
                 h4 {
-                    font-size: 1.2rem;
-                    font-weight: 900;
-                    letter-spacing: 0.2rem;
-                    text-transform: uppercase;
-                    color: var(--bg);
-                    margin-bottom: 1rem;
+                    @include eyebrow;
                 }
 
                 span {
-                    font-size: 2.8rem;
-                    color: var(--dark-4);
+                    display: block;
+                    font-size: 2.6rem;
+                    line-height: 1.25;
+                    color: var(--text-primary);
+
+                    @include minw($xl) {
+                        font-size: 3rem;
+                    }
                 }
             }
 
@@ -318,37 +405,41 @@
                 margin-bottom: 3rem;
 
                 ul {
-                    color: var(--dark-4);
+                    color: var(--text-primary);
 
                     li {
-                        line-height: 4rem;
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                        white-space: nowrap;
-                        text-transform: uppercase;
-                        position: relative;
-                        width: 100%;
-                        height: 4rem;
-                        border-bottom: 0.1rem solid #e1e1e1;
-                        font-weight: 700;
-                        font-size: 14px;
-                        letter-spacing: 0.1rem;
-                        text-align: left;
                         display: flex;
                         align-items: center;
-                        gap: 2rem;
+                        gap: 1.4rem;
+                        padding: 1.2rem 0;
+                        border-bottom: $hairline;
+                        font-weight: 600;
+                        font-size: 1.4rem;
+                        letter-spacing: 0.04em;
+                        line-height: 1.35;
+                        text-transform: uppercase;
 
                         &:last-of-type {
                             border-bottom: 0;
+                            padding-bottom: 0;
+                        }
+
+                        &:first-of-type {
+                            padding-top: 0;
                         }
 
                         .check {
-                            width: 2.3rem;
+                            flex-shrink: 0;
+                            width: 2.6rem;
+                            height: 2.6rem;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
                             border: solid 0.1rem var(--bg);
                             border-radius: 50%;
-                            padding: 0.5rem;
 
                             svg {
+                                width: 1.2rem;
                                 height: auto;
 
                                 g {
@@ -364,8 +455,22 @@
 
             &__short {
                 ul {
-                    color: var(--dark-4);
-                    font-size: 1.6rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.8rem;
+                    color: var(--text-primary);
+
+                    li {
+                        padding: 1.2rem 1.6rem;
+                        background: #f7f4f2;
+                        border-radius: 1rem;
+                        font-size: 1.5rem;
+                        line-height: 1.45;
+
+                        span {
+                            display: block;
+                        }
+                    }
                 }
             }
         }
