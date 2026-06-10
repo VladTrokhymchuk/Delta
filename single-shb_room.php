@@ -51,7 +51,21 @@
 
                 <div class="room__desc">
                     <h5><?php echo esc_html(get_field('opis_nomeru_zagolovok')); ?></h5>
-                    <p><?php echo wp_kses_post(get_field('opis_nomeru')); ?></p>
+                    <?php
+                        $opis = get_field('opis_nomeru');
+                        // Якщо це простий перелік через кому (без HTML) — рендеримо чіпами,
+                        // інакше лишаємо звичайний абзац.
+                        if ( $opis && strpos( $opis, '<' ) === false && strpos( $opis, ',' ) !== false ):
+                            $opis_items = array_filter( array_map( 'trim', explode( ',', $opis ) ) );
+                    ?>
+                    <ul class="room__desc__list">
+                        <?php foreach ( $opis_items as $opis_item ): ?>
+                        <li><?php echo esc_html( $opis_item ); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                    <?php else: ?>
+                    <p><?php echo wp_kses_post( $opis ); ?></p>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="room__sidebar">

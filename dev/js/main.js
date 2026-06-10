@@ -34,16 +34,14 @@ $('#hamburger-button').click(function () {
 });
 
 $('li a').click(function () {
-    animateHamburger();
-    slideMenu();
-    slideLogo();
+    // Клік по пункту меню завжди ЗАКРИВАє меню (а не перемикає стан),
+    // інакше на новій сторінці/десктопі лого отримує клас --open і зникає.
+    $('#hamburger-button').removeClass('open');
+    $('.navbar').removeClass('open');
+    $('.header__logo').removeClass('header__logo--open');
 
     if (window && window.innerWidth < 1024) {
-        if ($('li a').hasClass('open')) {
-            $("body").css('overflow', 'hidden');
-        } else {
-            $("body").css('overflow', 'unset');
-        }
+        $("body").css('overflow', 'unset');
     }
 });
 
