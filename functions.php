@@ -7,6 +7,7 @@ include_once 'functions-parts/_taxonomies-registration.php';
 include_once 'functions-parts/_breadcrumbs.php';
 include_once 'functions-parts/_hooks.php';
 include_once 'functions-parts/_custom-functions.php';
+include_once 'functions-parts/_seo-ai.php';
 
 # Parts
 include_once 'functions-parts/headache.php';

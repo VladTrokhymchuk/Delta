@@ -15,6 +15,17 @@ description: Сучасний UI/UX редизайн існуючого блок
 1. **Знайди джерело правди по токенах.** Кольори, шрифти, breakpoint-и, міксини
    (у цьому проєкті: `dev/styles/utils/variables/`, `dev/styles/utils/mixins.scss`).
    Редизайн має використовувати наявні змінні, а не хардкодити нові кольори.
+
+   **Брендові токени цього проєкту** (`css-vars.scss`) — актуальна палітра й план
+   міграції зі старої бордової описані в [`REDESIGN.md`](../../../REDESIGN.md):
+   ```
+   --brand-green-700  основний бренд (лого)   → аліас --bg (легасі, ~30 місць)
+   --brand-green-900  глибокий фон (футер)
+   --brand-gold-400   акцент — ТІЛЬКИ на зеленому/темному
+   --brand-gold-600   золото для бордерів/іконок на світлому
+   --brand-sand-100   тепле тло секцій         → аліас --bg-bage
+   ```
+   ⚠️ Золото `--brand-gold-400` на білому дає контраст ~1.5:1 — як текст не використовувати.
 2. **Прочитай поточні стилі блоку повністю** — зрозумій структуру БЕМ і що вже є.
 3. **Прочитай розмітку** (PHP/HTML) — які елементи генеруються динамічно
    (CF7-форми, swiper-слайди, WP-меню). Їх класи чіпати ризиковано.
@@ -52,12 +63,12 @@ box-shadow: $card-shadow;
 ```scss
 @mixin eyebrow {
     position: relative; display: inline-block;
-    color: var(--accent);
+    color: var(--bg);                 // = --brand-green-700
     font-size: 1.2rem; font-weight: 900;
     letter-spacing: 0.2rem; text-transform: uppercase;
     margin-bottom: 1.6rem; padding-bottom: 1rem;
     &::after { content:''; position:absolute; left:0; bottom:0;
-               width:3.5rem; height:0.2rem; background: var(--accent); }
+               width:3.5rem; height:0.2rem; background: var(--brand-gold-600); }
 }
 ```
 
@@ -86,8 +97,9 @@ endif;
 - Не хардкодити кольори/шрифти — бери з токенів проєкту.
 - Не перейменовувати класи, на які зав'язані JS/бібліотеки чи серверна розмітка.
 - Не змінювати дані/контент під виглядом стилю.
-- Не запускати білд вручну, якщо в проєкті працює автоматичний watch — спитай або поглянь
-  на конфіг (`package.json` scripts) перш ніж робити `npm run build`.
+- Не запускати білд вручну, якщо в проєкті працює автоматичний watch (`npm run dev` = gulp watch)
+  — див. [[code-testing]].
+- Не правити `build/` — це згенерований вивід Gulp. Тільки `dev/`.
 
 ## 4. Фінал
 
