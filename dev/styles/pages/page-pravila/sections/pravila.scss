@@ -1,9 +1,384 @@
 @import '../../../core';
 
+// ═══════════════════════════════════════════════════════════════
+// Сторінка «Правила» — довгий юридичний документ.
+//
+// Задача: зробити 15 КБ суцільного тексту читабельними. Три головні проблеми,
+// які тут вирішуються (усі — наслідок вставки з Word):
+//   1. рядок тягнувся на всю ширину контейнера (до 198rem) — нечитабельно;
+//   2. КОЖЕН абзац був у <strong>, тож жирний не виділяв нічого;
+//   3. не було жодного заголовка — структуру дає delta_prepare_document().
+//
+// Метафора: аркуш офіційного документа на теплому тлі + зміст збоку.
+// ═══════════════════════════════════════════════════════════════
+
+$measure: 78ch; // комфортна довжина рядка для суцільного тексту
+
 .pravila {
+
+    // ─────────────────────────── Секція
     &-section {
-        padding: 5rem 0;
+        padding: 4rem 0 6rem;
+        background-color: var(--bg-bage);
+
+        // section { overflow: hidden } з base.scss ламає position: sticky
+        // у змісті — нижче явно повертаємо видимість.
+        overflow: visible;
+
+        @include minw($lg-tab) {
+            padding: 6rem 0 9rem;
+        }
     }
 
-    padding: 0 2rem;
+    // ─────────────────────────── Шапка сторінки
+    &-head {
+        max-width: 90rem;
+        margin-bottom: 3.5rem;
+
+        @include minw($lg-tab) {
+            margin-bottom: 5rem;
+        }
+
+        &__crumbs {
+            margin-bottom: 1.6rem;
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+
+            a {
+                color: var(--bg);
+                transition: $hover-trans;
+
+                &:hover,
+                &:focus-visible {
+                    color: var(--brand-gold-800);
+                }
+            }
+
+            .separator {
+                margin: 0 0.6rem;
+                opacity: 0.5;
+            }
+        }
+
+        &__title {
+            font-family: $boska-medium;
+            font-size: 3.6rem;
+            line-height: 1.15;
+            color: var(--bg);
+
+            @include minw($sm-tab) {
+                font-size: 4.8rem;
+            }
+
+            @include minw($lg-tab) {
+                font-size: 5.6rem;
+            }
+
+            // Золота риска — той самий прийом, що в eyebrow і футері
+            &::after {
+                content: '';
+                display: block;
+                width: 6rem;
+                height: 0.2rem;
+                margin-top: 2rem;
+                background: var(--brand-gold-600);
+            }
+        }
+
+        &__meta {
+            margin-top: 1.8rem;
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+        }
+    }
+
+    // ─────────────────────────── Сітка: зміст + документ
+    &-layout {
+        display: grid;
+        gap: 3rem;
+        align-items: start;
+
+        @include minw($lg-tab) {
+            grid-template-columns: 28rem minmax(0, 1fr);
+            gap: 4rem;
+        }
+
+        @include minw($lg-xl) {
+            grid-template-columns: 30rem minmax(0, 1fr);
+            gap: 5rem;
+            max-width: 140rem;
+        }
+    }
+
+    // ─────────────────────────── Зміст
+    &-toc {
+        padding: 2.4rem 2.6rem;
+        background: var(--white);
+        border: 0.1rem solid var(--brand-green-050);
+        border-radius: var(--r-card);
+        box-shadow: var(--shadow-card);
+
+        @include minw($lg-tab) {
+            position: sticky;
+            top: 2.5rem;
+            max-height: calc(100vh - 5rem);
+            overflow-y: auto;
+        }
+
+        &__title {
+            margin-bottom: 1.8rem;
+            padding-bottom: 1rem;
+            border-bottom: 0.1rem solid var(--brand-green-050);
+            font-size: 1.2rem;
+            font-weight: 900;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+            color: var(--bg);
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            list-style: none;
+            counter-reset: none;
+
+            a {
+                display: flex;
+                align-items: baseline;
+                gap: 1rem;
+                padding: 0.8rem 1rem;
+                margin-left: -1rem;
+                border-radius: var(--r-input);
+                font-size: 1.5rem;
+                line-height: 1.45;
+                color: var(--text-primary);
+                transition: $hover-trans;
+
+                &:hover,
+                &:focus-visible {
+                    background: var(--brand-cream-050);
+                    color: var(--bg);
+                }
+            }
+        }
+
+        &__num {
+            flex-shrink: 0;
+            min-width: 2.2rem;
+            font-weight: 700;
+            color: var(--brand-gold-800);
+        }
+    }
+
+    // ═══════════════════════════════════════════════════════════
+    // Сам документ — «аркуш»
+    // ═══════════════════════════════════════════════════════════
+    padding: 3rem 2.4rem;
+    background: var(--white);
+    border: 0.1rem solid var(--brand-green-050);
+    border-radius: var(--r-card);
+    box-shadow: var(--shadow-card);
+
+    font-size: 1.6rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+
+    @include minw($sm-tab) {
+        padding: 4.5rem 4rem;
+    }
+
+    @include minw($lg-tab) {
+        padding: 6rem 5.5rem;
+    }
+
+    // ── Абзаци
+    p {
+        max-width: $measure; // головне: обмежуємо довжину рядка
+        margin-bottom: 1.4rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    // ── Знімаємо тотальний жирний.
+    // У контенті 81 абзац і 81 <strong> — виділення не виділяло нічого.
+    // Усередині абзаців повертаємо нормальну вагу; у заголовках і пунктах
+    // списків <strong> лишається значущим.
+    p > strong {
+        font-weight: 400;
+    }
+
+    // ── Заголовки розділів (з delta_prepare_document)
+    &__heading {
+        display: flex;
+        align-items: baseline;
+        gap: 1.4rem;
+        max-width: $measure;
+        margin: 4.5rem 0 2rem;
+        padding-bottom: 1.2rem;
+        border-bottom: 0.1rem solid var(--brand-green-050);
+
+        font-family: $boska-medium;
+        font-size: 2.4rem;
+        line-height: 1.25;
+        font-weight: 400;
+        color: var(--bg);
+
+        // щоб якір із змісту не ховався під верхнім краєм вікна
+        scroll-margin-top: 2.5rem;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        @include minw($sm-tab) {
+            font-size: 2.8rem;
+        }
+
+        &__num {
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.6rem;
+            height: 3.6rem;
+            border-radius: 50%;
+            background: var(--brand-gold-050);
+            border: 0.1rem solid var(--brand-gold-600);
+
+            font-family: $apercu-pro-bold;
+            font-size: 1.5rem;
+            line-height: 1;
+            color: var(--brand-gold-800);
+        }
+    }
+
+    // ── Центровані блоки з контенту (шапка «ЗАТВЕРДЖУЮ», назва документа,
+    //    ключові застереження про бронювання). Інлайн-стиль text-align
+    //    лишаємо як є — задаємо лише вигляд.
+    p[style*='center'] {
+        max-width: 68rem;
+        margin-left: auto;
+        margin-right: auto;
+        color: var(--text-primary);
+
+        > strong {
+            font-weight: 600;
+        }
+    }
+
+    // ── Списки
+    ul,
+    ol {
+        max-width: $measure;
+        margin: 0 0 2rem 0;
+        padding-left: 2.2rem;
+
+        li {
+            margin-bottom: 0.8rem;
+            padding-left: 0.6rem;
+
+            &::marker {
+                color: var(--brand-gold-800);
+                font-weight: 700;
+            }
+        }
+    }
+
+    ul li::marker {
+        content: '—  ';
+    }
+
+    // ── Посилання в тексті
+    a:not(.btn) {
+        color: var(--bg);
+        text-decoration: underline;
+        text-underline-offset: 0.3rem;
+        text-decoration-color: var(--brand-gold-600);
+        transition: $hover-trans;
+
+        &:hover,
+        &:focus-visible {
+            color: var(--brand-gold-800);
+        }
+    }
+
+    // ── Кнопка завантаження скану (PDF) з контенту.
+    // Розмітка в CMS зламана (</a> закривається перед </span>), тому
+    // стилізуємо і саме посилання, і вкладений span — щоб виглядало однаково
+    // незалежно від того, як браузер полагодив вкладеність.
+    .btn {
+        display: inline-flex;
+        width: auto;
+        margin-bottom: 3rem;
+
+        &,
+        .btn__prime {
+            align-items: center;
+            justify-content: center;
+            padding: 1.4rem 3rem;
+            border: 0;
+            border-radius: var(--r-input);
+            background: var(--bg);
+
+            font-family: $apercu-pro-regular;
+            font-size: 1.6rem;
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+            text-transform: none;
+            text-decoration: none;
+            color: var(--white);
+            transition: $hover-trans;
+        }
+
+        // Внутрішній span уже всередині зафарбованого <a> — прибираємо подвійний
+        // фон і глобальне `.btn span { width: 100% }` з buttons.scss
+        .btn__prime {
+            width: auto;
+            padding: 0;
+            background: transparent;
+        }
+
+        &:hover,
+        &:focus-visible {
+            background: var(--brand-green-500);
+            transform: translateY(-0.2rem);
+            box-shadow: var(--shadow-lift);
+        }
+    }
+
+    // ── Друк: документ мають роздруковувати, тож прибираємо зайве
+    @media print {
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+        font-size: 12pt;
+        color: #000;
+
+        p,
+        ul,
+        ol,
+        &__heading {
+            max-width: none;
+        }
+
+        .btn {
+            display: none;
+        }
+    }
+}
+
+@media print {
+    .pravila-toc,
+    .pravila-head__crumbs {
+        display: none;
+    }
+
+    .pravila-section {
+        padding: 0;
+        background: none;
+    }
 }

@@ -2,7 +2,9 @@
 
 .footer {
     position: relative;
-    background: var(--bg);
+    // Найглибший зелений — футер «закриває» сторінку й відділяється від хедера,
+    // який світліший (--brand-green-700). Раніше обидва були одного кольору.
+    background: var(--brand-green-900);
     color: var(--white);
     padding-top: 6rem;
     overflow: hidden;
@@ -17,18 +19,23 @@
         position: absolute;
         inset: 0;
         pointer-events: none;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.18) 100%);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.22) 100%);
     }
 
-    // Тонка акцентна лінія зверху
+    // Золота акцентна лінія зверху — рима до окантовки логотипу
     &::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        height: 0.3rem;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+        height: 0.2rem;
+        background: linear-gradient(90deg,
+                transparent,
+                var(--brand-gold-600) 25%,
+                var(--brand-gold-400) 50%,
+                var(--brand-gold-600) 75%,
+                transparent);
         z-index: 1;
     }
 
@@ -77,9 +84,20 @@
         svg {
             height: auto;
 
+            // Як і в хедері: монохромний SVG фарбуємо в золото.
+            // Прибрати, коли зʼявиться двоколірний логотип (REDESIGN.md §1.4).
             path {
-                fill: var(--white);
+                fill: var(--brand-gold-400);
             }
+        }
+
+        // Растровий логотип — світла підкладка (див. коментар у header.scss)
+        img {
+            width: 100%;
+            height: auto;
+            padding: 0.8rem 1rem;
+            border-radius: var(--r-input);
+            background: var(--brand-cream-050);
         }
     }
 
@@ -115,13 +133,14 @@
                 }
             }
 
-            &:hover {
-                background: var(--white);
-                border-color: var(--white);
+            &:hover,
+            &:focus-visible {
+                background: var(--brand-gold-400);
+                border-color: var(--brand-gold-400);
                 transform: translateY(-0.2rem);
 
                 svg path {
-                    fill: var(--bg);
+                    fill: var(--brand-green-900);
                 }
             }
         }
@@ -146,7 +165,7 @@
             bottom: 0;
             width: 3rem;
             height: 0.2rem;
-            background: rgba(255, 255, 255, 0.5);
+            background: var(--brand-gold-600);
         }
     }
 
@@ -183,13 +202,13 @@
                 width: 0;
                 height: 0.1rem;
                 margin-right: 0;
-                background: var(--white);
+                background: var(--brand-gold-400);
                 transition: $hover-trans;
             }
 
             &:hover,
             &:focus-visible {
-                color: var(--white);
+                color: var(--brand-gold-400);
 
                 &::before {
                     width: 1.6rem;
@@ -200,7 +219,7 @@
 
         .current-menu-item > a,
         .current_page_item > a {
-            color: var(--white);
+            color: var(--brand-gold-400);
 
             &::before {
                 width: 1.6rem;
@@ -250,6 +269,7 @@
 
             &:hover,
             &:focus-visible {
+                color: var(--brand-gold-400);
                 background-size: 100% 0.1rem;
             }
         }
@@ -276,7 +296,7 @@
             }
 
             &:focus {
-                border-bottom-color: var(--white);
+                border-bottom-color: var(--brand-gold-400);
             }
         }
 
@@ -301,9 +321,9 @@
 
             &:hover span,
             &:focus-visible span {
-                background: var(--white);
-                color: var(--bg);
-                border-color: var(--white);
+                background: var(--brand-gold-400);
+                color: var(--brand-green-900);
+                border-color: var(--brand-gold-400);
             }
         }
 
@@ -322,10 +342,11 @@
             cursor: pointer;
             transition: $hover-trans;
 
-            &:hover {
-                background: var(--white);
-                color: var(--bg);
-                border-color: var(--white);
+            &:hover,
+            &:focus-visible {
+                background: var(--brand-gold-400);
+                color: var(--brand-green-900);
+                border-color: var(--brand-gold-400);
             }
         }
     }
@@ -357,8 +378,9 @@
                 color: rgba(255, 255, 255, 0.85);
                 transition: $hover-trans;
 
-                &:hover {
-                    color: var(--white);
+                &:hover,
+                &:focus-visible {
+                    color: var(--brand-gold-400);
                 }
             }
         }

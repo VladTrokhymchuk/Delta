@@ -8,3 +8,4 @@ gulp/version.json
 notise
 /old
 .claude-tmp
+/build

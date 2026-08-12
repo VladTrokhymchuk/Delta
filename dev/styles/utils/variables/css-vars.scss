@@ -1,36 +1,70 @@
 @import '../../core';
 
 :root {
-    --accent-1: #d63638;
-    --accent-1-darker: #44AE71;
-    --accent-2: #FE733E;
-    --accent-2-darker: #d36033;
+    /* ═══════════════════════ БРЕНД ═══════════════════════
+     * Палітра з логотипу: глибокий лісовий зелений + тепле золото.
+     * Правило контрасту: золото світить НА ЗЕЛЕНОМУ, зелений — на світлому.
+     * gold-400 на білому = 1.5:1 → як текст НЕ використовувати (є gold-800).
+     * Обґрунтування й таблиця контрастів — у REDESIGN.md.
+     */
 
+    /* Зелений — колір щита логотипу */
+    --brand-green-900: #12291F; /* футер, найглибші полотна        */
+    --brand-green-700: #1E4A38; /* ОСНОВНИЙ бренд-колір (лого)     */
+    --brand-green-500: #2F6B51; /* hover / освітлений стан         */
+    --brand-green-050: #E8EFEA; /* бордери, роздільники, ледь тло  */
+
+    /* Золото — окантовка й літери логотипу */
+    --brand-gold-400: #EFCE8D;  /* акцент ТІЛЬКИ на темному        */
+    --brand-gold-600: #C9A45C;  /* бордери/іконки на світлому      */
+    --brand-gold-800: #8A6A2A;  /* єдине золото як ТЕКСТ на світлому (5.0:1) */
+    --brand-gold-050: #FAF3E4;  /* золота підкладка                */
+
+    /* Теплі нейтральні під зелено-золоту пару */
+    --brand-sand-100: #F5F0E6;  /* тло секцій                      */
+    --brand-cream-050: #FBF8F3; /* найсвітліше тло                 */
+
+    /* ── Легасі-аліаси: НЕ видаляти, на них зав'язано ~30 місць ── */
+    --bg: var(--brand-green-700);
+    --bg-bage: var(--brand-sand-100);
+
+    /* ═══════════════════════ НЕЙТРАЛЬНІ ═══════════════════════ */
     --dark-1: #153049;
     --dark-2: #484F55;
     --dark-3: #1A232B;
     --dark-4: #24303A;
 
-    --light-1: #F7F7F7;
-
     --white: #ffffff;
     --black: #000000;
 
-    --fullmenu-bg: #1A232B;
-    --header-border: #384B5B;
-
-    --footer-bg: #0D1218;
-    --footer-text: #ffffff;
-    --table-text-head: #EBF3FF;
-
     --text-primary: #1B2B38;
     --text-secondary: #484F55;
+
+    /* Службові — стани валідації, НЕ бренд */
+    --red: #C4342B;
+    --red-hover: #9B2A22;
+
+    /* ── Deprecated: лишені як аліаси, щоб не зламати кастомний CSS
+     *    із плагіна wp-add-custom-css. У нових стилях не використовувати. ── */
+    --accent-1: var(--brand-green-700);
+    --accent-1-darker: var(--brand-green-900);
+    --accent-2: var(--brand-gold-600);
+    --accent-2-darker: var(--brand-gold-800);
+    --light-1: var(--brand-cream-050);
+    --fullmenu-bg: var(--brand-sand-100);
+    --header-border: var(--brand-green-500);
+    --footer-bg: var(--brand-green-900);
+    --footer-text: var(--white);
+    --table-text-head: var(--brand-green-050);
     --text-legal-subtitle: #768088;
 
-    --red: #FA0F00;
-    --red-hover: #AD0C26;
-    --bg: #760023;
-    --bg-bage: #EEEAE8;
+    /* ═══════════════════════ ГЕОМЕТРІЯ ═══════════════════════ */
+    --r-card: 1.6rem;
+    --r-input: 0.8rem;
+    --r-pill: 100rem;
+
+    --shadow-card: 0 1rem 4rem rgba(18, 41, 31, 0.07);
+    --shadow-lift: 0 0.8rem 2rem rgba(18, 41, 31, 0.22);
 
     --header-mob-height: 9.8rem;
     --header-desk-width: 10.6rem;

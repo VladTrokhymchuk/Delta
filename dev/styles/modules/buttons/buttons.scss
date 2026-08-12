@@ -96,13 +96,39 @@
     }
 }
 
+// Основна дія — суцільний бренд-зелений.
+// Hover освітлює (--brand-green-500) + легкий lift: зрозуміліший сигнал, ніж
+// попереднє зниження alpha, яке на світлому тлі просто «вигорало».
 .bttn {
-    color: #fff;
-    background-color: #760023;
+    color: var(--white);
+    background-color: var(--bg);
+    border-radius: var(--r-input);
 
     &:hover {
-        background-color: rgb(118 0 35 / 75%);
-        color: #fff;
+        background-color: var(--brand-green-500);
+        color: var(--white);
+        transform: translateY(-0.2rem);
+        box-shadow: var(--shadow-lift);
+    }
+
+    // Обведення лягає на тло СТОРІНКИ (offset), а не на кнопку, тому потрібне
+    // темне золото: gold-600 на білому дає 2.4:1 — нижче за норму 3:1 для
+    // нетекстових елементів. gold-800 = 5.0:1.
+    &:focus-visible {
+        outline: 0.2rem solid var(--brand-gold-800);
+        outline-offset: 0.3rem;
+    }
+}
+
+// Акцентна CTA («Забронювати») — золото на зеленому тексті.
+// Використовувати ТІЛЬКИ на темному/зеленому тлі: на білому золото не читається.
+.bttn--gold {
+    color: var(--brand-green-900);
+    background-color: var(--brand-gold-400);
+
+    &:hover {
+        background-color: var(--white);
+        color: var(--brand-green-900);
     }
 }
 
@@ -127,7 +153,7 @@
 
 .bttn-loading {
     background-image: url('../img/general/spinner-blue.svg');
-    background-color: #43D6F91A;
+    background-color: rgba(30, 74, 56, 0.1); // брендовий зелений, було чуже блакитне #43D6F91A
 }
 
 .bttn-link {

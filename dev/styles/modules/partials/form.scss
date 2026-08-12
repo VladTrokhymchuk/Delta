@@ -51,8 +51,10 @@
                 color: #BCBCBC;
             }
 
+            // Фокус — брендове золото (форма живе на темному тлі футера).
+            // Було нейтральне #636363, яке читалось як «неактивно».
             &:focus {
-                border-color: #636363;
+                border-color: var(--brand-gold-400);
             }
 
             &:focus~.wpcf7-not-valid-tip {

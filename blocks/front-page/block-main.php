@@ -19,10 +19,10 @@
                 ?>
                 <div class="front-head__lay__logo">
                     <div class="front-head__lay__logo__img">
-                        <?php
-                                $svg_markup = file_get_contents( get_attached_file( $img_logo['ID'] ) );
-                                echo $svg_markup;
-                            ?>
+                        <?php delta_render_image( $img_logo, array(
+                                'alt'           => get_bloginfo('name'),
+                                'fetchpriority' => 'high',
+                            ) ); ?>
                     </div>
                 </div>
                 <?php endif; ?>

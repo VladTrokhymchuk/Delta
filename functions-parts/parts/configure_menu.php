@@ -24,4 +24,11 @@ add_action( 'after_setup_theme', function(){
 
 	# 5.2 Регистрация обложки для постов
 	add_theme_support( 'post-thumbnails' );
+
+	# 5.3 <title> у <head>.
+	# Без цієї підтримки WordPress не виводить <title> ВЗАГАЛІ: Rank Math лише
+	# фільтрує заголовок (через pre_get_document_title), а друкує його ядро WP —
+	# і лише за наявності title-tag. Наслідок був такий, що og:title і canonical
+	# від Rank Math були на місці, а самого <title> на сторінках не було.
+	add_theme_support( 'title-tag' );
 } );

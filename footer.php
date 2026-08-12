@@ -9,7 +9,7 @@
                     <?php $img_logo = get_field('img_logo', 'options'); if ($img_logo): ?>
                     <a class="footer__logo" href="<?php echo esc_url( home_url('/') ); ?>"
                         aria-label="<?php echo esc_attr( get_bloginfo('name') ); ?>">
-                        <?php echo file_get_contents( get_attached_file( $img_logo['ID'] ) ); ?>
+                        <?php delta_render_image( $img_logo, array( 'alt' => get_bloginfo('name') ) ); ?>
                     </a>
                     <?php endif; ?>
 
@@ -28,7 +28,9 @@
                             title="<?php echo esc_attr( $social_item['title'] ); ?>"
                             aria-label="<?php echo esc_attr( $social_item['title'] ); ?>"
                             target="_blank" rel="noopener">
-                            <?php if ( $img_soc ) echo file_get_contents( get_attached_file( $img_soc['ID'] ) ); ?>
+                            <?php if ( $img_soc ) delta_render_image( $img_soc, array(
+                                'alt' => $social_item['title'] ?: '',
+                            ) ); ?>
                         </a>
                         <?php endwhile; ?>
                     </div>

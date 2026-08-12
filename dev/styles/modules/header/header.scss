@@ -23,7 +23,25 @@
         position: relative;
         z-index: 250;
         background: var(--bg);
-        box-shadow: 0 0.2rem 2.4rem rgba(0, 0, 0, 0.12);
+        box-shadow: 0 0.2rem 2.4rem rgba(18, 41, 31, 0.18);
+
+        // Тонка золота лінія знизу — «шов» між хедером і контентом.
+        // Золото тут як матеріал (1px), а не як заливка.
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 0.1rem;
+            background: linear-gradient(90deg,
+                    transparent,
+                    var(--brand-gold-600) 20%,
+                    var(--brand-gold-400) 50%,
+                    var(--brand-gold-600) 80%,
+                    transparent);
+            opacity: 0.55;
+        }
     }
 
     position: fixed;
@@ -52,23 +70,36 @@
             width: auto;
             height: 100%;
 
+            // Логотип у медіатеці поки МОНОХРОМНИЙ SVG, тому фарбуємо його тут.
+            // Золото на зеленому хедері = 6.6:1 і повторює пару з нового лого.
+            // ⚠️ Коли завантажать ДВОКОЛІРНИЙ SVG — прибрати цей fill і блок --open,
+            //    інакше логотип сплющиться в один колір. Див. REDESIGN.md §1.4.
             path {
                 transition: $hover-trans;
 
-                fill: var(--white)
+                fill: var(--brand-gold-400);
             }
         }
 
+        // Мобільне меню відкрите → фон світлий (--bg-bage), золото на ньому не
+        // читається (1.5:1), тому логотип стає зеленим.
         &--open {
             svg {
                 path {
-                    fill: var(--bg)
+                    fill: var(--bg);
                 }
             }
         }
 
+        // Растровий логотип (PNG/JPG) — сюди потрапляє лише він: SVG інлайниться
+        // як <svg> хелпером delta_render_image(). Двоколірний логотип має власний
+        // ЗЕЛЕНИЙ щит, який на зеленому хедері зникає, тому даємо світлу підкладку.
         img {
             max-width: 70%;
+            padding: 0.6rem 1rem;
+            border-radius: var(--r-input);
+            background: var(--brand-cream-050);
+            box-shadow: 0 0.2rem 1.2rem rgba(18, 41, 31, 0.25);
 
             @include minw($lg-tab) {
                 max-width: 100%;
@@ -206,16 +237,21 @@
                                 }
                             }
 
+                            // CTA заливається золотом — головна дія на сторінці
+                            // має бути найпомітнішою, а золото на зеленому хедері
+                            // контрастніше й «дорожче», ніж біле.
                             &:hover,
                             &:focus-within {
-                                background: transparent;
+                                background: var(--brand-gold-400);
+                                border-color: var(--brand-gold-400);
 
                                 @include minw($lg-tab) {
-                                    background: var(--white);
+                                    background: var(--brand-gold-400);
+                                    border-color: var(--brand-gold-400);
                                 }
 
                                 a {
-                                    color: var(--bg);
+                                    color: var(--brand-green-900);
                                 }
                             }
                         }
@@ -270,10 +306,12 @@
                             &:hover,
                             &:focus-visible {
                                 transition: $hover-trans;
-                                color: var(--red-hover);
+                                // було var(--red-hover) — службовий колір помилки
+                                // в ролі бренду; на мобільному меню (світле тло) тепер зелений
+                                color: var(--bg);
 
                                 @include minw($lg-tab) {
-                                    color: var(--white);
+                                    color: var(--brand-gold-400);
                                 }
 
                                 &::after {

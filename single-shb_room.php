@@ -96,9 +96,7 @@
                             <li>
                                 <?php $check = get_field('check', 'options'); if ($check): ?>
                                 <div class="check">
-                                    <?php $svg_markup_check = file_get_contents( get_attached_file( $check['ID'] ) );
-                                        echo $svg_markup_check;
-                                    ?>
+                                    <?php delta_render_image( $check, array( 'alt' => '' ) ); ?>
                                 </div>
                                 <?php endif; ?>
                                 <span><?php echo esc_html(get_sub_field('d_f_item')); ?></span>

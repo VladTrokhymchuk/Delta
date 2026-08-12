@@ -11,7 +11,7 @@
     <title><?php echo esc_html(get_field('title_head', 'options')) ?></title>
     <meta name="description" content="<?php echo esc_html(get_field('description_head', 'options')) ?>">
     <?php endif; ?>
-    <meta name="theme-color" content="#760023">
+    <meta name="theme-color" content="#1E4A38"><?php // = --brand-green-700, колір хедера ?>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet"> -->
@@ -47,8 +47,11 @@
                     <a class="header__logo" href='<?= esc_url($link['url']); ?>'
                         title="<?=esc_html( $link['title'] ); ?>" aria-label="<?=esc_attr( $link['title'] ?: get_bloginfo('name') ); ?>">
                         <?php
-                            $svg_markup = file_get_contents( get_attached_file( $img_logo['ID'] ) );
-                            echo $svg_markup;
+                            // Логотип — первинний екран, тому fetchpriority замість lazy.
+                            delta_render_image( $img_logo, array(
+                                'alt'           => get_bloginfo('name'),
+                                'fetchpriority' => 'high',
+                            ) );
                         ?>
                     </a>
 
