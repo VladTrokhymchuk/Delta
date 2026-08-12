@@ -23,12 +23,13 @@ $('#hamburger-button').click(function () {
     slideMenu(); /*attaching click handler to the burger button*/
     slideLogo();
 
+    var isOpen = $('#hamburger-button').hasClass('open');
+    $(this)
+        .attr('aria-expanded', isOpen ? 'true' : 'false')
+        .attr('aria-label', isOpen ? 'Закрити меню' : 'Відкрити меню');
+
     if (window && window.innerWidth < 1024) {
-        if ($('#hamburger-button').hasClass('open')) {
-            $("body").css('overflow', 'hidden');
-        } else {
-            $("body").css('overflow', 'unset');
-        }
+        $("body").css('overflow', isOpen ? 'hidden' : 'unset');
     }
 
 });
@@ -36,7 +37,10 @@ $('#hamburger-button').click(function () {
 $('li a').click(function () {
     // Клік по пункту меню завжди ЗАКРИВАє меню (а не перемикає стан),
     // інакше на новій сторінці/десктопі лого отримує клас --open і зникає.
-    $('#hamburger-button').removeClass('open');
+    $('#hamburger-button')
+        .removeClass('open')
+        .attr('aria-expanded', 'false')
+        .attr('aria-label', 'Відкрити меню');
     $('.navbar').removeClass('open');
     $('.header__logo').removeClass('header__logo--open');
 

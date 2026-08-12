@@ -6,9 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+    <?php // Rank Math керує <title> та мета-описом через wp_head(); ручні теги — лише фолбек, якщо плагін вимкнено.
+    if ( ! class_exists( 'RankMath' ) ) : ?>
     <title><?php echo esc_html(get_field('title_head', 'options')) ?></title>
     <meta name="description" content="<?php echo esc_html(get_field('description_head', 'options')) ?>">
-    <meta name="keywords" content="<?php echo esc_html(get_field('keywords_head', 'options')) ?>">
+    <?php endif; ?>
+    <meta name="theme-color" content="#760023">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet"> -->
@@ -28,12 +31,13 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Перейти до вмісту</a>
     <main <?php body_class(); ?>>
 
-        <header class="header-section">
+        <header class="header-section" role="banner">
             <div class="container">
 
-                <div class="header__nav">
+                <nav class="header__nav" aria-label="Головне меню">
                     <?php
                         $img_logo = get_field('img_logo', 'options');
                         if ($img_logo):
@@ -41,7 +45,7 @@
                     ?>
 
                     <a class="header__logo" href='<?= esc_url($link['url']); ?>'
-                        title="<?=esc_html( $link['title'] ); ?>">
+                        title="<?=esc_html( $link['title'] ); ?>" aria-label="<?=esc_attr( $link['title'] ?: get_bloginfo('name') ); ?>">
                         <?php
                             $svg_markup = file_get_contents( get_attached_file( $img_logo['ID'] ) );
                             echo $svg_markup;
@@ -51,7 +55,7 @@
 
                     <?php endif; ?>
 
-                    <div class='navbar'>
+                    <div class='navbar' id="primary-navigation">
                         <?php wp_nav_menu(array(
                             'menu' => 'Second menu',
                             'container'       => 'div',
@@ -62,15 +66,16 @@
                     </div>
 
                     <div class="hamburger__box">
-                        <div id="hamburger-button">
+                        <button type="button" id="hamburger-button" aria-label="Відкрити меню"
+                            aria-expanded="false" aria-controls="primary-navigation">
                             <span></span>
                             <span></span>
                             <span></span>
-                        </div>
+                        </button>
                     </div>
 
-                </div>
+                </nav>
             </div>
         </header>
 
-        <div class='main-wrap'>
+        <div class='main-wrap' id="main-content">

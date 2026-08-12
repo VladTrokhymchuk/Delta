@@ -47,7 +47,7 @@
 <section id="<?php echo esc_html(get_field('id_hotel')); ?>" class="front-about-section">
     <div class="container">
         <div class="front-about">
-            <h3><?php echo esc_html(get_field('about_title')); ?></h3>
+            <h2><?php echo esc_html(get_field('about_title')); ?></h2>
             <p><?php echo esc_html(get_field('about_desc')); ?></p>
         </div>
     </div>
@@ -62,7 +62,7 @@
         </div>
         <div class="content front-parallax__cont">
             <div class="front-parallax__cont__info">
-                <h1><?php echo esc_html(get_field('title_room')); ?></h1>
+                <h2><?php echo esc_html(get_field('title_room')); ?></h2>
                 <p><?php echo esc_html(get_field('desc_room')); ?></p>
             </div>
             <?php if( get_field('link_room') ): $link_room = get_field('link_room');?>
@@ -76,7 +76,7 @@
 <section id="<?php echo esc_html(get_field('id_info')); ?>" class="front-informations-section">
     <div class="container">
         <div class="front-informations">
-            <h3><?php echo esc_html(get_field('info_title')); ?></h3>
+            <h2><?php echo esc_html(get_field('info_title')); ?></h2>
             <div class="front-informations__inform">
                 <?php if( have_rows('info_rep') ): while( have_rows('info_rep') ): the_row(); ?>
                 <div class="front-informations__inform__item">
@@ -100,7 +100,7 @@
             <?php echo $main_iframe; ?>
         </div>
         <div class="front-location__address">
-            <h3 class="front-location__title"><?php echo esc_html(get_field('str_title')); ?></h3>
+            <h2 class="front-location__title"><?php echo esc_html(get_field('str_title')); ?></h2>
 
             <div class="front-location__wrap">
                 <?php if( have_rows('address_item') ): while( have_rows('address_item') ): the_row(); ?>
